@@ -7,6 +7,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: 'Merriweathe
 
 blockquote p { font-size: 16px; line-height: 1.6em; }
 
+justify { width: 100%; } 
+justify p { text-align: justify;} 
+
 /* Masthead */
 .header, .footer, .header h3 { font-family: 'Montserrat', Helvetica, sans-serif; text-transform: uppercase; font-weight: normal; }
 
