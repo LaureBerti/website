@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network of collaborators</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+    /* --- CSS intégré --- */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f7f6;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+        /* Empêche le défilement de la page */
+    }
+
+    .container {
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        padding: 30px 40px;
+        text-align: center;
+        max-width: 45%;
+        width: 1000px;
+        box-sizing: border-box;
+        max-height: 95vh;
+        /* Limite la hauteur du conteneur */
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+        font-size: 2.2em;
+    }
+
+    p {
+        color: #7f8c8d;
+        margin-bottom: 30px;
+        font-size: 1.1em;
+    }
+
+    #graph-container {
+        flex-grow: 1;
+        /* Prend l'espace disponible */
+        min-height: 400px;
+        /* Hauteur minimale pour le graphe */
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        background-color: #ffffff;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        /* Pour cacher les éléments qui dépassent lors du zoom/pan */
+        position: relative;
+        /* Nécessaire pour le positionnement absolu du SVG */
+    }
+
+    #graph-container svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Styles des éléments SVG */
+    .link {
+        stroke: #bdc3c7;
+        /* Couleur des liens */
+        stroke-opacity: 0.8;
+    }
+
+    .node {
+        fill: #3498db;
+        /* Couleur par défaut des nœuds */
+        stroke: #fff;
+        stroke-width: 2px;
+        cursor: grab;
+        transition: fill 0.2s ease, stroke 0.2s ease;
+    }
+
+    .node.central {
+        fill: #e74c3c;
+        /* Couleur de l'auteur central */
+        stroke: #f1c40f;
+        /* Bordure pour l'auteur central */
+        stroke-width: 4px;
+    }
+
+    .node:hover {
+        fill: #2980b9;
+        /* Couleur au survol */
+        cursor: grabbing;
+    }
+
+    .node-label {
+        font-size: 10px;
+        fill: #2c3e50;
+        pointer-events: none;
+        /* Permet de cliquer à travers le texte pour le nœud */
+        text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+        /* Contour blanc pour lisibilité */
+    }
+
+    /* Styles du tooltip */
+    .tooltip {
+        position: absolute;
+        text-align: left;
+        padding: 8px 12px;
+        font: 12px sans-serif;
+        background: rgba(0, 0, 0, 0.8);
+        /* Fond semi-transparent */
+        color: #fff;
+        border: 0px;
+        border-radius: 4px;
+        pointer-events: none;
+        /* Le tooltip ne doit pas interférer avec les événements de la souris */
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        z-index: 1000;
+    }
+
+    .tooltip strong {
+        color: #f1c40f;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>My Network of Co-Authors</h1>     
+        <div id="graph-container">
+        </div>
+        <div id="tooltip" class="tooltip"></div>
+    </div>
+    <script src="./js/network.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

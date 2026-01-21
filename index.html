@@ -3,90 +3,318 @@
 
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138011367-1"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138011367-1"></script>
+
+   
     <meta name="robots" content="all">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <meta name="description" content="Laure Berti-Equille">
     <meta name="author" content="Laure Berti-Equille">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Homepage, Laure Berti-Equille, Computer Science, data quality, machine learning, data preparation, data cleaning, data curation, data repairing, ML applied to sustainable developement, anomaly detection, data fusion, data integration, truth discovery, fact-checking">
-    <script id="twitter-wjs" src="web_fichiers/widgets.js"></script>
-    <script async="" src="web_fichiers/ga.js"></script>
-    <script src="web_fichiers/modernizr.js"></script>
-    <title>Laure Berti-Equille </title>
-    <!-- styles -->
+    
+    
+    <!-- CSS -->
     <link rel="icon" href="favicon.ico">
     <link href='web_fichiers/academicons.min.css' rel='stylesheet'>
     <link href="web_fichiers/font-awesome.css" rel="stylesheet">
-    <link href="web_fichiers/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="web_fichiers/prettify.css">
     <link href="web_fichiers/bootstrap.css" rel="stylesheet">
-    <link href="web_fichiers/jumbotron-narrow.css" rel="stylesheet">
+    
+    <!-- styles -->
     <style type="text/css">
-    article+[data-readmore-toggle],
-    article[data-readmore] {
-        display: block;
-        width: 100%;
-    }
+        @import url(http://fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic,700,700italic);
+        @import url(http://fonts.googleapis.com/css?family=Montserrat);
+        
+        
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-family: 'Montserrat', Helvetica ; font-weight: 700;}
+        /* Masthead */
+        .header, .footer,  h1, h3 { font-family: 'Montserrat', Helvetica, sans-serif; font-weight: normal; }
 
-    article[data-readmore] {
-        transition: height 200ms;
-        overflow: hidden;
-    }
-    </style>
-    <style type="text/css">
-    #info+[data-readmore-toggle],
-    #info[data-readmore] {
-        display: block;
-        width: 100%;
-    }
+        /* Navigation */
+        h3.text-muted a {text-decoration: none; color: #999999; }
+        h3.text-muted a:hover { text-decoration: none; color: #0088cc; }
 
-    #info[data-readmore] {
-        transition: height 200ms;
-        overflow: hidden;
+        p { text-align:left; vertical-align:middle font-size: 12px; line-height: 1.6em; }
+
+
+        img-small {vertical-align:text-top;border:0; width:120px;float:left; margin-right:10px; }
+        
+        span.pub_authors {
+          font-weight: 300;
+          font-size: 14px;
+        }
+        span.pub_type {
+          font-weight: 300;
+          color: #7F7F7F;
+          font-size: 14px;
+        }
+        span.pub_downloads {
+          font-weight: 300;
+          color: #7F7F7F;
+          font-size: 12px;
+        }
+
+        span.label-default {
+          background-color: #969696;
+          margin-right: 8px;
+        }
+        
+        article+[data-readmore-toggle],
+        article[data-readmore] {
+            display: block;
+            width: 100%;
+        }
+
+        article[data-readmore] {
+            transition: height 200ms;
+            overflow: hidden;
+        }
+        #info+[data-readmore-toggle],
+        #info[data-readmore] {
+            display: block;
+            width: 100%;
+        }
+
+        #info[data-readmore] {
+            transition: height 200ms;
+            overflow: hidden;
+        }
+        /* pub style and table style*/
+        table.articles {
+          border-collapse: separate;
+          border-spacing: 0 15px;
+        }
+        table.articles td {
+          vertical-align: top;
+        }
+        table.img img-small {
+          vertical-align: top;
+          width:120px;
+        }
+
+        .box {
+          display: block;
+          text-align: justify;
+        }
+        .box:not(.fun) a {
+          color: #555;
+          text-decoration: none;
+          border-bottom: 1px solid #555;
+          word-wrap: break-word;
+        }
+        .box:not(.fun) a:hover {
+          color: #222;
+          text-decoration: none;
+          border-bottom: 1px solid #222;
+        }
+        .box.about #news {
+          width: 100%;
+          padding: 0 1rem;
+          height: 17rem;
+          overflow-x: auto;
+          text-align: left;
+          position: relative;
+        }
+        .box.about .news-items {
+          position: absolute;
+          height: 100%;
+          white-space: nowrap;
+        }
+        .box.about .news-items .item {
+          display: inline-block;
+          width: 14rem;
+          max-height: 19rem;
+          overflow: hidden;
+          white-space: normal;
+          margin-right: 1rem;
+          border: 1px solid #2fb5de;
+          border-radius: 10px;
+          padding: 0.6rem;
+          vertical-align: top;
+        }
+        .box.about .news-items a {
+          color: Orange ;
+          text-decoration: Orange;
+          border-bottom: none;
+          word-wrap: break-word;
+          font-weight: 600 !important;
+          text-decoration-style: solid;
+        }
+        .box.about .news-items a:link {
+          color: Orange;
+          text-decoration: Orange;
+          text-decoration-style: solid;
+        }
+        .box.about .news-items a:hover {
+          color: DodgerBlue  ;
+          text-decoration: DodgerBlue;
+          border-bottom: 1px solid #222;
+        }
+        .box.about .news-items p {
+          font-size: 1.1rem;
+          line-height: 12px;
+          color: #428bca !important;
+          margin: 0;
+        }
+        .box.about .news-items p.date {
+          font-style: italic;
+          font-size: 0.8rem;
+          text-align: right;
+          margin-bottom: 0.25em;
+          color: #525252;
+        }
+     
+        header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 5%;
+        box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+        background-color: #fff;
+        }
+
+        ul-nav {
+            list-style: none;
+            justify-content: space-around;
+            display: flex;
+            align-items: center;
+           
+        }
+        ul-nav li-nav {
+            margin: 15 10px;
+            align-items: center;   
+                    
+        }
+        ul-nav li-nav a{
+
+        font-size: 80%;
+        }
+
+        
+
+    @media screen and (max-width: 1037px) {
+        body {
+            position: relative;
+        }
+
+    ul-nav {
+        flex-direction:row;
+        position: absolute;
+        inset-block-start: 120px;
+        top: 300;
+        left: -1000px;
+        height: 25px;
+        width: 100%;
+        display: flex;
+        background-color: rgba(255, 255, 255, 0.8);
+        transition: 0.5s;
+        backdrop-filter: blur(5px);
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
     }
+    ul-nav li-nav{
+        margin: 20px 0;
+        font-weight: bold;
+    }
+   
+    ul-nav li-nav a:hover{
+        color: #fff;
+        background: #7F7F7F;
+
+    }
+    .button{
+        z-index: 100;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    .button::after{
+        content: "";
+        position: absolute;
+        width: 35px;
+        height: 2px;
+        background-color: #000;
+        transform: translateY(-10px);
+        box-shadow: 0 10px 0 #000 ;
+        transition: 0.5s;
+    }
+    .button.active::after{
+        transform: rotate(45deg);
+        box-shadow: 0 0 0 #000 ;
+    }
+    .button::before{
+        content: "";
+        position: absolute;
+        width: 35px;
+        height: 2px;
+        background-color: #000;
+        transform: translateY(10px);
+        transition: 0.5s;
+    }
+    .button.active::before{
+        transform: rotate(-45deg);
+    }
+    ul-nav.active {
+        left :0 ;
+    }
+}
+
+
+
     </style>
+
+    <title>Laure Berti-Equille </title>
+
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-            <h3 class="text-muted">Laure Berti-Equille <small>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Research Director <a href="https://en.ird.fr/" target="_blank" ><img align="right" vertical-align= "middle" width="60" src="img/logo-ird.png"></a>
-           </small> </h3>
-            <ul class="nav nav-pills pull-right">
-                <li class=""><a href="#research" title="Research">Research</a></li>
-                <li class=""><a href="#projects" title="Projects">Projects</a></li>
-                <li class=""><a href="#publications" title="Publications">Publications</a></li>
-                <li class=""><a href="#talks" title="Talks">Talks</a></li>
-                <li class=""><a href="#teaching" title="teaching">Students</a></li>
-                <li class=""><a href="#bio" title="Bio">Bio</a></li>
-                <li class=""><a href="#contact" title="Contact">Contact</a></li>
-            </ul>
-        </div>
-        <!-- /header -->
-        <div>
-        </br>
+    <header style="margin-left:auto;justify-content: center;align-items: center;">
+               <a href="https://en.ird.fr/" target="_blank" >
+            <div class="img-small">
+                <img align="center" vertical-align= "bottom" width="60" src="img/logo-ird.png">
+            </div></a> &nbsp;  &nbsp;  &nbsp; 
+        
+        <h2 class="text-muted">Laure Berti-Equille </br> 
+                <small>
+            Research Director</small>
+            </br>
             <p>
-            <p align="right">
-                <a href="https://github.com/laureberti" target="_blank" title="Github">
-                    <i class="fa fa-github-square fa-2x"></i></a>
+                <a href="https://github.com/laureberti" target="_blank" title="Github"><i class="fa fa-github-square fa-1x"></i></a>
                 <a href="https://twitter.com/laureberti" target="_blank" title="Twitter">
-                    <i class="fa fa-twitter-square fa-2x"></i></a>
+                    <i class="fa fa-twitter-square fa-1x"></i></a>
                 <a href="https://www.linkedin.com/in/laure-berti-equille/" target="_blank" title="LinkedIn">
-                    <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
-                <a href="https://scholar.google.fr/citations?user=pHwxwjwAAAAJ&hl=fr&oi=ao" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square fa-2x"></i></a>
-                <a href="https://www.researchgate.net/profile/Laure-Berti-Equille" target="_blank" title="Research Gate"><i class="ai ai-researchgate-square fa-2x"></i></a>
-                <a href="https://orcid.org/0000-0002-8046-0570" target="_blank" title="Orcid"><i class="ai ai-orcid-square fa-2x"></i></a>
-                <a href="https://cv.hal.science/laure-berti-equille" target="_blank" title="HAL"><i class="ai ai-hal-square fa-2x"></i></a>
+                    <i class="fa fa-linkedin-square fa-1x" aria-hidden="true"></i></a>
+                <a href="https://scholar.google.fr/citations?user=pHwxwjwAAAAJ&hl=fr&oi=ao" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square fa-1x"></i></a>
+                <a href="https://www.researchgate.net/profile/Laure-Berti-Equille" target="_blank" title="RG"><i class="ai ai-researchgate-square fa-1x"></i></a>
+                <a href="https://orcid.org/0000-0002-8046-0570" target="_blank" title="Orcid"><i class="ai ai-orcid-square fa-1x"></i></a>
+            </p></h2>
+            </br>
+     
+          <ul-nav class="menu">
+            
+                <li-nav><a href="#research" title="Research">
+                    <b style="border-radius: 25px;border: 1px solid #0088cc;padding: 3px;"> Research </b></a></li>
+                <li-nav><a href="#projects" title="Projects"> <b style="border-radius: 25px;border: 1px solid #0088cc;padding: 3px;"> Projects </b></a></li>
+                <li-nav><a href="#publications" title="Publications"><b style="border-radius: 25px;border: 1px solid #0088cc;padding: 3px;"> Publications </b></a></li>
+                <li-nav><a href="#talks" title="Talks"> <b style="border-radius: 25px;border: 1px solid #0088cc;padding: 3px;"> Talks </b></a></li>
+                <li-nav><a href="#teaching" title="teaching"> <b style="border-radius: 25px;border: 1px solid #0088cc;padding: 3px;"> Students </b></a></li>
+                <li-nav><a href="#bio" title="Bio"> <b style="border-radius: 25px;border: 1px solid #0088cc;padding: 3px;"> Bio </b></a></li>
+                <li-nav><a href="#contact" title="Contact"> <b style="border-radius: 25px;border: 1px solid #0088cc;padding: 3px;"> Contact </b></a></li>
+        </ul-nav>
 
-
-
-            </p>
-            </p>
-        <h2><i class="fa fa-bullhorn" aria-hidden="true"></i> &nbsp; News</h2>
+     
+        <div class="button"></div>
+    </header>
+    
+    <div class="container">
+       
+    
+            
+            <h2><i class="fa fa-bullhorn" aria-hidden="true"></i> &nbsp; News</h2>
         
             <div class="box about mt-4">
             <div id="news" class="div-left-line-blue">
@@ -100,13 +328,15 @@
                  <div class="item"><p class="date">Jul, 2024</p><p>
 
                 </p></div>
+
 -->
+                
 
                  <div class="item"><p class="date">Sept, 2025</p><p><i class="fa fa-newspaper-o"></i> <b>New Book </b> entitled <a href="https://doi.org/10.1051/978-2-7598-3883-7" title="AI for SDGs" target="_blank"> "AI for SDGs – A technical and illustrated tour"</a> with Open Access</p></div>
 
 
                          
-                <div class="item"><p class="date">Sept, 2025</p><p><i class="fa fa-newspaper-o"></i> <b>Paper accepted at  <a href="https://www.climatechange.ai/events/neurips2025" title="" target="_blank">  NeurIPS 2025 Workshop on Tackling Climate Change with Machine Learning </b></a> entitled "Advancing Multimodal Fact-Checking Against Climate Misinformation..." with O. El Baf, Q. Senatore &amp;  A. Mouakher (Univ. Perpignan, France). </p></div> 
+                <div class="item"><p class="date">Sept, 2025</p><p><i class="fa fa-newspaper-o"></i> <b>Paper accepted at  <a href="https://www.climatechange.ai/events/neurips2025" title="" target="_blank">  NeurIPS 2025 Workshop CCAI </b></a> entitled "Advancing Multimodal Fact-Checking Against Climate Misinformation..." with O. El Baf, Q. Senatore &amp;  A. Mouakher (Univ. Perpignan, France). </p></div> 
                  <!-- <a href="" title="Not every day is a sunny day..." target="_blank">[GitHub]</a> -->
 
                     
@@ -160,6 +390,7 @@
                     <a href="./pub/mixmax_2024.pdf" title="MixMAS: A Framework for Sampling-Based Mixer Architecture Search for Multimodal Fusion and Learning" target="_blank">[pdf]</a>
                 </p></div>
 
+
                  <div class="item"><p class="date">Oct, 2024</p><p><i class="fa fa-newspaper-o"></i> <b>Paper accepted at <a href="https://www.climatechange.ai/events/neurips2024" title="CCAI’s Workshop on Tackling Climate Change with Machine Learning at NeurIPS 2024" target="_blank"> NeurIPS 2004 CCAI Workshop</b></a> entitled "Hierarchical Classification for Automated Image Annotation of Coral Reef Benthic Structures" with C. Blondin, K. Inagaki, G. Longo, &amp; J. Guérin (IRD).
                       <a href="https://arxiv.org/abs/2412.08228" title="Hierarchical Classification for Automated Image Annotation of Coral Reef Benthic Structures" target="_blank">[arXiv.org]</a>
                 </p></div>
@@ -168,164 +399,186 @@
    
                <div class="item"><p class="date">Oct, 2024</p><p><b> Paper accepted at  <a href="https://www3.cs.stonybrook.edu/~ieeebigdata2024/" target="_blank"> IEEE BigData 2024 </b></a> entitled "OrionBench: Benchmarking Time Series Generative Models in the Service of the End-User" with S. Alnegheimish, &amp; K. Veeramachaneni (MIT). 
                    <a href="https://arxiv.org/abs/2310.17748" title="OrionBench: Benchmarking Time Series Generative Models in the Service of the End-User" target="_blank">[arXiv.org]</a></p></p></div>
-     
+
                 <div class="item"><p class="date">Oct, 2024</p><p>Happy to co-organize <b>  the 1rst International Workshop on <a href="https://sites.google.com/servicenow.com/good-data-2025/" target="_blank">Good Data for Generative AI</b></a> in conjunction with <b> AAAI 2025</b> with D. Vazquez (ServiceNow Research), S. Wang (IBM T. J. Watson Research Center) and R. Raghavendra (Meta).</p></div>
 
-                <div class="item"><p class="date">Sept, 2024</p><p><b> Paper accepted at <a href="https://mveo.github.io" target="_blank">  MVEO@BMVC 2024 </b></a> Workshop at the British Machine Vision Conf. entitled "Predicting Socio-economic Indicator Variations with Satellite Image Time Series and Transformer" with R. Jarry, M. Chaumont, &amp; G. Subsol (UM). <a href="./pub/mveo.pdf" title="Predicting Socio-economic Indicator Variations with Satellite Image Time Series and Transformer" target="_blank">[pdf]</a></p></div>
+                <div class="item"><p class="date">Sept, 2024</p><p><b> Paper accepted at <a href="https://mveo.github.io" target="_blank">  MVEO@BMVC 2024 </b></a> Workshop at the British Machine Vision Conf. on "Predicting Socio-economic Indicator Variations with Satellite Image Time Series and Transformer" with R. Jarry, M. Chaumont, &amp; G. Subsol (UM). <a href="./pub/mveo.pdf" title="Predicting Socio-economic Indicator Variations with Satellite Image Time Series and Transformer" target="_blank">[pdf]</a></p></div>
 
-                <div class="item"><p class="date">Aug, 2024</p><p><b> Paper accepted at  <a href="https://dsaa2024.dsaa.co/" target="_blank"> DSAA 2024 </b></a> entitled "Can Large Language Models be Anomaly Detectors for Time Series?" with S. Alnegheimish, L. Nguyen, &amp; K. Veeramachaneni (MIT).  <a href="./pub/DSAA_2024.pdf" title="Can Large Language Models be Anomaly Detectors for Time Series" target="_blank">[pdf]</a></p></p></div>
-
-
-                    
-                <div class="item"><p class="date">Aug, 2024</p><p><i class="fa fa-newspaper-o"></i>  <b>MIT News</b> on <a href="https://news.mit.edu/2024/researchers-use-large-language-models-to-flag-problems-0814" title="MIT researchers use large language models to flag problems in complex systems" target="_blank"> "MIT researchers use large language models to flag problems in complex systems"</a> with S. Alnegheimish, L. Nguyen, &amp; K. Veeramachaneni (MIT). </p></div>
-
-                
                 <div class="item"><p class="date">Aug, 2024</p><p><i class="fa fa-newspaper-o"></i>  <b>NVIDIA Blog</b> on <a href="https://developer.nvidia.com/blog/llm-research-rewrites-the-role-of-ai-in-safeguarding-sustainable-systems/" title="LLM Research Rewrites the Role of AI in Safeguarding Sustainable Systems" target="_blank"> "LLM Research Rewrites the Role of AI in Safeguarding Sustainable Systems"</a> with A. Zytek, I. Arnaldo, D. Liu, &amp; K. Veeramachaneni (MIT).
                 </p></div>
-                    
-                <div class="item"><p class="date">Jul, 2024</p><p>Please check <b>LUMA</b>: our benchmarking dataset for learning from multimodal data with uncertainty quantitification in HuggingFace and Medium. <a href="https://arxiv.org/abs/2406.09864" title="LUMA: A Benchmark Dataset for Learning from Uncertain and Multimodal Data" target="_blank">[arXiv.org]</a> <a href="https://huggingface.co/datasets/bezirganyan/LUMA" target="_blank">[HuggingFace]</a> <a href="https://medium.com/@grigor.bezirganyan98/uncertainty-aware-ai-from-multimodal-data-a-pytorch-tutorial-with-luma-dataset-dfd37fc12acd" target="_blank">[Medium]</a></p></div>
-  
+
+                
+                <div class="item"><p class="date">August, 2024</p><p><i class="fa fa-newspaper-o"></i>  <b>MIT News</b> on <a href="https://news.mit.edu/2024/researchers-use-large-language-models-to-flag-problems-0814" title="MIT researchers use large language models to flag problems in complex systems" target="_blank"> "MIT researchers use large language models to flag problems in complex systems"</a> with S. Alnegheimish, L. Nguyen, &amp; K. Veeramachaneni (MIT). </p></div>
+
+                <div class="item"><p class="date">Jul, 2024</p><p>Please check <b>LUMA</b>: our benchmarking dataset for learning from multimodal data with uncertainty quantitification in HuggingFace and Medium. <a href="https://arxiv.org/abs/2406.09864" title="LUMA: A Benchmark Dataset for Learning from Uncertain and Multimodal Data" target="_blank">[pdf]</a> <a href="https://huggingface.co/datasets/bezirganyan/LUMA" target="_blank">[HuggingFace]</a> <a href="https://medium.com/@grigor.bezirganyan98/uncertainty-aware-ai-from-multimodal-data-a-pytorch-tutorial-with-luma-dataset-dfd37fc12acd" target="_blank">[Medium]</a></p></div>
+                
+                <div class="item"><p class="date">Jul, 2024</p><p><b> Paper accepted at  <a href="https://dsaa2024.dsaa.co/" target="_blank">  DSAA 2024 </b></a>  entitled "Can Large Language Models be Anomaly Detectors for Time Series?" with S. Alnegheimish, L. Nguyen, &amp; K. Veeramachaneni (MIT).  <a href="./pub/DSAA2024.pdf" title="Can Large Language Models be Anomaly Detectors for Time Series" target="_blank">[pdf]</a></p></p></div>
+
+
+                <div class="item"><p class="date">Jul, 2024</p><p><b>Paper accepted at  <a href="https://bigdataieee.org/BigData2023/" target="_blank">  IEEE BigData 2023</b></a>  on "M2-Mixer: A Multimodal Mixer with Multi-head Loss for Classification from Multimodal Data" with G. Bezirganyan, S. Sellami, &amp; S. Fournier. <a href="https://ieeexplore.ieee.org/abstract/document/10386252" title="M2-Mixer: A Multimodal Mixer with Multi-head Loss for Classification from Multimodal Data" target="_blank">[pdf]</a>
+                </p></div>
+                
+
                 <div class="item"><p class="date">May, 2024</p><p><b> Recipient of the Mobility Grant of <a href="https://talos-ai4ssh.uoc.gr/" target="_blank"> TALOS-AI4SSH ERA Chair </b></a> in Artificial Intelligence for Humanities and Social Sciences, May 2024.  
                 </p></div>
 
+
                <div class="item"><p class="date">April, 2024</p><p><b>Paper accepted in the  <a href="https://www.sciencedirect.com/science/article/pii/S1532046424000352" target="_blank">  Journal of Biomedical Informatics </b></a>  on "Creating a computer assisted ICD coding system: Performance metric choice and use of the ICD hierarchy", with Q. Marcou &amp; N. Novelli (April 2024). <a href="./pub/jbi2024.pdf" title="Creating a computer assisted ICD coding system: Performance metric choice and use of the ICD hierarchy" target="_blank">[pdf]</a></p></div>
                 
+
+
                 <div class="item"><p class="date">March, 2024</p><p><b> Dagstuhl Seminar report</b> on "Integrating HPC, AI, and Workflows for Scientific Data Analysis" is out. <a href="https://doi.org/10.4230/DagRep.13.8.129" title="Integrating HPC, AI, and Workflows for Scientific Data Analysis (Dagstuhl Seminar 23352)" target="_blank">Here!</a></p></div>
 
 
-                <div class="item"><p class="date">Jan, 2024</p><p> <b>Paper accepted at  <a href="https://iclr.cc/" target="_blank">  ICLR 2024 </b></a>  entitled "Faithful Vision-Language Interpretation via Concept Bottleneck Models" with S. Lai, L. Hu, J. Wang, &amp; D. Wang (KAUST). <a href="./pub/iclr2024.pdf" title="Faithful Vision-Language Interpretation via Concept Bottleneck Models" target="_blank">[pdf]</a></p></div>
+                <div class="item"><p class="date">Jan, 2024</p><p> <b>Paper accepted at  <a href="https://iclr.cc/" target="_blank">  ICLR 2024 </b></a>  on "Faithful Vision-Language Interpretation via Concept Bottleneck Models" with S. Lai, L. Hu, J. Wang, &amp; D. Wang from KAUST. <a href="./pub/iclr2024.pdf" title="Faithful Vision-Language Interpretation via Concept Bottleneck Models" target="_blank">[pdf]</a></p></div>
 
-                    
-              <div class="item"><p class="date">Oct, 2023</p><p><b>Paper accepted at <a href="https://www.tdwg.org/conferences/2023/session-list/#sym11" target="_blank"> TDWG 2023</b>  (SYM11)</a>  entitled "Combining biodiversity and environmental data for addressing scientific and societal questions" with Rafael L. G. Raimundo. <a href="https://biss.pensoft.net/article/112703/download/pdf/" title="Combining ecological and socio-environmental data and networks to achieve sustainability" target="_blank">[pdf]</a></p></div>
-
-                    
-                <div class="item"><p class="date">Jul, 2023</p><p><b>Organization of the <a href="https://www.dagstuhl.de/en/seminars/seminar-calendar/seminar-details/23352" target="_blank"> Dagstuhl seminar </a> </b>  entitled "Integrating HPC, AI, and Workflows for Scientific Data Analysis" (Aug. 27 – Sep. 01, 2023) with  R. Ferreira da Silva, R. M. Badia, &amp; U. Leser.</p></div>
+                <div class="item"><p class="date">Jul, 2023</p><p><b>Organization of the <a href="https://www.dagstuhl.de/en/seminars/seminar-calendar/seminar-details/23352" target="_blank"> Dagstuhl seminar </a> </b>  on "Integrating HPC, AI, and Workflows for Scientific Data Analysis" (Aug. 27 – Sep. 01, 2023) with  R. Ferreira da Silva, R. M. Badia, &amp; U. Leser.</p></div>
 
                 <div class="item"><p class="date">Jul, 2023</p><p><b>Editor of the Special Issue of <a href="https://www.mdpi.com/journal/sensors/special_issues/474QRK5XS0" target="_blank"> Sensors </a> </b>  on "Deep Learning for Environmental Remote Sensing" with D. Ienco and C. Fraga Dantas.</p></div>
-                
-                    <div class="item"><p class="date">Jul, 2023</p><p><b>Paper accepted at  <a href="https://bigdataieee.org/BigData2023/" target="_blank">  IEEE BigData 2023</b></a>  entitled "M2-Mixer: A Multimodal Mixer with Multi-head Loss for Classification from Multimodal Data" with G. Bezirganyan, S. Sellami, &amp; S. Fournier. <a href="https://ieeexplore.ieee.org/abstract/document/10386252" title="M2-Mixer: A Multimodal Mixer with Multi-head Loss for Classification from Multimodal Data" target="_blank">[pdf]</a>
-                </p></div>
-                
 
 
-   
-               <div class="item"><p class="date">Jul, 2023</p><p> Paper accepted at  <a href="https://2023.ieeeigarss.org/" target="_blank">  IGARSS 2023</b></a>  entitled "Comparing Spatial and Spatio-Temporal Paradigms to Estimate the Evolution of Socio-Economic Indicators from Satellite Images” with R. Jarry, M. Chaumont, and G. Subsol.  <a href="./pub/2022BigData.pdf" title="Comparing Spatial and Spatio-Temporal Paradigms to Estimate the Evolution of Socio-Economic Indicators from Satellite Images" target="_blank">[pdf]</a></p></div> 
-
-               <div class="item"><p class="date">May, 2023</p><p><b>Poster accepted at <a href="https://epiclin2023.congres-scientifique.com/" target="_blank"> EPICLIN 2023</b></a> entitled "Deep learning for assisting Healthcare ICD coding" with Q. Marcou and N. Novelli. </p></div> 
-
-                <div class="item"><p class="date">Dec, 2022</p><p><i class="fa fa-newspaper-o"></i>  <b>VentureBeat</b> on <a href="https://venturebeat.com/ai/how-mit-is-training-ai-language-models-in-an-era-of-quality-data-scarcity/" title="How MIT is training AI language models in an era of quality data scarcity" target="_blank"> "How MIT is training AI language models in an era of quality data scarcity"</a> with L. Xu (MIT), A. Cuesta-Infante (URJC) &amp; K. Veeramachaneni (MIT). </p></div>
-
-                <div class="item"><p class="date">Dec, 2022</p><p><b>Paper accepted at the 2022 IEEE BigData</b> entitled "AER: Auto-Encoder with Regression for Time Series Anomaly Detection" with L. Wong, D. Liu, S. Alnegheimish, and K. Veeramachaneni (MIT). <a href="./pub/2022BigData.pdf" title="AER: Auto-Encoder with Regression for Time Series Anomaly Detection" target="_blank">[pdf]</a></p></div>
-
-                <div class="item"><p class="date">Nov, 2022</p><p><b>Paper accepted at Findings of AACL-IJCNLP 2022 </b> entitled "R&amp;R: Metric-guided Adversarial Sentence Generation" with L. Xu (MIT), A. Cuesta-Infante (Univ. Rey Juan Carlos), and K. Veeramachaneni (MIT). <a href="https://aclanthology.org/2022.findings-aacl.41.pdf" title="R&amp;R: Metric-guided Adversarial Sentence Generation"  target="_blank">[pdf]</a></p></div>
-
-               <div class="item"><p class="date">Nov, 2022</p><p><b>Paper accepted at the 1st AAAI 2022 Fall Symposium </b> series on the Role of AI in Responding to Climate Challenges entitled "Discovering Transition Pathways Towards Coviability with Machine Learning" with R. L.G. Raimundo (Federal Univ. of Paraiba, Brazil). <a href="https://www.climatechange.ai/papers/aaaifss2022/6" title="Discovering Transition Pathways Towards Coviability with Machine Learning" target="_blank">[pdf]</a></p></div>
-
-        
-                <div class="item"><p class="date">Aug, 2022</p><p><i class="fa fa-trophy"></i>  <b>Best workshop paper KDD AdvML 2022</b> entitled "In Situ Augmentation for Defending Against Adversarial Attacks on Text Classifiers" with L. Xu (MIT), A. Cuesta Infante (Univ. Rey Juan Carlos), and K. Veeramachaneni (MIT).  <a href="./pub/advml.pdf" title="In Situ Augmentation for Defending Against Adversarial Attacks on Text Classifiers" target="_blank">[pdf]</a></p></div>
-
-                <div class="item"><p class="date">Aug, 2022</p><p> <b>Tutorials at KDD 2022 and AI-ML Systems 2022</b> entitled "Advances in exploratory data analysis, visualisation and quality for data centric AI systems" presented by H. Patel (IBM Research), S. Guttula (IBM Research), R. S. Mittal (IBM Research), N. Manwani (IIITH), L. Berti-Equille (IRD), and A. Manatkar (IIITH).  <a href=" https://www.slideshare.net/HimaPatel2/advances-in-exploratory-data-analysis-visualisation-and-quality-for-data-centric-ai-systems" title="KDD 2022 Tutorial" target="_blank">[slides] </a> </p></div>            
-                
-            <div class="item"><p class="date">July, 2022</p><p><b>Paper accepted in Earth and Space Science Journal</b>  entitled "Mitigation Strategies to Improve Reproducibility of Poverty Estimations From Remote Sensing Images Using Deep Learning" with J. Machicao et al. 
-                <!-- (Univ. of São Paulo), A. Ben Abbes (FRB), L. Meneguzzi (Univ. of São Paulo), P. Corrêa (Univ. de São Paulo), A. Specht (Univ. of Queensland), R. David (ERINHA), G. Subsol (CNRS), D. Vellenich (Univ. of São Paulo), R. Devillers (IRD), S.  Stall (AGU), N. Mouquet (CNRS), M. Chaumont (Univ. of Montpellier), L. Berti-Equille (IRD), and D. Mouillot (Univ. of Montpellier). -->
-                <a href="https://agupubs.onlinelibrary.wiley.com/journal/23335084" title=" Mitigation Strategies to Improve Reproducibility of Poverty Estimations From Remote Sensing Images Using Deep Learning" target="_blank">[pdf]</a></p></div>
-                
-           <div class="item"><p class="date">June, 2022</p><p><b>Two posters accepted in RDA 19th Plenary meeting</b>, part of International Data Week, 20–23 June 2022, Seoul, South Korea on <a href="https://doi.org/10.5281/zenodo.6587694" title="Reproducing Deep Learning experiments: common challenges and recommendations for improvement" target="_blank"> "Reproducibility of Deep Learning"</a></p></div>
-
-
-            <div class="item"><p class="date">June, 2022</p><p> <b>Paper accepted at ICPRAI 2022 </b> entitled "Stochastic pairing for contrastive anomaly detection on time series" with G. Chambaret, F. Bouchara, E. Bruno, V. Martin and F. Chaillan. <a href="./pub/icprai.pdf" title="Stochastic pairing for contrastive anomaly detection on time series" target="_blank">[pdf]</a></p></div>
-
-           
-            <div class="item"><p class="date">June, 2022</p><p><b>Paper accepted at SIGMOD 2022 </b>(ACM International Conference on Management of Data) entitled "Sintel: An Overarching Ecosystem for End-to-End Time Series Anomaly Detection" with S. Alnegheimish, D. Liu, C. Sala, and K. Veeramachaneni. <a href="./pub/final_sintel.pdf" title="Sintel: An Overarching Ecosystem for End-to-End Time Series Anomaly Detection" target="_blank">[pdf]</a> &nbsp; <a href="https://sintel.dev/">[code]</a></p></div>
-              
-       
                <div class="item"><p class="date">June, 2022</p><p><i class="fa fa-newspaper-o"></i>  <b>MIT News</b> on <a href="https://news.mit.edu/2022/explainability-machine-learning-0630" title="Building Explainability into the Components of Machine Learning Models" target="_blank"> "Building Explainability into the Components of Machine Learning Models"</a> with A. Zytek, I. Arnaldo, D. Liu, &amp; K. Veeramachaneni (MIT).
                 </p></div>
 
-            
-                <div class="item"><p class="date">June, 2022</p><p><b>Paper accepted at KDD Explorations</b> entitled "The Need for Interpretable Features: Motivation and Taxonomy" with A. Zytek, I. Arnaldo, D. Liu, and K. Veeramachaneni (MIT). <a href="https://arxiv.org/abs/2202.11748" title="The Need for Interpretable Features: Motivation and Taxonomy" target="_blank">[arXiv.org]</a></p></div>
+               <div class="item"><p class="date">Aug, 2022</p><p> <b>Tutorials at KDD 2022 and AI-ML Systems 2022</b> on "Advances in exploratory data analysis, visualisation and quality for data centric AI systems" presented by H. Patel (IBM Research), S. Guttula (IBM Research), R. S. Mittal (IBM Research), N. Manwani (IIITH), L. Berti-Equille (IRD), and A. Manatkar (IIITH).  <a href=" https://www.slideshare.net/HimaPatel2/advances-in-exploratory-data-analysis-visualisation-and-quality-for-data-centric-ai-systems" title="KDD 2022 Tutorial" target="_blank">[slides] </a> </p></div>
                 
-                    
-             <div class="item"><p class="date">May, 2022</p><p><b>Paper accepted at ICDE 2022 </b>(International Conference on Data Engineering) entitled "Provenance-aware Discovery of Functional Dependencies on Integrated Views" with U. Comignani, N. Novelli, and A. Bonifati. <a href="https://arxiv.org/pdf/2112.09011.pdf" title="Provenance-aware Discovery of Functional Dependencies on Integrated Views" target="_blank">[arXiv.org]</a> &nbsp;<a href="https://github.com/ucomignani/InFine">[code]</a>  &nbsp;<a href="./pub/ICDE_2022_video.mp4">[video]</a></p></div>
-
-            <div class="item"><p class="date">Mar, 2022</p><p> <b>Delighted to be joining <a href="https://www.mit.edu"> <img width="40" vertical-align="text-top" src="img/mit-logo.png"></a> and
-                <a href="https://lids.mit.edu" title="Laboratory for Information &amp; Decision Systems" target="_blank"><img width="50" vertical-align="top" src="img/logo-lids.png"></a> as a visiting scientist in the <a href=" https://dai.lids.mit.edu/" title="DataToAI" target="_blank"> DataToAI group</a> </b></p></div>
-
-               <div class="item"><p class="date">Jan, 2022</p><p><b>Happy to be the co-leader of <a href="https://ideal.ufpb.br/" target="_blank">IDEAL</a></b>,  the first International Joint Research Lab on AI Applied to Agroecology with Prof. Rafael L.G. Raimundo, Federal Univ. of Paraiba, Brazil. </p></div>
-
-
-                    
-            <div class="item"><p class="date">Nov, 2021</p><p><i class="fa fa-trophy"></i>  <b>Best Demo paper at CIKM 2021</b> entitled "DORA The Explorer: Exploring Data with Interactive Deep Reinforcement Learning" with A. Personnaz, S. Amer-Yahia, M. Fabricius, S. Subramanian. <a href="./pub/DORA_demo.pdf" title="DORA The Explorer: Exploring Data with Interactive Deep Reinforcement Learning" target="_blank">[pdf]</a></p></div>
-           
-            <div class="item"><p class="date">Oct, 2021</p><p> <b>Paper accepted at DSAA 2021 </b>(International Conference on Data Science and Advanced Analytics) entitled "Statistically Sound User Segment Search" with A. Chibah and S. Amer-Yahia. <a href="./pub/final_DSAA2021_2021155137.pdf" title="A Framework for Statistically Sound Customer Segment Search" target="_blank">[pdf]</a></p></div>
+                <div class="item"><p class="date">June, 2022</p><p><b>Paper accepted at KDD Explorations</b> on "The Need for Interpretable Features: Motivation and Taxonomy" with A. Zytek, I. Arnaldo, D. Liu, and K. Veeramachaneni (MIT). <a href="https://arxiv.org/abs/2202.11748" title="The Need for Interpretable Features: Motivation and Taxonomy" target="_blank">[pdf]</a></p></div>
+                
+                <div class="item"><p class="date">Jan, 2022</p><p>Happy to be the co-leader of <b> <a href="https://ideal.ufpb.br/" target="_blank">IDEAL</a></b>,  the first International Joint Research Lab on AI Applied to Agroecology with Prof. Rafael L.G. Raimundo, Federal Univ. of Paraiba, Brazil. </p></div>
 
 
                 <div class="item"><p class="date">Aug, 2021</p><p><b>Tutorial presented at KDD 2021</b> on Challenges in KDD and ML for Sustainable Development with D. Dao, S. Ermon, and B. Goswami. <a href="https://laureberti.github.io/KDD2021_Tutorial/" title="Challenges in KDD and ML for Sustainable Development" target="_blank">[slides]</a> <a href="https://dl.acm.org/doi/10.1145/3447548.3470798" title="Challenges in KDD and ML for Sustainable Development" target="_blank">[abstract]</a></p></div>
 
 
+
+              <div class="item"><p class="date">Oct, 2023</p><p><b>Paper accepted at <a href="https://www.tdwg.org/conferences/2023/session-list/#sym11" target="_blank"> TDWG 2023</b>  (SYM11)</a>  on "Combining biodiversity and environmental data for addressing scientific and societal questions" with Rafael L. G. Raimundo. <a href="https://biss.pensoft.net/article/112703/download/pdf/" title="Combining ecological and socio-environmental data and networks to achieve sustainability" target="_blank">[pdf]</a></p></div>
+               
+               <div class="item"><p class="date">Jul, 2023</p><p> Paper accepted at  <a href="https://2023.ieeeigarss.org/" target="_blank">  IGARSS 2023</b></a>  on "Comparing Spatial and Spatio-Temporal Paradigms to Estimate the Evolution of Socio-Economic Indicators from Satellite Images” with R. Jarry, M. Chaumont, and G. Subsol.  <a href="./pub/2022BigData.pdf" title="Comparing Spatial and Spatio-Temporal Paradigms to Estimate the Evolution of Socio-Economic Indicators from Satellite Images" target="_blank">[pdf]</a></p></div> 
+
+               <div class="item"><p class="date">May, 2023</p><p><b>Poster accepted at <a href="https://epiclin2023.congres-scientifique.com/" target="_blank"> EPICLIN 2023</b></a> on "Deep learning for assisting Healthcare ICD coding" with Q. Marcou and N. Novelli. </p></div> 
+
+            
+
+                <div class="item"><p class="date">Dec, 2022</p><p><b>Paper accepted at the 2022 IEEE BigData</b> on "AER: Auto-Encoder with Regression for Time Series Anomaly Detection" with L. Wong, D. Liu, S. Alnegheimish, and K. Veeramachaneni (MIT). <a href="./pub/2022BigData.pdf" title="AER: Auto-Encoder with Regression for Time Series Anomaly Detection" target="_blank">[pdf]</a></p></div>
+
+                <div class="item"><p class="date">Nov, 2022</p><p><b>Paper accepted at Findings of AACL-IJCNLP 2022 </b> on "R&amp;R: Metric-guided Adversarial Sentence Generation" with L. Xu (MIT), A. Cuesta-Infante (Univ. Rey Juan Carlos), and K. Veeramachaneni (MIT). <a href="https://aclanthology.org/2022.findings-aacl.41.pdf" title="R&amp;R: Metric-guided Adversarial Sentence Generation"  target="_blank">[pdf]</a></p></div>
+
+               <div class="item"><p class="date">Nov, 2022</p><p>Paper accepted at the 1st AAAI 2022 Fall Symposium series on the Role of AI in Responding to Climate Challenges</b> on "Discovering Transition Pathways Towards Coviability with Machine Learning" with R. L.G. Raimundo (Federal Univ. of Paraiba, Brazil). <a href="https://www.climatechange.ai/papers/aaaifss2022/6" title="Discovering Transition Pathways Towards Coviability with Machine Learning" target="_blank">[pdf]</a></p></div>
+
+
+                <div class="item"><p class="date">Aug, 2022</p><p><i class="fa fa-trophy"></i>  <b>Best workshop paper KDD AdvML 2022</b> on "In Situ Augmentation for Defending Against Adversarial Attacks on Text Classifiers" with L. Xu (MIT), A. Cuesta Infante (Univ. Rey Juan Carlos), and K. Veeramachaneni (MIT).  <a href="./pub/advml.pdf" title="In Situ Augmentation for Defending Against Adversarial Attacks on Text Classifiers" target="_blank">[pdf]</a></p></div>
+
+                
+            <div class="item"><p class="date">July, 2022</p><p><b>Paper accepted in Earth and Space Science Journal</b>  on "Mitigation Strategies to Improve Reproducibility of Poverty Estimations From Remote Sensing Images Using Deep Learning" with J. Machicao (Univ. of São Paulo), A. Ben Abbes (FRB), L. Meneguzzi (Univ. of São Paulo), P. Corrêa (Univ. de São Paulo), A. Specht (Univ. of Queensland), R. David (ERINHA), G. Subsol (CNRS), D. Vellenich (Univ. of São Paulo), R. Devillers (IRD), S.  Stall (AGU), N. Mouquet (CNRS), M. Chaumont (Univ. of Montpellier), L. Berti-Equille (IRD), and D. Mouillot (Univ. of Montpellier).  <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022EA002379" title=" Mitigation Strategies to Improve Reproducibility of Poverty Estimations From Remote Sensing Images Using Deep Learning" target="_blank">[Editor]</a></p></div>
+                
+           <div class="item"><p class="date">June, 2022</p><p><b>Two posters accepted in RDA 19th Plenary meeting</b>, part of International Data Week, 20–23 June 2022, Seoul, South Korea on <a href="https://doi.org/10.5281/zenodo.6587694" title="Reproducing Deep Learning experiments: common challenges and recommendations for improvement" target="_blank"> "Reproducibility of Deep Learning"</a></p></div>
+
+
+            <div class="item"><p class="date">June, 2022</p><p> <b>Paper accepted at ICPRAI 2022 </b> on "Stochastic pairing for contrastive anomaly detection on time series" with G. Chambaret, F. Bouchara, E. Bruno, V. Martin and F. Chaillan. <a href="./pub/icprai.pdf" title="Stochastic pairing for contrastive anomaly detection on time series" target="_blank">[pdf]</a></p></div>
+
+           
+            <div class="item"><p class="date">June, 2022</p><p><b>Paper accepted at SIGMOD 2022 </b>(ACM International Conference on Management of Data) on "Sintel: An Overarching Ecosystem for End-to-End Time Series Anomaly Detection" with S. Alnegheimish, D. Liu, C. Sala, and K. Veeramachaneni. <a href="./pub/final_sintel.pdf" title="Sintel: An Overarching Ecosystem for End-to-End Time Series Anomaly Detection" target="_blank">[pdf]</a> &nbsp; <a href="https://sintel.dev/">[code]</a></p></div>
+              
+
+             <div class="item"><p class="date">May, 2022</p><p><b>Paper accepted at ICDE 2022 </b>(International Conference on Data Engineering) on "Provenance-aware Discovery of Functional Dependencies on Integrated Views" with U. Comignani, N. Novelli, and A. Bonifati. <a href="https://arxiv.org/pdf/2112.09011.pdf" title="Provenance-aware Discovery of Functional Dependencies on Integrated Views" target="_blank">[pdf]</a> &nbsp;<a href="https://github.com/ucomignani/InFine">[code]</a>  &nbsp;<a href="./pub/ICDE_2022_video.mp4">[video]</a></p></div>
+
+            <div class="item"><p class="date">Mar, 2022</p><p> <b>Delighted to be joining <a href="https://www.mit.edu"> <img width="40" vertical-align="text-top" src="img/mit-logo.png"></a> and
+                <a href="https://lids.mit.edu" title="Laboratory for Information &amp; Decision Systems" target="_blank"><img width="50" vertical-align="top" src="img/logo-lids.png"></a> as a visiting scientist in the <a href=" https://dai.lids.mit.edu/" title="DataToAI" target="_blank"> DataToAI group</a> </b></p></div>
+
+            
+            <div class="item"><p class="date">Nov, 2021</p><p><i class="fa fa-trophy"></i>  <b>Best Demo paper at CIKM 2021</b> on "DORA The Explorer: Exploring Data with Interactive Deep Reinforcement Learning" with A. Personnaz, S. Amer-Yahia, M. Fabricius, S. Subramanian. <a href="./pub/DORA_demo.pdf" title="DORA The Explorer: Exploring Data with Interactive Deep Reinforcement Learning" target="_blank">[pdf]</a></p></div>
+           
+            <div class="item"><p class="date">Oct, 2021</p><p> <b>Paper accepted at DSAA 2021 </b>(International Conference on Data Science and Advanced Analytics) on "Statistically Sound User Segment Search" with A. Chibah and S. Amer-Yahia. <a href="./pub/final_DSAA2021_2021155137.pdf" title="A Framework for Statistically Sound Customer Segment Search" target="_blank">[pdf]</a></p></div>
+
+
+
                 </div>
             </div>
             </div>
+
+
+
+            <ul>
+                 
+
+
+                 <!--  
+
+ 
+
+
+         
+   
+             -->
+            </ul>
+      
+
+        
+
        
 
         <hr style="width:90%;text-align:left;margin-left:0">
         <section id="research">
             <h2><i class="fa fa-puzzle-piece" aria-hidden="true"></i> &nbsp; Research Focus</h2>
-        <div id="justify">
+
             <p>  
-                I am a Research Director (DR1) in Data Analytics and Applied Machine Learning at <a href="https://en.ird.fr/" target="_blank">IRD</a>, the French research institute on Sustainable Development. My research focuses on designing methods, algorithms, and systems that assist the users in complex and necessary tasks for multimodal data intelligence, multimodal learning, and critical decision making. These tasks combine core data management and engineering techniques (including data integration, fusion, cleaning, and preparation), data analytics, and statistical machine learning methods. The final goal is to let the users focus exclusively on the logic of their application, without being concerned by the underlying models or the execution details of data preprocessing, feature and ML model engineering. Frugality and sustainability are becoming prevalent in my work. See below an overview of the methods, data types, and applications I have been working on so far.
-                <img src="img/overview.png" alt="Topics" style="text-align:center;height:300px;">
-                 </p><p>I design and code techniques and end-to-end analytical pipelines, as well as scientific workflows including the following key aspects of Data Science and AI:
+                I am a Research Director (DR1) in Data Analytics and Applied Machine Learning at <a href="https://en.ird.fr/" target="_blank">IRD</a>, <img src="img/overview.png" alt="Topics" width="400" style="float:right;">  the French research institute on Sustainable Development.  My research focuses on designing methods, algorithms, and systems that assist the users in complex and necessary tasks for multimodal data intelligence, multimodal learning, and critical decision making. These tasks combine core data management and engineering techniques (including data integration, fusion, cleaning, and preparation), data analytics, and statistical machine learning methods. The final goal is to let the users focus exclusively on the logic of their application, without being concerned by the underlying models or the execution details of data preprocessing, feature and ML model engineering. Frugality and sustainability are becoming prevalent in my work. See below an overview of the methods, data types, and applications I have been working on so far.
+                </p>
+                 <p>I design and code techniques and end-to-end analytical pipelines, as well as scientific workflows including the following key aspects of Data Science and AI:
                 <ul><img src="img/dq.png" alt="Topics" style="float:right;height:170px;">
                     <li> Multimodal Deep Learning</li>
                     <li> Uncertainty Quantification in ML </li>
                     <li> Anomaly Detection </li>
-                    <li> Data cleaning, integration, fusion, and preparation </li>
-                    <li> Frugal AI, Explainable AI </li>
+                    <li> Data cleaning, integration, fusion, and preparation for data analytics and ML</li>
                     <li> Detection of false information (fake news), fact-checking, and truth discovery</li>
-                    <li> Applied ML: sustainability science, SDGs, healthcare and biomedical domains, environmental and Earth Observation sciences, and Internet of Behaviors (IoB).</li>
+                    <li> Applied ML with use cases in sustainability science, healthcare and biomedical domains, environmental and Earth Observation sciences, and Internet of Behaviors (IoB).</li>
                 </ul>
+                My network of collaborators can be visualized here: <a href="./network.html" target="_blank" class="btn btn-primary btn-md" role="button">Collaborators</a>&nbsp;&nbsp;&nbsp;
 
             </p>
-        </div>
+          
         </section>
+  
+      <hr style="width:90%;text-align:left;margin-left:0">
+
          <section id="research">
             <h2><i class="fa fa-globe" aria-hidden="true"></i> &nbsp; IDEAL International Joint Lab Leader</h2>
 
-            <p>  <img class='img-small' src="img/ideal.png">
+            <p>  <img class='img-small' src="img/ideal.png"  style="float:left;height:170px;">
                 I am the co-leader of the  <a href="https://ideal.ufpb.br/" title="IDEAL IJL" target="_blank">International Joint Lab IDEAL (artificial Intelligence, Data analytics, and Earth observation applied to sustAinability Lab)</a> with Rafael L. G. Raimundo, Professor of Ecology at the Federal University of Paraiba, Brazil. With more than 60 permanent researchers, <b>IDEAL lab promotes transdisciplinary research bridging agroecology, artificial intelligence and social sciences </b> to find coviability transition pathways. We also support governance and education projects with integrative approaches to ecological restoration, social inclusion, and bioeconomies. <a href="https://ideal.ufpb.br/" title="IDEAL IJL" target="_blank">[More information]</a> 
-                  </p><p>As a part of our transfer to society, we designed and developped a board game that aims at conquering a territory with the common goal of maintaining coviability, that is sustainable coexistence and harmony between humans and Nature. The print & play version is available .<a href="https://ideal.ufpb.br/ideal-game/" title="IDEAL GAME" target="_blank">[here]</a> , coming soon: its AI-backed app and online version.
+                  </p><p>As a part of our transfer to society, we designed and developped a board game that aims at conquering a territory with the common goal of maintaining coviability, that is sustainable coexistence and harmony between humans and Nature. The print & play version is available: <a href="https://ideal.ufpb.br/ideal-game/" title="IDEAL GAME" target="_blank">[here]</a>, coming soon: its AI-backed app and online version.
             </p>
           
+
         </section>  
 
-        <hr style="width:90%;text-align:left;margin-left:0">
-         <section id="research">
-
+      <hr style="width:90%;text-align:left;margin-left:0">
              <h2><i class="fa fa-book" aria-hidden="true"></i> &nbsp; Books</h2>
 
-    
+     
+
 
         <table style="width:100%">
-  <thead>
-    <tr>
-    <th scope="col" style="text-align: center; vertical-align: middle;">AI for SDGs</th>
-      <th scope="col" style="text-align: center; vertical-align: middle;">Fact-Checking</th>
-      <th scope="col" style="text-align: center; vertical-align: middle;">Data Governance</th>
-      <th scope="col" style="text-align: center; vertical-align: middle;">Data Quality</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-        <td style='text-align:center; vertical-align:middle'>  <a href="https://laboutique.edpsciences.fr/produit/1514/9782759838844/ai-for-sdgs" target="_blank" title="AI for SDGs: A technical and illustrated tour" >
-             <img src="img/ai4sdgs.png" alt="Topics" style="float:none;height:200px;">  </a>
+          <thead>
+            <tr>
+            <th scope="col" style="text-align: center; vertical-align: middle;">AI for SDGs</th>
+              <th scope="col" style="text-align: center; vertical-align: middle;">Fact-Checking</th>
+              <th scope="col" style="text-align: center; vertical-align: middle;">Data Governance</th>
+              <th scope="col" style="text-align: center; vertical-align: middle;">Data Quality</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+          <td style='text-align:center; vertical-align:middle'>  <a href="https://laboutique.edpsciences.fr/produit/1514/9782759838844/ai-for-sdgs" target="_blank" title="AI for SDGs: A technical and illustrated tour" >
+             <img src="img/ai4sdgs.png"  style="float:none;width:80px">  </a>
          </td>
+
       <td style='text-align:center; vertical-align:middle'>  <a href="https://www.amazon.fr/Veracity-Data-Computation-Algorithms-Misinformation/dp/1627057714" target="_blank" title="Veracity of Big Data" >
-             <img src="img/veracity.png" alt="Topics" style="float:none;height:200px;">  </a>
+             <img src="img/veracity.png" style="float:none;width:80px">  </a>
          </td>
-      <td style='text-align:center; vertical-align:middle'><a href='https://www.amazon.fr/qualit%C3%A9-gouvernance-donn%C3%A9es-performance-entreprises/dp/2746225107/?_encoding=UTF8&pd_rd_w=azgQo&content-id=amzn1.sym.dcdf4c22-7037-4442-8fdf-d1f78b5e1c63&pf_rd_p=dcdf4c22-7037-4442-8fdf-d1f78b5e1c63&pf_rd_r=260-6738164-8402821&pd_rd_wg=gFHJN&pd_rd_r=687f6654-c326-47f9-a488-1c4f40734b25&ref_=aufs_ap_sc_dsk' title="Gouvernance des données" target="_blank"> <img src="img/DQgouvernance.png" alt="Topics" style="float:none;height:200px; width: 100"> </a>
+      <td style='text-align:center; vertical-align:middle'><a href="https://www.amazon.fr/qualit%C3%A9-gouvernance-donn%C3%A9es-performance-entreprises/dp/2746225107/?_encoding=UTF8&pd_rd_w=azgQo&content-id=amzn1.sym.dcdf4c22-7037-4442-8fdf-d1f78b5e1c63&pf_rd_p=dcdf4c22-7037-4442-8fdf-d1f78b5e1c63&pf_rd_r=260-6738164-8402821&pd_rd_wg=gFHJN&pd_rd_r=687f6654-c326-47f9-a488-1c4f40734b25&ref_=aufs_ap_sc_dsk title="Gouvernance des données" target="_blank"> <img src="img/DQgouvernance.png" style="float:none;width:80px"> </a>
       </td>
-      <td style='text-align:center; vertical-align:middle'> <a href="./pub/Habilitation-Laure-Berti-Equille.pdf" target="_blank" title="Quality Awareness for Managing and Mining Data"> <img src="img/HDR.png" alt="Topics" style="float:none;height:200px;"> </a> 
+      <td style='text-align:center; vertical-align:middle'> <a href="./pub/Habilitation-Laure-Berti-Equille.pdf" target="_blank" title="Quality Awareness for Managing and Mining Data"> <img src="img/HDR.png" style="float:none;width:80px"> </a> 
       </td>
     </tr>
 
@@ -333,25 +586,31 @@
 </table>
         
          
-        </div>
 
         
         <hr style="width:90%;text-align:left;margin-left:0">
         <section id="publications">
             <h2><i class="fa fa-paperclip" aria-hidden="true"></i> Publications</h2>
-            <p>Partially on: &emsp;
-                <a href="https://dblp.uni-trier.de/pers/hd/b/Berti==Eacute=quille:Laure" class="btn btn-primary btn-md" role="button">DBLP</a>&nbsp;&nbsp;&nbsp;
-                <a href="https://www.researchgate.net/profile/Laure_Berti-Equille" class="btn btn-primary btn-md" role="button">ResearchGate</a>&nbsp;&nbsp;&nbsp;
-                <a href="https://scholar.google.fr/citations?user=pHwxwjwAAAAJ" class="btn btn-primary btn-md" role="button">GoogleScholar</a>&nbsp;&nbsp;&nbsp;
-
-                 <a href="https://arxiv.org/search/?query=berti-equille&searchtype=all&source=header" class="btn btn-primary btn-md" role="button">arXiv</a>&nbsp;&nbsp;&nbsp;
-
-                   <a href="https://cv.hal.science/laure-berti-equille" class="btn btn-primary btn-md" role="button">HAL</a>&nbsp;&nbsp;&nbsp;
-            </p>
             <p>
+                <a href="https://dblp.uni-trier.de/pers/hd/b/Berti==Eacute=quille:Laure" class="btn btn-primary btn-md" role="button">DBLP</a>
 
+                <a href="https://www.researchgate.net/profile/Laure_Berti-Equille" class="btn btn-primary btn-md" role="button">RG</a>
 
-                 <table width="140">
+                <a href="https://scholar.google.fr/citations?user=pHwxwjwAAAAJ" class="btn btn-primary btn-md" role="button">GS</a>
+
+                 <a href="https://arxiv.org/search/?query=berti-equille&searchtype=all&source=header" class="btn btn-primary btn-md" role="button">arXiv</a>
+
+                <a href=" https://www.semanticscholar.org/search?q=berti-equille&sort=relevance" class="btn btn-primary btn-md" role="button">SS</a>
+            
+
+                 <a href="https://ird.academia.edu/LaureBertiEquille" class="btn btn-primary btn-md" role="button">Academia</a>
+                
+                
+            
+           </p>
+
+          
+            <table width="140">
                     <tbody>
                         <tr>
                             <div align=center class="year">
@@ -361,8 +620,12 @@
                     </tbody>
                 </table>
                 <ul>
-                    <li> L. Berti-Equille, AI for SDGs – A technical and illustrated tour. EDP Sciences, 94 pages, September 2025. ISBN (ebook) : 978-7598-3884-4.  
+                     <li> L. Berti-Equille, AI for SDGs – A technical and illustrated tour. EDP Sciences, 94 pages, September 2025. ISBN (ebook) : 978-7598-3884-4.  
                     <span class="pub_downloads"> Download: <a href="https://doi.org/10.1051/978-2-7598-3883-7" title="AI for SDGs – A technical and illustrated tour" target="_blank">[Editor]</a></li>
+
+                    <li> O. El Baf, Q. Senatore, A. Mouakher, L. Berti-Equille.  Advancing Multimodal Fact-Checking Against Climate Misinformation: A Benchmark Dataset and Comparison of Lightweight Models. Proc. of the NeurIPS 2024 Workshop on Climate Change AI (<b>CCAI 2025</b>). Vancouver, Canada, Dec. 7, 2025. <span class="pub_downloads"> Download:  <a href="https://www.climatechange.ai/papers/neurips2025/77" title="Advancing Multimodal Fact-Checking Against Climate Misinformation" target="_blank">[Web site]</a></li>  
+
+
                      <li> C. Blondin, J. Guérin, K. Inagaki, G. Longo, &amp;   L.  Berti-Equille. Hierarchical Classification for Automated Image Annotation of Coral Reef Benthic Structures.  Rencontres des Jeunes Chercheurs en Intelligence Artificielle (<b>RJCIA</b>), Dijon, France, 30 juin - 4 juillet, 2025. 
                         <span class="pub_downloads"> Download: <a href="https://arxiv.org/abs/2412.08228" title="Hierarchical Classification for Automated Image Annotation of Coral Reef Benthic Structures" target="_blank">[arXiv.org]</a></li> 
 
@@ -386,36 +649,57 @@
                         <span class="pub_downloads"> Download: <a href="./pub/cest2025_temp1.pdf" title="Forest Resilience, Precipitation, and Ecosystem Service Value: A Correlation and Trend Analysis" target="_blank">[pdf]</a> <a href="./pub/CEST_2025.pdf" title="Forest Resilience, Precipitation, and Ecosystem Service Value: A Correlation and Trend Analysis" target="_blank">[slides]</a>  <a href="https://github.com/LaureBerti/CEST_2025" title="Forest Resilience, Precipitation, and Ecosystem Service Value: A Correlation and Trend Analysis" target="_blank">[GitHub]</a></li>
                      
                 </ul>        
-        </p>
 
-                    
+
              <table width="140">
-                    <tbody>
+                <tbody>
                         <tr>
                             <div align=center class="year">
                                 <h5>2024</h5>
                             </div>
                         </tr>
-                    </tbody>
-            </table>
+                </tbody>
+                </table>
                 <ul>
+                
                     <li> C. Blondin, J. Guérin, K. Inagaki, G. Longo, and L. Berti-Equille. Hierarchical Classification for Automated Image Annotation of Coral Reef Benthic Structures. Proc. of the NeurIPS 2024 Workshop on Climate Change AI (<b>CCAI 2024</b>). Vancouver, Canada, Dec. 10-16, 2024. <span class="pub_downloads"> Download:  <a href="https://arxiv.org/abs/2412.08228" title="Hierarchical Classification for Automated Image Annotation of Coral Reef Benthic Structures" target="_blank">[arXiv.org]</a></li>    
                     <li> A. Chergui, G. Bezirganyan, S. Sellami,  L. Berti-Equille, and S. Fournier. MixMAS: A Framework for Sampling-Based Mixer Architecture Search for Multimodal Fusion and Learning. Proc. of the IEEE Big Data Workshop on Multimodal AI (<b>MMAI 2024</b>). Washington DC, USA, Dec. 15-18, 2024. <span class="pub_downloads"> Download:  <a href="./pub/mixmax_2024.pdf" title="MixMAS: A Framework for Sampling-Based Mixer Architecture Search for Multimodal Fusion and Learning" target="_blank">[pdf]</a></li> 
                     <li> A. Zytek, S. Pido, S. Alnegheimish, L. Berti-Equille, and K. Veeramachaneni. Explingo: Explaining AI Predictions using Large Language Models. Proc. of the 2024 IEEE International Conference on <b>BigData 2024</b>. Washington DC, USA, Dec. 15-18, 2024. <span class="pub_downloads"> Download:  <a href="https://arxiv.org/abs/2412.05145" title="Explingo: Explaining AI Predictions using Large Language Models" target="_blank">[arXiv.org]</a></li> 
                     <li> S. Alnegheimish,  L. Berti-Equille, and K. Veeramachaneni. OrionBench: Benchmarking Time Series Generative Models in the Service of the End-User. Proc. of the 2024 IEEE International Conference on <b>BigData 2024</b>. Washington DC, USA, Dec. 15-18, 2024. <span class="pub_downloads"> Download:  <a href="https://arxiv.org/abs/2310.17748" title="OrionBench: Benchmarking Time Series Generative Models in the Service of the End-User" target="_blank">[arXiv.org]</a></li> 
-                    <li> S. Alnegheimish, L. Nguyen,  L. Berti-Equille, and K. Veeramachaneni. Can Large Language Models be Anomaly Detectors for Time Series? Proc. of the 11th IEEE International Conference on Data Science and Advanced Analytics (<b>DSAA 2024</b>). San Diego, CA, USA, Oct. 6-10, 2024. <span class="pub_downloads"> Download:  <a href="./pub/DSAA_2024.pdf" title="Can Large Language Models be Anomaly Detectors for Time Series?" target="_blank">[pdf]</a></li>       
-                    <li> S. Lai, L. Hu, J. Wang, L. Berti-Equille, D. Wang. Faithful Vision-Language Interpretation via Concept Bottleneck Models. Proc. of the 12th International Conference on Learning Representations (<b>ICLR 2024</b>). Vienna, Austria, May 7-11, 2024. <span class="pub_downloads"> Download:  <a href="./pub/iclr2024.pdf" title="Faithful Vision-Language Interpretation via Concept Bottleneck Models" target="_blank">[pdf]</a></li> 
-                    <li> G. Bezirganyan, S. Sellami, L.Berti-Équille, S. Fournier. LUMA: A Benchmark Dataset for Learning from Uncertain and Multimodal Data. arXiv:2406.09864, June 2024. <span class="pub_downloads">Download: [<a href="https://arxiv.org/abs/2406.09864" title="LUMA: A Benchmark Dataset for Learning from Uncertain and Multimodal Data" target="_blank">arXiv.org</a>] [<a href="https://github.com/bezirganyan/LUMA">code</a>]
-                        [<a href="https://huggingface.co/datasets/bezirganyan/LUMA">HuggingFace</a>] [<a href="https://medium.com/@grigor.bezirganyan98/uncertainty-aware-ai-from-multimodal-data-a-pytorch-tutorial-with-luma-dataset-dfd37fc12acd">Medium</a>]</li>
-                    <li> R. Jarry, M. Chaumont, L. Berti-Équille and G. Subsol. Predicting Socio-economic Indicator Variations with Satellite Image Time Series and Transformer. Proc. of the Workshop on Machine Vision for Earth Observation and Environment Monitoring at the British Machine Vision Conference (<b>MVEO@BMVC 2024</b>), Glasgow, UK, Nov. 28, 2024. <span class="pub_downloads"> Download:  <a href="./pub/mveo.pdf" title="Predicting Socio-economic Indicator Variations with Satellite Image Time Series and Transformer" target="_blank">[pdf]</a></li> 
-                    <li> R. Jarry, M. Chaumont, L. Berti-Équille and G. Subsol. Comparer le paradigme spatial au spatio-temporel pour estimer l'évolution d'indicateurs socio-économiques à partir d'images satellites.   Actes de la 8ème Conférence Nationale en Intelligence Artificielle (<b>CNIA 2024</b>). 3-5 juillet 2024, La Rochelle, France. <span class="pub_downloads"> Download:  <a href="./pub/cnia.pdf" title="Comparer le paradigme spatial au spatio-temporel pour estimer l'évolution d'indicateurs socio-économiques à partir d'images satellites" target="_blank">[pdf]</a></li> 
-                    <li> Q. Marcou, L. Berti-Equille, N. Novelli. Creating a computer assisted ICD coding system: Performance metric choice and use of the ICD hierarchy, <b>Journal of Biomedical Informatics</b>,Volume 152, 2024, 104617, ISSN 1532-0464. <span class="pub_downloads"> Download:  <a href="./pub/jbi2024.pdf" title="Creating a computer assisted ICD coding system: Performance metric choice and use of the ICD hierarchy" target="_blank">[pdf]</a></li> 
-                    <li> Q. Marcou,  L. Berti-Equille and N. Novelli. Création d'un système d'aide informatisée au codage Classification internationale des maladies (CIM) : choix de métrique de performance et utilisation de la hiérarchie CIM. <b>Journal of Epidemiology and Population Health</b>, Volume 72, Supplement 1, 2024, 202352, ISSN 2950-4333.  <span class="pub_downloads"> Download:  <a href="https://www.sciencedirect.com/science/article/abs/pii/S2950433324001629" title="Création d'un système d'aide informatisée au codage Classification internationale des maladies (CIM) : choix de métrique de performance et utilisation de la hiérarchie CIM" target="_blank">[pdf]</a></li>
-                    <li> R. M. Badia, L. Berti-Equille, R. Ferreira da Silva, and U. Leser. Integrating HPC, AI, and Workflows for Scientific Data Analysis (<b>Dagstuhl Seminar 23352</b>). In Dagstuhl Reports, Volume 13, Issue 8, pp. 129-164, Schloss Dagstuhl – Leibniz-Zentrum für Informatik (2024)
-                        <span class="pub_downloads"> Download:  <a href="https://doi.org/10.4230/DagRep.13.8.129" title="Integrating HPC, AI, and Workflows for Scientific Data Analysis (Dagstuhl Seminar 23352)" target="_blank">[pdf]</a></li> 
+                    <li> S. Alnegheimish, L. Nguyen,  L. Berti-Equille, and K. Veeramachaneni. Can Large Language Models be Anomaly Detectors for Time Series? Proc. of the 11th IEEE International Conference on Data Science and Advanced Analytics (<b>DSAA 2024</b>). San Diego, CA, USA, Oct. 6-10, 2024. <span class="pub_downloads"> Download:  <a href="./pub/DSAA_2024.pdf" title="Can Large Language Models be Anomaly Detectors for Time Series?" target="_blank">[pdf]</a></li>  
+                <li> S. Lai, L. Hu, J. Wang, L. Berti-Equille, D. Wang. Faithful Vision-Language Interpretation via Concept Bottleneck Models. Proc. of the he 12th International Conference on Learning Representations (<b>ICLR 2024</b>). Vienna, Austria, May 7-11, 2024. <span class="pub_downloads"> Download:  <a href="./pub/iclr2024.pdf" title="Faithful Vision-Language Interpretation via Concept Bottleneck Models" target="_blank">[pdf]</a></li> 
+
+                <li> G. Bezirganyan, S. Sellami, L.Berti-Équille, S. Fournier. LUMA: A Benchmark Dataset for Learning from Uncertain and Multimodal Data. arXiv:2406.09864, June 2024. <span class="pub_downloads">Download: [<a href="https://arxiv.org/abs/2406.09864" title="LUMA: A Benchmark Dataset for Learning from Uncertain and Multimodal Data" target="_blank">arXiv.org</a>] [<a href="https://github.com/bezirganyan/LUMA">code</a>]
+                [<a href="https://huggingface.co/datasets/bezirganyan/LUMA">HuggingFace</a>] [<a href="https://medium.com/@grigor.bezirganyan98/uncertainty-aware-ai-from-multimodal-data-a-pytorch-tutorial-with-luma-dataset-dfd37fc12acd">Medium</a>]</li>
+
+
+                </ul>
+                <article style="max-height: none; height: 200px;" data-readmore="" aria-expanded="false" id="rmjs-1">
+
+                <ul>
+                <li> R. Jarry, M. Chaumont, L. Berti-Équille and G. Subsol. Predicting Socio-economic Indicator Variations with Satellite Image Time Series and Transformer. Porc. of the Workshop on Machine Vision for Earth Observation and Environment Monitoring at the British Machine Vision Conference (<b>MVEO@BMVC 2024</b>), Glasgow, UK, Nov. 28, 2024. <span class="pub_downloads"> Download:  <a href="./pub/mveo.pdf" title="Predicting Socio-economic Indicator Variations with Satellite Image Time Series and Transformer" target="_blank">[pdf]</a></li> 
+
+
+                <li> R. Jarry, M. Chaumont, L. Berti-Équille and G. Subsol. Comparer le paradigme spatial au spatio-temporel pour estimer l'évolution d'indicateurs socio-économiques à partir d'images satellites.   Actes de la 8ème Conférence Nationale en Intelligence Artificielle (<b>CNIA 2024</b>). 3-5 juillet 2024, La Rochelle, France. <span class="pub_downloads"> Download:  <a href="./pub/cnia.pdf" title="Comparer le paradigme spatial au spatio-temporel pour estimer l'évolution d'indicateurs socio-économiques à partir d'images satellites" target="_blank">[pdf]</a></li> 
+
+
+
+                <li> Q. Marcou, L. Berti-Equille, N. Novelli. Creating a computer assisted ICD coding system: Performance metric choice and use of the ICD hierarchy, <b>Journal of Biomedical Informatics</b>,Volume 152, 2024, 104617, ISSN 1532-0464. <span class="pub_downloads"> Download:  <a href="./pub/jbi2024.pdf" title="Creating a computer assisted ICD coding system: Performance metric choice and use of the ICD hierarchy" target="_blank">[pdf]</a></li> 
+
+
+
+                <li> Q. Marcou,  L. Berti-Equille and N. Novelli. Création d'un système d'aide informatisée au codage Classification internationale des maladies (CIM) : choix de métrique de performance et utilisation de la hiérarchie CIM. <b>Journal of Epidemiology and Population Health</b>, Volume 72, Supplement 1, 2024, 202352, ISSN 2950-4333.  <span class="pub_downloads"> Download:  <a href="https://www.sciencedirect.com/science/article/abs/pii/S2950433324001629" title="Création d'un système d'aide informatisée au codage Classification internationale des maladies (CIM) : choix de métrique de performance et utilisation de la hiérarchie CIM" target="_blank">[pdf]</a></li>
+
+
+                <li> R. M. Badia, L. Berti-Equille, R. Ferreira da Silva, and U. Leser. Integrating HPC, AI, and Workflows for Scientific Data Analysis (<b>Dagstuhl Seminar 23352</b>). In Dagstuhl Reports, Volume 13, Issue 8, pp. 129-164, Schloss Dagstuhl – Leibniz-Zentrum für Informatik (2024)
+                    <span class="pub_downloads"> Download:  <a href="https://doi.org/10.4230/DagRep.13.8.129" title="Integrating HPC, AI, and Workflows for Scientific Data Analysis (Dagstuhl Seminar 23352)" target="_blank">[pdf]</a></li> 
+
                 </ul>
 
-                 <table width="140">
+
+
+
+            <table width="140">
                     <tbody>
                         <tr>
                             <div align=center class="year">
@@ -424,13 +708,24 @@
                         </tr>
                     </tbody>
                 </table>
-                    <ul>
-                        <li> L. Berti-Equille. Détection et correction des problèmes de qualité de données par apprentissage automatique. Techniques de l'Ingénieur. Dossier H3701v1, 10 mai 2023. <a href="https://www.techniques-ingenieur.fr/base-documentaire/technologies-de-l-information-th9/bases-de-donnees-42309210/detection-et-correction-des-problemes-de-qualite-de-donnees-par-apprentissage-automatique-h3701/" title="Détection et correction des problèmes de qualité de données par apprentissage automatique." target="_blank"> [Publisher Site]</a></li>
-                        <li> G. Bezirganyan, S. Sellami, L. Berti-Equille and S. Fournier. M2-Mixer: A Multimodal Mixer with Multi-head Loss for Classification from Multimodal Data. Proc. of the 2023 IEEE International Conference on Big Data (<b>BigData 2023</b>), Sorrento, Italy, 2023, pp. 1052-1058, doi: 10.1109/BigData59044.2023.10386252. <span class="pub_downloads"> Download:  <a href="https://ieeexplore.ieee.org/abstract/document/10386252" title="M2-Mixer: A Multimodal Mixer with Multi-head Loss for Classification from Multimodal Data" target="_blank">[pdf]</a></li> 
-                        <li>  L. Berti-Equille and R. L. G. Raimundo. Combining ecological and socio-environmental data and networks to achieve sustainability. Proc. of the 2023  Biodiversity Information Standards (<b>TDWG 2023</b>), Hobart, Tasmania, Australia, Oct. 9-13, 2023. <span class="pub_downloads"> Download:  <a href="https://biss.pensoft.net/article/112703/download/pdf/" title="Combining ecological and socio-environmental data and networks to achieve sustainability" target="_blank">[pdf]</a></li>
-                        <li> R. Jarry, M. Chaumont, L. Berti-Equille, and G. Subsol. Comparing Spatial and Spatio-Temporal Paradigms to Estimate the Evolution of Socio-Economic Indicators from Satellite Images. Proc. of the International Geoscience and Remote Sensing Symposium (<b>IGARSS</b>), Pasadena, CA, USA, July 17, 2023. <span class="pub_downloads"> Download:  <a href="./pub/2022BigData.pdf" title="Comparing Spatial and Spatio-Temporal Paradigms to Estimate the Evolution of Socio-Economic Indicators from Satellite Images" target="_blank">[pdf]</a></li>
-                        <li> Q. Marcou,  L. Berti-Equille and N. Novelli. Création d'un système d'aide informatisée au codage CIM: choix de métrique et utilisation de la hiérarchie CIM. (Poster) Actes de la 17ème conférence francophone d’EPIdémiologie CLINique (<b>EPICLIN 2023</b>), 10-12 mai 2023. </li>
-                    </ul>
+                <ul>
+                    <li> L. Berti-Equille. Détection et correction des problèmes de qualité de données par apprentissage automatique. Techniques de l'Ingénieur. Dossier H3701v1, 10 mai 2023. <a href="https://www.techniques-ingenieur.fr/base-documentaire/technologies-de-l-information-th9/bases-de-donnees-42309210/detection-et-correction-des-problemes-de-qualite-de-donnees-par-apprentissage-automatique-h3701/" title="Détection et correction des problèmes de qualité de données par apprentissage automatique." target="_blank"> [Publisher Site]</a></li>
+
+                     <li> G. Bezirganyan, S. Sellami, L. Berti-Equille and S. Fournier. M2-Mixer: A Multimodal Mixer with Multi-head Loss for Classification from Multimodal Data. Proc. of the 2023 IEEE International Conference on Big Data (<b>BigData 2023</b>), Sorrento, Italy, 2023, pp. 1052-1058, doi: 10.1109/BigData59044.2023.10386252. <span class="pub_downloads"> Download:  <a href="https://ieeexplore.ieee.org/abstract/document/10386252" title="M2-Mixer: A Multimodal Mixer with Multi-head Loss for Classification from Multimodal Data" target="_blank">[pdf]</a></li> 
+
+
+                     <li>  L. Berti-Equille and R. L. G. Raimundo. Combining ecological and socio-environmental data and networks to achieve sustainability. Proc. of the 2023  Biodiversity Information Standards (<b>TDWG 2023</b>), Hobart, Tasmania, Australia, Oct. 9-13, 2023. <span class="pub_downloads"> Download:  <a href="https://biss.pensoft.net/article/112703/download/pdf/" title="Combining ecological and socio-environmental data and networks to achieve sustainability" target="_blank">[pdf]</a></li>
+
+                    <li> R. Jarry, M. Chaumont, L. Berti-Equille, and G. Subsol. Comparing Spatial and Spatio-Temporal Paradigms to Estimate the Evolution of Socio-Economic Indicators from Satellite Images. Proc. of the International Geoscience and Remote Sensing Symposium (<b>IGARSS</b>), Pasadena, CA, USA, July 17, 2023. <span class="pub_downloads"> Download:  <a href="./pub/2022BigData.pdf" title="Comparing Spatial and Spatio-Temporal Paradigms to Estimate the Evolution of Socio-Economic Indicators from Satellite Images" target="_blank">[pdf]</a></li>
+           
+          
+                    <li> Q. Marcou,  L. Berti-Equille and N. Novelli. Création d'un système d'aide informatisée au codage CIM: choix de métrique et utilisation de la hiérarchie CIM. (Poster) Actes de la 17ème conférence francophone d’EPIdémiologie CLINique (<b>EPICLIN 2023</b>), 10-12 mai 2023. </li>
+
+    
+
+                </ul>
+
+    
 
                 <table width="140">
                     <tbody>
@@ -442,30 +737,59 @@
                     </tbody>
                 </table>
                 <ul>
-                    <li> L. Wong, D. Liu, L. Berti-Equille, S. Alnegheimish, and K. Veeramachaneni. AER: Auto-Encoder with Regression for Time Series Anomaly Detection. Proc. of the 2022 IEEE International Conference on Big Data (<b>IEEE BigData 2022</b>), Osaka, Japan, Dec. 17-20, 2022.<span class="pub_downloads"> Download:  <a href="./pub/2022BigData.pdf" title="AER: Auto-Encoder with Regression for Time Series Anomaly Detection" target="_blank">[pdf]</a></li>
+
+
+                     <li> L. Wong, D. Liu, L. Berti-Equille, S. Alnegheimish, and K. Veeramachaneni. AER: Auto-Encoder with Regression for Time Series Anomaly Detection. Proc. of the 2022 IEEE International Conference on Big Data (<b>IEEE BigData 2022</b>), Osaka, Japan, Dec. 17-20, 2022.<span class="pub_downloads"> Download:  <a href="./pub/2022BigData.pdf" title="AER: Auto-Encoder with Regression for Time Series Anomaly Detection" target="_blank">[pdf]</a></li>
+
+
                     <li> L. Berti-Equille and R. L. G. Raimundo. Discovering Transition Pathways Towards Coviability with Machine Learning. Proc. of the 1st <b>AAAI 2022</b> Fall Symposium series on the Role of AI in Responding to Climate Challenges, Arlington, Virginia, USA, Nov. 17-19, 2022. <span class="pub_downloads"> Download: <a href="https://www.climatechange.ai/papers/aaaifss2022/6" title="Discovering Transition Pathways Towards Coviability with Machine Learning" target="_blank">[pdf]</a></li>
+
                     <li> L. Xu, A. Cuesta-Infante, L. Berti-Equille, and K. Veeramachaneni. R&amp;R: Metric-guided Adversarial Sentence Generation. Findings of the Association for Computational Linguistics: <b>AACL-IJCNLP 2022</b>. <span class="pub_downloads"> Download: <a href="https://aclanthology.org/2022.findings-aacl.41.pdf" title="R&amp;R: Metric-guided Adversarial Sentence Generation"  target="_blank">[pdf]</a></li>
+
+
                     <li> L. Xu, L. Berti-Equille, A. Cuesta-Infante, and K. Veeramachaneni. Improving Textual Adversarial Attacks using Metric-Guided Rewrite and Rollback. Proc. of <b>ICONIP 2022</b>, IIT Indore, India,  Nov. 22-26, 2022. </li>
+   
+
                     <li> L. Xu, L. Berti-Equille,  A. Cuesta Infante, and K. Veeramachaneni. In Situ Augmentation for Defending Against Adversarial Attacks on Text Classifiers. Proc. of the 4th Workshop on Adversarial Learning Methods for Machine Learning and Data Mining (<b>AdvML @ KDD 2022</b>).  <span class="pub_downloads"> <i class="fa fa-trophy"></i> <span class="pub_award">Best workshop paper   </span> Download: <a href="./pub/advml.pdf" title="In Situ Augmentation for Defending Against Adversarial Attacks on Text Classifiers" target="_blank">[pdf]</a></li>
-                    <li> H. Patel, S. Guttula, R. S. Mittal, N. Manwani, L. Berti-Equille, and A. Manatkar. Advances in exploratory data analysis, visualisation and quality for data centric AI systems. Tutorial at the ACM SIGKDD Conference on Knowledge Discovery and Data Mining (<b> SIGKDD 2022</b>), Aug 14-18, 2022, Washington, DC, USA. </li>
-                    <li> A. Zytek, I. Arnaldo, D. Liu, L. Berti-Equille, and K. Veeramachaneni. The Need for Interpretable Features: Motivation and Taxonomy. KDD Explorations, June 2022.
-                         <span class="pub_downloads">Download: [<a href="https://arxiv.org/abs/2202.11748" title="The Need for Interpretable Features: Motivation and Taxonomy" target="_blank">arXiv.org</a>]  [<a href="https://dl.acm.org/doi/10.1145/3544903.3544905" title="The Need for Interpretable Features: Motivation and Taxonomy" target="_blank">acm.org</a>]</li>
-              </ul>
 
- <article style="max-height: none; height: 200px;" data-readmore="" aria-expanded="false" id="rmjs-1">
 
-                <ul>
-                    <li> S. Alnegheimish, D. Liu, C. Sala, L. Berti-Equille, and K. Veeramachaneni. Sintel: An Overarching Ecosystem for End-to-End Time Series Anomaly Detection. Proc. of 2022 ACM SIGMOD International Conference on Management of Data (<b>SIGMOD 2022</b>). <span class="pub_downloads">Download: [<a href="./pub/final_sintel.pdf" title="Sintel: An Overarching Ecosystem for End-to-End Time Series Anomaly Detection" target="_blank">pdf</a>] &nbsp;[<a href="https://sintel.dev/">code</a>]</li>
+                    <li> H. Patel, S. Guttula, R. S. Mittal, N. Manwani, L. Berti-Equille, and A. Manatkar. Advances in exploratory data analysis, visualisation and quality for data centric AI systems. Tutorial at the ACM SIGKDD Conference on Knowledge Discovery and Data Mining (<b> SIGKDD 2022</b>), Aug 14-18, 2022, Washington, DC, USA.  
+                    </li>
+
+
+                    <li> A. Zytek, I. Arnaldo, D. Liu, L. Berti-Equille, and K. Veeramachaneni. The Need for Interpretable Features: Motivation and Taxonomy. KDD Explorations, June 2022. <span class="pub_downloads">Download: [<a href="https://arxiv.org/abs/2202.11748" title="The Need for Interpretable Features: Motivation and Taxonomy" target="_blank">arXiv.org</a>]  [<a href="https://dl.acm.org/doi/10.1145/3544903.3544905" title="The Need for Interpretable Features: Motivation and Taxonomy" target="_blank">acm.org</a>]
+                    </li>
+
+                    <li> S. Alnegheimish, D. Liu, C. Sala, L. Berti-Equille, and K. Veeramachaneni. Sintel: An Overarching Ecosystem for End-to-End Time Series Anomaly Detection. Proc. of 2022 ACM SIGMOD International Conference on Management of Data (<b>SIGMOD 2022</b>). <span class="pub_downloads">Download: [<a href="./pub/final_sintel.pdf" title="Sintel: An Overarching Ecosystem for End-to-End Time Series Anomaly Detection" target="_blank">pdf</a>] &nbsp;[<a href="https://sintel.dev/">code</a>] 
+                    </li>
+
+
                      <li> U. Comignani,  L. Berti-Equille, N. Novelli, and A. Bonifati. Provenance-aware Discovery of Functional Dependencies on Integrated Views. Proc. of IEEE International Conference on Data Engineering (<b>ICDE 2022</b>).
-                        <span class="pub_downloads">Download: [<a href="https://arxiv.org/pdf/2112.09011.pdf" title="Provenance-aware Discovery of Functional Dependencies on Integrated Views" target="_blank">arXiv.org</a>] &nbsp;[<a href="https://github.com/ucomignani/InFine">code</a>]  &nbsp;[<a href="./pub/ICDE_2022_video.mp4">video</a>] </li>
-                    <li> G. Chambaret,  L. Berti-Equille, F. Bouchara, E. Bruno, V. Martin, and F. Chaillan. Stochastic pairing for contrastive anomaly detection on time series. Proc. of the 3rd International Conference on Pattern Recognition and Artificial Intelligence (<b>ICPRAI 2022</b>), June 2022, Paris, France.
-                        <span class="pub_downloads">Download: [<a href="./pub/icprai.pdf" title="Stochastic pairing for contrastive anomaly detection on time series" target="_blank">pdf</a>]</li>
-                    <li> J. Machicao, A. Ben Abbes, L. Meneguzzi, P. Corrêa, A. Specht, R. David, G. Subsol, D. Vellenich, R. Devillers, S.  Stall, N. Mouquet, M. Chaumont, L. Berti-Equille, and D. Mouillot.  Mitigation Strategies to Improve Reproducibility of Poverty Estimations From Remote Sensing Images Using Deep Learning. <b>Earth and Space Science Journa</b>l. <span class="pub_downloads">Download: [<a href="https://agupubs.onlinelibrary.wiley.com/journal/23335084" title=" Mitigation Strategies to Improve Reproducibility of Poverty Estimations From Remote Sensing Images Using Deep Learning" target="_blank">pdf</a>]</li> 
-                    <li> J. Machicao, A. Ben Abbes, L. Meneguzzi, P. Corrêa, A. Specht, R. David, G. Subsol, D. Vellenich, R. Devillers, S.  Stall, N. Mouquet, M. Chaumont, L. Berti-Equille, and D. Mouillot.  Reproducing Deep Learning experiments: common challenges and recommendations for improvement. Poster at <b>RDA</b> 19th Plenary meeting, part of International Data Week, 20–23 June 2022, Seoul, South Korea  <span class="pub_downloads">Download: <a href="https://doi.org/10.5281/zenodo.6587694" title="Reproducing Deep Learning experiments: common challenges and recommendations for improvement" target="_blank">[pdf]</a></li>
-                    <li> A. Ben Abbes, J. Machicao, L. Meneguzzi, P. Corrêa, A. Specht, R. David, G. Subsol, D. Vellenich, R. Devillers, S.  Stall, N. Mouquet, M. Chaumont, L. Berti-Equille, and D. Mouillot.  Checklist Strategies to Improve the Reproducibility of Deep Learning Experiments with an Illustration. Poster at <b>RDA</b> 19th Plenary meeting, part of International Data Week, 20–23 June 2022, Seoul, South Korea  <span class="pub_downloads">Download: <a href="http://parsecproject.org/wp-content/uploads/2022/07/Ali-et-al_checklist_RDA19.pdf" title="Checklist Strategies to Improve the Reproducibility of Deep Learning Experiments with an Illustration" target="_blank">[pdf]</a></li>
-                    <!--            <i class="fa fa-trophy"></i> <span class="pub_award">GitHub star &gt; 200</span> -->
-                 </ul>
+                    <span class="pub_downloads">Download: [<a href="https://arxiv.org/pdf/2112.09011.pdf" title="Provenance-aware Discovery of Functional Dependencies on Integrated Views" target="_blank">arXiv.org</a>] &nbsp;[<a href="https://github.com/ucomignani/InFine">code</a>]  &nbsp;[<a href="./pub/ICDE_2022_video.mp4">video</a>] 
+                    </li>
 
+          
+                    <li> G. Chambaret,  L. Berti-Equille, F. Bouchara, E. Bruno, V. Martin, and F. Chaillan. Stochastic pairing for contrastive anomaly detection on time series. Proc. of the 3rd International Conference on Pattern Recognition and Artificial Intelligence (<b>ICPRAI 2022</b>), June 2022, Paris, France.
+                        <span class="pub_downloads">Download: [<a href="./pub/icprai.pdf" title="Stochastic pairing for contrastive anomaly detection on time series" target="_blank">pdf</a>]
+                    </li>
+
+                    <li> J. Machicao, A. Ben Abbes, L. Meneguzzi, P. Corrêa, A. Specht, R. David, G. Subsol, D. Vellenich, R. Devillers, S.  Stall, N. Mouquet, M. Chaumont, L. Berti-Equille, and D. Mouillot.  Mitigation Strategies to Improve Reproducibility of Poverty Estimations From Remote Sensing Images Using Deep Learning. <b>Earth and Space Science Journal</b>. <span class="pub_downloads">Download: [<a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022EA002379" title=" Mitigation Strategies to Improve Reproducibility of Poverty Estimations From Remote Sensing Images Using Deep Learning" target="_blank">Editor</a>]
+                     </li> 
+
+                    <li> J. Machicao, A. Ben Abbes, L. Meneguzzi, P. Corrêa, A. Specht, R. David, G. Subsol, D. Vellenich, R. Devillers, S.  Stall, N. Mouquet, M. Chaumont, L. Berti-Equille, and D. Mouillot.  Reproducing Deep Learning experiments: common challenges and recommendations for improvement. Poster at <b>RDA</b> 19th Plenary meeting, part of International Data Week, 20–23 June 2022, Seoul, South Korea  <span class="pub_downloads">Download: <a href="https://doi.org/10.5281/zenodo.6587694" title="Reproducing Deep Learning experiments: common challenges and recommendations for improvement" target="_blank">[pdf]</a></li>
+           
+                    
+                    <li> A. Ben Abbes, J. Machicao, L. Meneguzzi, P. Corrêa, A. Specht, R. David, G. Subsol, D. Vellenich, R. Devillers, S.  Stall, N. Mouquet, M. Chaumont, L. Berti-Equille, and D. Mouillot.  Checklist Strategies to Improve the Reproducibility of Deep Learning Experiments with an Illustration. Poster at <b>RDA</b> 19th Plenary meeting, part of International Data Week, 20–23 June 2022, Seoul, South Korea  <span class="pub_downloads">Download: <a href="http://parsecproject.org/wp-content/uploads/2022/07/Ali-et-al_checklist_RDA19.pdf" title="Checklist Strategies to Improve the Reproducibility of Deep Learning Experiments with an Illustration" target="_blank">[pdf]</a></li>
+
+
+<!--
+                           <i class="fa fa-trophy"></i> <span class="pub_award">GitHub star &gt; 200</span> -->
+            
+                  
+
+                </ul>
+ 
+            <p>
                 <table width="140">
                     <tbody>
                         <tr>
@@ -479,21 +803,39 @@
                     <li> A. Chibah, S. Amer-Yahia, L. Berti-Equille. A Framework for Statistically Sound Customer Segment Search. Proc. of IEEE 8th International Conference on Data Science and Advanced Analytics (<b>DSAA 2021</b>), Porto, Portugal, 2021.
                         <span class="pub_downloads">Download: [<a href="./pub/final_DSAA2021_2021155137.pdf" title="A Framework for Statistically Sound Customer Segment Search" target="_blank">pdf</a>] &nbsp;[<a href="https://github.com/x-s4/S4">code</a>] 
                             <!-- <i class="fa fa-trophy"></i> <span class="pub_award">GitHub star &gt; 200</span> -->
-                        </span></li>
+                        </span>
+                    </li>
+                    
                     <li> R. Ghosh, M. T. Craig, H. S. Matthews, C. Samaras, L. Berti-Equille. Reconstruction of Long-Term Historical Electricity Demand Data. Proc. of <b>ICML 2021</b> Workshop on Tackling Climate Change with Machine Learning, 2021.
-                        <span class="pub_downloads">Download: [<a href="https://arxiv.org/abs/2209.04693" title="Reconstruction of Long-Term Historical Electricity Demand Data" target="_blank">pdf</a>] 
+                        <span class="pub_downloads">Download: [<a href="./pub/ICML2021.pdf" title="Reconstruction of Long-Term Historical Electricity Demand Data" target="_blank">pdf</a>] 
                             <!-- <i class="fa fa-trophy"></i> <span class="pub_award">GitHub star &gt; 200</span> -->
-                        </span></li>
-                    <li> A. Personnaz, S. Amer-Yahia, L. Berti-Equille, M. Fabricius, S. Subramanian. Balancing Familiarity and Curiosity in Data Exploration with Deep Reinforcement Learning. Proc. of the 4th Workshop in Exploiting AI Techniques for Data Management in conjunction with SIGMOD 2021 (<b>AIDM @ SIGMOD 2021</b>), p. 16-23, 2021. <span class="pub_downloads">Download: [<a href="./pub/aiDM21_paper_2(1).pdf" title="Balancing Familiarity and Curiosity in Data Exploration with Deep Reinforcement Learning" target="_blank">pdf</a>] &nbsp;[<a href="./pub/aidm21_slides.pdf">slides</a>] &nbsp;[<a href="https://github.com/apersonnaz/rl-guided-galaxy-exploration">code</a>] </span></li>
+                        </span>
+                    </li>
+
+                    <li> A. Personnaz, S. Amer-Yahia, L. Berti-Equille, M. Fabricius, S. Subramanian. Balancing Familiarity and Curiosity in Data Exploration with Deep Reinforcement Learning. Proc. of the 4th Workshop in Exploiting AI Techniques for Data Management in conjunction with SIGMOD 2021 (<b>AIDM @ SIGMOD 2021</b>), p. 16-23, 2021. <span class="pub_downloads">Download: [<a href="./pub/aiDM21_paper_2(1).pdf" title="Balancing Familiarity and Curiosity in Data Exploration with Deep Reinforcement Learning" target="_blank">pdf</a>] &nbsp;[<a href="./pub/aidm21_slides.pdf">slides</a>] &nbsp;[<a href="https://github.com/apersonnaz/rl-guided-galaxy-exploration">code</a>] 
+                        </span>
+                    </li>
                     <li> A. Personnaz, S. Amer-Yahia, L. Berti-Equille, M. Fabricius, S. Subramanian. DORA The Explorer: Exploring Data with Interactive Deep Reinforcement Learning [demonstration paper]. Proc. of the 30th ACM International Conference on Information and Knowledge Management (<b>CIKM 2021</b>).
-                        <span class="pub_downloads"><i class="fa fa-trophy"></i> <span class="pub_award">Best  Demo   </span> Download: [<a href="./pub/DORA_demo.pdf" title="DORA The Explorer: Exploring Data with Interactive Deep Reinforcement Learning [demonstration paper]" target="_blank">pdf</a>] </i> &nbsp;[<a href="https://bit.ly/dora-application.">application</a>] &nbsp;[<a href="https://github.com/apersonnaz/rl-guided-galaxy-exploration">code</a>] &nbsp;[<a href="https://bit.ly/dora-demo">video </a> ] </span></li>
+                        <span class="pub_downloads"><i class="fa fa-trophy"></i> <span class="pub_award">Best  Demo   </span> Download: [<a href="./pub/DORA_demo.pdf" title="DORA The Explorer: Exploring Data with Interactive Deep Reinforcement Learning [demonstration paper]" target="_blank">pdf</a>] </i> &nbsp;[<a href="https://bit.ly/dora-application.">application</a>] &nbsp;[<a href="https://github.com/apersonnaz/rl-guided-galaxy-exploration">code</a>] &nbsp;[<a href="https://bit.ly/dora-demo">video </a> ] 
+                        </span>
+                    </li>
                     <li> A. Chibah, S. Amer-Yahia, L. Berti-Equille. QeNoBi: a system for QuErying and miNing BehavIoral patterns [demonstration paper]. Proc. of the 2021 IEEE 37th International Conference on Data Engineering (<b>ICDE 2021</b>), pp. 2673-2676, 2021.
-                        <span class="pub_downloads">Download: [<a href="./pub/ICDE2021.pdf" title="QeNoBi: a system for QuErying and miNing BehavIoral patterns [demonstration paper]" target="_blank">pdf</a>] &nbsp;[<a href="https://bit.ly/2HlcO3S">code</a>] &nbsp;[<a href="./pub/QENOBI_video.mp4">video</a>] </span></li>
+                        <span class="pub_downloads">Download: [<a href="./pub/ICDE2021.pdf" title="QeNoBi: a system for QuErying and miNing BehavIoral patterns [demonstration paper]" target="_blank">pdf</a>] &nbsp;[<a href="https://bit.ly/2HlcO3S">code</a>] &nbsp;[<a href="./pub/QENOBI_video.mp4">video</a>] 
+                        </span>
+                    </li>
                     <li> G. Chambaret, L. Berti-Equille, F. Bouchara, E. Bruno, V. Martin, F. Chaillan. Amélioration du pronostic par apprentissage profond pour des applications de maintenance prédictive, <b>EGC 2021</b>. Revue des Nouvelles Technologies de l’Information, vol. RNTI-E-37 pp. 325-332, Janvier 2021.
-                        <span class="pub_downloads">Download: [<a href="./pub/EGC2021.pdf" title="Amélioration du pronostic par apprentissage profond pour des applications de maintenance prédictive" target="_blank">pdf</a>] </span></li>
+                        <span class="pub_downloads">Download: [<a href="./pub/EGC2021.pdf" title="Amélioration du pronostic par apprentissage profond pour des applications de maintenance prédictive" target="_blank">pdf</a>] 
+                        </span>
+                    </li>
                     <li> L. Berti-Equille, D. Dao, S. Ermon, B. Goswami. Challenges in KDD and ML for Sustainable Development. Tutorial at the International Conference on Knowledge Discovery and Data Mining (<b>KDD 2021</b>), Singapore, 15 August 2021.
-                        <span class="pub_downloads">Download: [<a href="https://laureberti.github.io/KDD2021_Tutorial/" title="Challenges in KDD and ML for Sustainable Development" target="_blank">website</a>] &nbsp;[<a href="https://dl.acm.org/doi/10.1145/3447548.3470798" title="Challenges in KDD and ML for Sustainable Development" target="_blank">abstract</a>]</span></li>
-                    <li>H. Patel, F. Ishikawa, L. Berti-Equille, N. Gupta, S. Mehta, S. Masuda, S. Mujumdar, S. Afzal, S. Bedathur, Y. Nishi Editors: Proc. of the 2nd International Workshop on Data Quality Assessment for Machine Learning of the 27th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (<b>DQAML @ KDD 2021</b>), August 2021, pp. 4147–4148  <span class="pub_downloads">Download: [<a href="./pub/DQworkshop.pdf" title="2nd International Workshop on Data Quality Assessment for Machine Learning" target="_blank">pdf</a>]</span></li>
+                        <span class="pub_downloads">Download: [<a href="https://laureberti.github.io/KDD2021_Tutorial/" title="Challenges in KDD and ML for Sustainable Development" target="_blank">website</a>] &nbsp;[<a href="https://dl.acm.org/doi/10.1145/3447548.3470798" title="Challenges in KDD and ML for Sustainable Development" target="_blank">abstract</a>]  
+                        </span>
+                    </li>
+
+                    <li> 
+                    H. Patel, F. Ishikawa, L. Berti-Equille, N. Gupta, S. Mehta, S. Masuda, S. Mujumdar, S. Afzal, S. Bedathur, Y. Nishi Editors: Proc. of the 2nd International Workshop on Data Quality Assessment for Machine Learning of the 27th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (<b>DQAML @ KDD 2021</b>), August 2021, pp. 4147–4148  <span class="pub_downloads">Download: [<a href="./pub/DQworkshop.pdf" title="2nd International Workshop on Data Quality Assessment for Machine Learning" target="_blank">pdf</a>]
+                        </span>
+                    </li>
 
 
                 </ul>
@@ -508,7 +850,7 @@
                         </tbody>
                     </table>
                     <ul>
-                        <li> Robin Jarry, Marc Chaumont, Laure Berti-Equille, Gérad Subsol. Assessment of CNN-based Methods for Poverty Estimation from Satellite Images. Proc. of the 11th IAPR International Workshop on Pattern Recognition in Remote Sensing (<b>PRRS @ ICPR 2020</b>) in conjunction with the International Conference on Pattern Recognition (ICPR 2020). <span class="pub_downloads"> Download: <a href="./pub/ICPR2020.pdf" title="Assessment of CNN-based Methods for Poverty Estimation from Satellite Images" target="_blank">[pdf]</a></li>
+                        <li>Robin Jarry, Marc Chaumont, Laure Berti-Equille, Gérad Subsol. Assessment of CNN-based Methods for Poverty Estimation from Satellite Images. Proc. of the 11th IAPR International Workshop on Pattern Recognition in Remote Sensing (<b>PRRS @ ICPR 2020</b>) in conjunction with the International Conference on Pattern Recognition (ICPR 2020). <span class="pub_downloads"> Download: <a href="./pub/ICPR2020.pdf" title="Assessment of CNN-based Methods for Poverty Estimation from Satellite Images" target="_blank">[pdf]</a></li>
                         <li> Ugo Comignani, Laure Berti-Equille, Noël Novelli. Discovering Multi-Table Functional Dependencies Without Full Join Computation. CoRR abs/2012.06237, 2020.</li>
                         <li> Laure Berti-Equille: Active Reinforcement Learning for Data Preparation: Learn2Clean with Human-In-The-Loop. Proc. of the Conference on Innovative Data Systems Research (<b>CIDR 2020</b>), Amsterdam, Netherlands, January 2020. <span class="pub_downloads"> Download: <a href="./pub/CIDR2020.pdf" title="Active Reinforcement Learning for Data Preparation" target="_blank">[pdf]</a></li>
                         <li> Ugo Comignani, Noël Novelli, Laure Berti-Equille: Data Quality Checking for Machine Learning with MeSQuaL. Proc. of <b>EDBT 2020</b>: 591-594. <span class="pub_downloads"> Download:  <a href="./pub/EDBT2020.pdf" title="Active Reinforcement Learning for Data Preparation" target="_blank">[pdf]</a></li>
@@ -523,7 +865,7 @@
                         </tbody>
                     </table>
                     <ul>
-                        <li> Laure Berti-Equille. Truth Discovery. In: Sakr S., Zomaya A. (eds) Encyclopedia of Big Data Technologies. Springer, Cham, 2019. <span class="pub_downloads"> Download: <a href="./pub/TruthDiscovery.pdf" title="Truth Discovery" target="_blank">[Author Copy]</a></li>
+                        <li>Laure Berti-Equille. Truth Discovery. In: Sakr S., Zomaya A. (eds) Encyclopedia of Big Data Technologies. Springer, Cham, 2019. <span class="pub_downloads"> Download: <a href="./pub/TruthDiscovery.pdf" title="Truth Discovery" target="_blank">[Author Copy]</a></li>
                         <li> Laure Berti-Equille. Reinforcement Learning for Data Preparation with Active Reward Learning. Proc. of INSCI 2019, <span class="pub_downloads"> Download: <a href="https://link.springer.com/book/10.1007/978-3-030-34770-3" title="" target="_blank"> LNCS 11938, 121-132.</a></li>
                         <li> Laure Berti-Equille: ML-Based Knowledge Graph Curation: Current Solutions and Challenges. WWW (Companion Volume) 2019: 938-939 </li>
                         <li> Laure Berti-Equille. Learn2Clean: Optimizing the Sequence of Tasks for Web Data Preparation. Proc. of the Web Conference 2019, pp. 2580-2586, San Francisco, May 2019. <span class="pub_downloads"> Download: <a href="./pub/www19.pdf" title="Learn2Clean: Optimizing the Sequence of Tasks for Web Data Preparation" target="_blank">[pdf]</a> </li>
@@ -556,7 +898,7 @@
                         </tbody>
                     </table>
                     <ul>
-                        <li> Andrés Troya-Galvis, Pierre Gançarski, Laure Berti-Equille. Interactions segmentation-classification dans un cadre multi-paradigme pour l'analyse d'images de télédétection. Revue d'Intelligence Artificielle 31(1-2): 133-152, 2017. <a href="https://ria.revuesonline.com/article.jsp?articleId=37705" title="Interactions segmentation-classification dans un cadre multi-paradigme pour l'analyse d'images de télédétection" target="_blank"> [Publisher Site]</a></li>
+                        <li>Andrés Troya-Galvis, Pierre Gançarski, Laure Berti-Equille. Interactions segmentation-classification dans un cadre multi-paradigme pour l'analyse d'images de télédétection. Revue d'Intelligence Artificielle 31(1-2): 133-152, 2017. <a href="https://ria.revuesonline.com/article.jsp?articleId=37705" title="Interactions segmentation-classification dans un cadre multi-paradigme pour l'analyse d'images de télédétection" target="_blank"> [Publisher Site]</a></li>
                         <li> Saravanan Thirumuruganathan, Laure Berti-Equille, Mourad Ouzzani, Jorge-Arnulfo Quiane-Ruiz and Nan Tang, UGuide – User-Guided Discovery of FD-Detectable Errors. Proc. of the 2017 ACM SIGMOD/PODS Conference, Chicago, May 2017. <span class="pub_downloads"> Download: <a href="./pub/sigmod2017.pdf" title="UGuide – User-Guided Discovery of FD-Detectable Errors" target="_blank">[pdf]</a></li>
                         <li> Eva C. Serrano Balderas, Laure Berti-Equille, Ma. Aurora Armienta Hernandez, and Corinne Grac, Principled Data Preprocessing: Application to Biological Aquatic Indicators of Water Pollution. Proc. of the DEXA-BIOKDD'17 workshop, Lyon, France, August 2017. <span class="pub_downloads"> Download: <a href="./pub/BioKDD2017.pdf" title="Principled Data Preprocessing: Application to Biological Aquatic Indicators of Water Pollution" target="_blank">[pdf]</a></li>
                         <li> Eva C. Serrano Balderas, Ma. Aurora Armienta Hernandez, Laure Berti-Equille, Corinne Grac and Jean-Christophe Desconnets, Evaluation of Heavy Metals, Pesticides and Emergent pollutants content in the Tula river Mexico. Proc. of the the 10th European Symposium for Freshwater Sciences (SEFS10), Olomouc, Czech Republic, July 2017. <span class="pub_downloads"> Download: <a href="https://www.researchgate.net/publication/318404978_Evaluation_of_heavy_metals_pesticides_and_emergent_pollutants_content_in_the_Tula_river_Mexico" title="Evaluation of Heavy Metals, Pesticides and Emergent pollutants content in the Tula river Mexico" target="_blank">[ResearchGate]</a></li>
@@ -599,13 +941,13 @@
                         </tbody>
                     </table>
                     <ul>
-                        <li> Laure Berti-Equille, Javier Borge-Holthoefer, Veracity of Data: From Truth Discovery Computation Algorithms to Models of Misinformation Dynamics. Synthesis Lectures on Data Management, Morgan &amp; Claypool Publishers, December 2015. <a href="http://www.morganclaypool.com/doi/abs/10.2200/S00676ED1V01Y201509DTM042" title=" Veracity of Data: From Truth Discovery Computation Algorithms to Models of Misinformation Dynamics" target="_blank">[Publisher Site]</a> </li>
+                        <li>Laure Berti-Equille, Javier Borge-Holthoefer, Veracity of Data: From Truth Discovery Computation Algorithms to Models of Misinformation Dynamics. Synthesis Lectures on Data Management, Morgan &amp; Claypool Publishers, December 2015. <a href="http://www.morganclaypool.com/doi/abs/10.2200/S00676ED1V01Y201509DTM042" title=" Veracity of Data: From Truth Discovery Computation Algorithms to Models of Misinformation Dynamics" target="_blank">[Publisher Site]</a> </li>
                         <li> Khalid Belhajjame, Domenico Beneventano, Laure Berti-Equille, James Cheney, Víctor Cuevas-Vicenttín, Tom De Nies, Helena Galhardas, Ashish Gehani, Boris Glavic, Paul T. Groth, Olaf Hartig, Scott Jensen, Andrea Maurino, Gianni Mecca, Renée J. Miller, Luc Moreau, Mourad Ouzzani, Jaehong Park (2015). Editorial. J. Data and Information Quality, 5(3): 8. </li>
                         <li> Andres Troya-Galvis, Pierre Gançarski, Nicolas Passat, Laure Berti-Equille, Unsupervised Quantification of Under and Over Segmentation for Object Based Remote Sensing Image Analysis, IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, vol. 8(4), JSTARS-2014-00825.R3, 2015. <span class="pub_downloads"> Download: <a href="./pub/andres.pdf" title="Unsupervised Quantification of Under and Over Segmentation for Object Based Remote Sensing Image Analysis" target="_blank">[pdf]</a></li>
                         <li> Lilia Berrahou, Nathalie Lalande, Eva Serrano, Guilhem Molla, Laure Berti-Equille, Sandro Bimonte, Sandra Bringay, Flavie Cernesson, Corinne Grac, Dino Ienco, Florence Le Ber and Maguelonne Teisseire. A quality-aware spatial datawarehouse for querying hydroecological data, Computers &amp; Geosciences, 2015. <a href="https://hal.archives-ouvertes.fr/hal-01223918/" title="A quality-aware spatial datawarehouse for querying hydroecological data" target="_blank"> [pdf]</a></li>
                         <li> Eva Carmina Serrano Balderas, Corinne Grac, Laure Berti-Equille, Ma. Aurora Armienta Hernandez. Potential application of biological indices based on macroinvertebrates on Mexican streams. Ecological Indicators Journal, 2015. <span class="pub_downloads"> Download: <a href="https://www.sciencedirect.com/science/article/pii/S1470160X15005427?via%3Dihub" title=" Potential application of biological indices based on macroinvertebrates on Mexican streams" target="_blank"> [HAL]</a></li>
-                        <li> Laure Berti-Equille. Data veracity estimation with ensembling truth discovery methods. Proc. of IEEE Big Data Conference 2015, pp. 2628-2636, 2015. <a href="http://ieeexplore.ieee.org/document/7364062/" target="_blank">[Publisher Site]</a> </li>
-                        <li> Ismael Caballero, Laure Berti-Equille, Mario Piattini. Towards Principled Data Science Assessment - The Personal Data Science Process (PdsP). Proc. of International Conference on Enterprise Information Systems, ICEIS, (1):374-378, 2015. <a href="http://dl.acm.org/citation.cfm?id=2981125.2981165" target="_blank">[Publisher Site]</a>
+                        <li>Laure Berti-Equille. Data veracity estimation with ensembling truth discovery methods. Proc. of IEEE Big Data Conference 2015, pp. 2628-2636, 2015. <a href="http://ieeexplore.ieee.org/document/7364062/" target="_blank">[Publisher Site]</a> </li>
+                        <li>Ismael Caballero, Laure Berti-Equille, Mario Piattini. Towards Principled Data Science Assessment - The Personal Data Science Process (PdsP). Proc. of International Conference on Enterprise Information Systems, ICEIS, (1):374-378, 2015. <a href="http://dl.acm.org/citation.cfm?id=2981125.2981165" target="_blank">[Publisher Site]</a>
                         </li>
                         <li> Dalia Attia Waguih, Naman Goel, Hossam M. Hammady, Laure Berti-Equille. AllegatorTrack: Visualizing and Explaining Truth Discovery Results from Multisource Data (Demo). Proc. of ICDE 2015, Seoul, Korea, April 2015. <span class="pub_downloads"> Download: <a href="./pub/demo_ICDE2015.pdf" target="_blank">[pdf]</a></li>
                     </ul>
@@ -902,9 +1244,11 @@
                                 L. Berti-Equille. Merging an Active Database and a Reflective System: Modeling a New Several Architecture, (Poster), Proc. of the 15th British National Conference on Databases (BNCOD’97), London, U.K., pp. 119-120, 1997. </li>
                         </ul>
             </p>
-        </article>
+            </article>
         </section>
         <hr style="width:90%;text-align:left;margin-left:0">
+       
+
         <section id="projects">
             <h2><i class="fa fa-tasks" aria-hidden="true"></i> Projects</h2>
             <!-- <article style="max-height: None; height: 200px;" data-readmore="" aria-expanded="false" id="rmjs-1">
@@ -926,8 +1270,8 @@
 -->
             <table class="articles">
                 <tbody>
-                    <tr>
-                        <td><img class='img-small' src="img/ideal.png"></td>
+                        <tr>
+                        <td><img class='img-small' src="img/ideal.png" width="100"></td>
                         <td>
                             <span class="pub_title">IDEAL International Joint Lab (artificial Intelligence, Data analytics, and Earth observation applied to sustAinability Lab)</span>
                             <span class="pub_authors">2023-2028</span>
@@ -940,7 +1284,7 @@
                     </tr>
 
                    <tr>
-                        <td><img class='img-small' src="img/psf.png"></td>
+                        <td><img class='img-small' src="img/psf.png" width="100"></td>
                         <td>
                             <span class="pub_title"> Methodologies and Innovative Approaches for Sustainable Agroecology and Governance Adaptivity </span>
                             <span class="pub_authors">June 2025 - May 2028</span>
@@ -953,7 +1297,7 @@
 
                     
                    <tr>
-                        <td><img class='img-small' src="img/m2d2.png"></td>
+                        <td><img class='img-small' src="img/m2d2.png" width="100"></td>
                         <td>
                             <span class="pub_title"> M2D2: Machine learning-based Micro Deforestation Detection - supporting conservation programs involving smallholders </span>
                             <span class="pub_authors">June 2023 - May 2024</span>
@@ -963,12 +1307,10 @@
                               </span> 
                         </td>
                     </tr>
-                    
                     <tr>
-                        <td><img class='img-small' src="img/mosaic.png"></td>
+                        <td><img  class='img-small' src="img/mosaic.png" width="100"></div></td>
                         <td>
                             <span class="pub_title">MOSAIC Multi-site application of Open Science in the creAtion of healthy environments Involving local Communities</span>
-                            <span class="pub_authors">2024-2027</span>
                             <span class="pub_authors">15-partner project, PI: E. Roux (IRD, France)</span>
                             <span class="pub_type"><span class="label label-default">European Union </span> &nbsp; HORIZON-HLTH-2023-ENVHLTH-02-01, Jan. 2024 – Dec. 2027.</span>
                             <span class="pub_downloads">Role: Participant
@@ -976,28 +1318,29 @@
                         </td>
                     </tr>
 
+
+             
+                </tbody>
+            </table>
+
+               <article style="max-height: none; height: 200px;" data-readmore="" aria-expanded="false" id="rmjs-1">
+
+                 <table class="articles">
+                <tbody>
+
                     <tr>
-                        <td><img class='img-small' src="img/eco2adapt.png"></td>
+                        <td><img class='img-small' src="img/eco2adapt.png" width="100"></td>
                         <td>
                             <span class="pub_title">ECO2ADAPT: Ecosystem-based Adaptation and Changemaking to Shape, Protect and Maintain the Resilience of Tomorrow’s Forests </span>
-                            <span class="pub_authors">2022-2027</span>
                             <span class="pub_authors">31-partner project, PI: A. Stokes (INRAE, France)</span>
                             <span class="pub_type"><span class="label label-default">European Union </span> &nbsp; HORIZON-CL6-2021-CLIMATE-01-10, Sept. 2022 – Aug. 2027.</span>
                             <span class="pub_downloads">Role: Participant
                                [<a href="https://www.eco2adapt.eu/" title="ECO2ADAPT" target="_blank">info</a>] &nbsp;</span>
                         </td>
                     </tr>
-                </tbody>
-            </table>
-        <article style="max-height: none; height: 200px;" data-readmore="" aria-expanded="false" id="rmjs-1">
-           
-
-           <table class="articles">
-                <tbody>
-
 
                     <tr>
-                        <td><img class='img-small' src="img/parsec.png"></td>
+                        <td><img class='img-small' src="img/parsec.png" width="100"></td>
                         <td>
                             <span class="pub_title">PARSEC: Building New Tools for Data Sharing and Re-Use through a Transnational Investigation of Socioeconomic Impacts of Protected Areas</span> Participating countries: Brazil, France, Japan, United States, Australia, UK, PI: N. Mouquet (CESAB, Montpellier, France)
                             <span class="pub_type"><span class="label label-default">Belmont Forum</span>, Jan. 2019 – Jan. 2023.</span>
@@ -1007,7 +1350,7 @@
                     </tr>
                     <tr>
 
-                        <td><img class='img-small' src="img/mpa.png"></td>
+                        <td><img class='img-small' src="img/mpa.png" width="100"></td>
                         <td>
                             <span class="pub_title">MPA-POVERTY: Can marine protected areas alleviate poverty in the context of land desertification?</span>
                             <span class="pub_authors">6-partner project, PI: Prof. D. Mouillot (MARBEC, Univ. Montpellier 2, France)</span>
@@ -1017,7 +1360,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><img class='img-small' src="img/mesqual.png"></td>
+                        <td><img class='img-small' src="img/mesqual.png" width="100"></td>
                         <td>
                             <span class="pub_title">QUALIHEALTH: Enhancing the Quality of Health Data</span>
                             <span class="pub_authors">7-partner project, PI: Prof. A. Bonifati (LIRIS, Univ. Lyon 1, France)</span>
@@ -1027,18 +1370,18 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><img class='img-small' src="img/hatim.png"></td>
+                        <td><img class='img-small' src="img/hatim.png" width="100"></td>
                         <td>
                             <span class="pub_title">COCLICO: COllaboration, Classification, Incrémentalité et COnnaisssances</span>
                             <span class="pub_authors">6-partner project, PI: Prof. P. Gançarski (ICUBE, Univ. Strasbourg, France)</span>
-                            <span class="pub_type"><span class="label label-default">ANR</span> &nbsp; French National Agency for Research, Feb. 2012 – Jan. 2016</span>
+                            <span class="pub_type"><span class="label label-default">ANR</span> &nbsp; French National Agency for Research, Feb. 2019 – Jan. 2023.</span>
                             <span class="pub_downloads">Role: Work Package Leader
-                                [<a href="https://anr.fr/en/funded-projects-and-impact/funded-projects/project/funded/project/b2d9d3668f92a3b9fbbf7866072501ef-88dc89264a/?tx_anrprojects_funded%5Bcontroller%5D=Funded&cHash=5c75d3fbee4000ec5a08d876725a8280" title="ANR COCLICO" target="_blank">info</a>] &nbsp;</span>
+                                [<a href=="https://anr.fr/en/funded-projects-and-impact/funded-projects/project/funded/project/b2d9d3668f92a3b9fbbf7866072501ef-88dc89264a/?tx_anrprojects_funded%5Bcontroller%5D=Funded&cHash=5c75d3fbee4000ec5a08d876725a8280" title="ANR COCLICO" target="_blank">info</a>] &nbsp;</span>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <img class='img-small' src="img/fresqueau.png"></td>
+                            <img class='img-small' src="img/fresqueau.png" width="100"></td>
                         <td>
                             <span class="pub_title">FRESQUEAU: Data mining for assessing and monitoring the hydrobiologic quality of running waters</span>
                             <span class="pub_authors">6-partner project, PI: F. Le Ber (Univ. Strasbourg, France)</span>
@@ -1050,7 +1393,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img class='img-small' src="img/exqualibur.png"></td>
+                            <img class='img-small' src="img/exqualibur.png" width="100"></td>
                         <td>
                             <span class="pub_title">EXQUALIBUR: Quality-introspective Data Management System</span>
                             <span class="pub_authors">European Marie Curie Outgoing International Fellowship (FP6-MOIF-CT-2006-041000)</span>
@@ -1062,7 +1405,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img class='img-small' src="img/enthrone.png"></td>
+                            <img class='img-small' src="img/enthrone.png" width="100"></td>
                         <td>
                             <span class="pub_title">ENTHRONE: End-to-End QoS through Integrated Management of Content, Networks and Terminals, Phase 1</span>
                             <span class="pub_authors">32-partner project, PI: Thales Broadcast France</span>
@@ -1074,7 +1417,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img class='img-small' src="img/quadris.png"></td>
+                            <img class='img-small' src="img/quadris.png" width="100"></td>
                         <td>
                             <span class="pub_title">QUADRIS: Quality of Multi-source Data and Information Systems</span>
                             <span class="pub_authors">6-partner project, PI: Thales Broadcast (Univ. Rennes 1, France)</span>
@@ -1086,9 +1429,7 @@
                     </tr>
                 </tbody>
             </table>
-            </article>
-
-            
+            <!-- </article>  -->
             <hr style="width:90%;text-align:left;margin-left:0">
             <h2> <i class="fa fa-lock" aria-hidden="true"></i> Patents</h2>
             <ul>
@@ -1098,7 +1439,9 @@
             </ul>
             <h2><i class="fa fa-trophy" aria-hidden="true"></i> Awards</h2>
             <ul>
-                <li> Recipient of the Mobility Grant of <a href="https://talos-ai4ssh.uoc.gr/" target="_blank">   TALOS-AI4SSH ERA Chair </a> in Artificial Intelligence for Humanities and Social Sciences, May 2024 and May 2025.  </li>
+                <li> Member of ELLIS Society, Dec. 2025 </li>
+
+                <li> Recipient of the Mobility Grant of <a href="https://talos-ai4ssh.uoc.gr/" target="_blank">   TALOS-AI4SSH ERA Chair </a> in Artificial Intelligence for Humanities and Social Sciences, May 2024.  </li>
                 <li> Promoted to ACM Senior Member Grade, July 2021</li>
                 <li> Promoted to IEEE Senior Member Grade, Dec. 2018</li>
                 <li> Recipient of Prime d’Encadrement Doctoral et de Recherche, 2018-2021, 2022-2025</li>
@@ -1120,8 +1463,7 @@
 
             <h2><i class="fa fa-newspaper-o" aria-hidden="true"></i> Press</h2>
             <ul>
-
-                <li> <b>MIT News</b> of Aug. 13, 2025 on <a href="https://news.mit.edu/2025/new-way-test-how-well-ai-systems-classify-text-0813" title="A new way to test how well AI systems classify text" target="_blank"> "A new way to test how well AI systems classify text"</a> with L. Xu, S. Alnegheimish, A. Cuesta-Infante (URJC), and K. Veeramachaneni (MIT).</li>
+                  <li> <b>MIT News</b> of Aug. 13, 2025 on <a href="https://news.mit.edu/2025/new-way-test-how-well-ai-systems-classify-text-0813" title="A new way to test how well AI systems classify text" target="_blank"> "A new way to test how well AI systems classify text"</a> with L. Xu, S. Alnegheimish, A. Cuesta-Infante (URJC), and K. Veeramachaneni (MIT).</li>
 
                 
                 <li> <b>MIT News</b> of  Dec. 9, 2024 on <a href="https://news.mit.edu/2024/enabling-ai-explain-predictions-plain-language-1209" title="Enabling AI to explain its predictions in plain language" target="_blank"> "Enabling AI to explain its predictions in plain language"</a> with A. Zytek, S. Pido, S. Alnegheimish, and K. Veeramachaneni (MIT).</li>
@@ -1137,116 +1479,139 @@
                 <li> <b>MIT News</b> of June 30, 2022 on <a href="https://news.mit.edu/2022/explainability-machine-learning-0630" title="Building Explainability into the Components of Machine Learning Models" target="_blank"> "Building Explainability into the Components of Machine Learning Models"</a> with A. Zytek, I. Arnaldo, D. Liu, and K. Veeramachaneni (MIT).</li>
             </ul>
 
-
         </section>
         <hr style="width:90%;text-align:left;margin-left:0">
         <section id="talks">
             <h2><i class="fa fa-commenting-o" aria-hidden="true"></i> Talks</h2>
            
                 <ul>
-                    
-                     <li> Invited Talk on "Leveraging Multimodal Deep Learning and Foundation Models to support SGDs", at AI4C organized by CMCC, Como, Italy, June 2025 .<span class="pub_downloads"> Download: <a href="./pub/ai4c.pdf" title="Leveraging Multimodal Deep Learning and Foundation Models to support SGDs" target="_blank">[slides]</a></li>
+                    <li> Invited Talk on "Leveraging Multimodal Deep Learning and Foundation Models to support SGDs", at AI4C organized by CMCC, Como, Italy, June 2025 .<span class="pub_downloads"> Download: <a href="./pub/ai4c.pdf" title="Leveraging Multimodal Deep Learning and Foundation Models to support SGDs" target="_blank">[slides]</a></li>
 
                     <li> Tutorial at the international conference <a href="https://toth.condillac.org/training-2025-ai" title="TOTh Training" target="_blank"> TOTh 2025 </a> on "Knowledge Graphs, LLMs, and RAG" with R. Giannadakis, & R. Milio (University of Crete, TALOS AI for SSH), at Univ. Savoie-Mont Blanc, France June 2-3, 2025 <span class="pub_downloads"> Download: <a href="./pub/Toth2025-Training.pdf" title="Knowledge Graphs, LLMs, and RAG" target="_blank">[slides]</a> </li>
                     
                     <li> Invited Seminar on "Data (Quality) Challenges in Multimodal AI Pipelines", at DICEN, CNAM (visio), April 4, 2025.<span class="pub_downloads"> Download: <a href="./pub/dicen_2025.pdf" title="Leveraging Transformers, Vision, and Multimodal Models to support SGDs" target="_blank">[slides]</a></li>
 
                     <li> Invited Seminar on "Leveraging Transformers, Vision, and Multimodal Models to support SGDs", at Univ. Rey Juan Carlos, Madrid, Spain, Nov. 5, 2024.<span class="pub_downloads"> Download: <a href="./pub/urjc_2024.pdf" title="Leveraging Transformers, Vision, and Multimodal Models to support SGDs" target="_blank">[slides]</a></li>
+                    
+                    </ul>
 
-                     <li> Keynote talk entitled "Optimization in Analytical and Scientific Workflows", CNRS headquarters, Paris, France, Oct. 4, 2024. <span class="pub_downloads"> Download: <a href="./pub/cnrs_2024.pdf" title="Optimization in Analytical and Scientific Workflows" target="_blank">[slides]</a></li>
-
-                     <li>Keynote talk entitled "Challenges of Multimodal Fusion and Fact-checking", Intelligent Information Systems Seminar, Swedish Defence Research Agency, Stockholm, Sweden, June 4, 2024. <span class="pub_downloads"> Download: <a href="./pub/fos_2024.pdf" title="Challenges of Multimodal Fusion and Fact-checking" target="_blank">[slides]</a></li>
-
-                     <li>Keynote talk entitled "Data Curation for ML: Toward a Principled Approach", Univ. of Creta UCRC-KEME, Greece, May 15, 2024. <span class="pub_downloads"> Download: <a href="./pub/ucrc_2024.pdf" title="Data Curation for ML: Toward a Principled Approach" target="_blank">[slides]</a></li>
-
-                     <li>Keynote talk entitled "Data Quality in Environmental and Sustainability Sciences", CNRS headquarters, Paris, France March 29, 2024. <span class="pub_downloads"> Download: <a href="./pub/cnrs_dq_2024.pdf" title="Data Quality in Environmental and Sustainability Sciences" target="_blank">[slides]</a></li>
-
-                     <li>Keynote talk entitled "Data-centric Machine Learning Applied to Sustainability", Federal Univ. of Paraiba, Brazil, March 4, 2024. <span class="pub_downloads"> Download: <a href="./pub/ufpb2_2024.pdf" title="Data-centric Machine Learning Applied to Sustainability" target="_blank">[slides]</a></li>
-
-                     <li>Keynote talk entitled "Learning from Small Data in Ecology", Federal Univ. of Paraiba, Brazil, Feb. 16, 2024. <span class="pub_downloads"> Download: <a href="./pub/ufpb_2024.pdf" title="Learning from Small Data in Ecology" target="_blank">[slides]</a></li>
-                        </ul>
-
-            <article style="max-height: none; height: 200px;" data-readmore="" aria-expanded="false" id="rmjs-1">
-                <ul>
-                    <li>Tutorial:  H. Patel, S. Guttula, R. S. Mittal, N. Manwani, L. Berti-Equille, and A. Manatkar. Advances in exploratory data analysis, visualisation and quality for data centric AI systems. Tutorial at the International Conference on Data Engineering (<b>KDD 2022</b>), Washington DC, 14-18 August 2022 and AI-ML Systems 2022, Bangalore, India, Oct. 12-15, 2022. <span class="pub_downloads"> Download: <a href=" https://www.slideshare.net/HimaPatel2/advances-in-exploratory-data-analysis-visualisation-and-quality-for-data-centric-ai-systems" title="KDD 2022 Tutorial" target="_blank">[slides]</a></li>
-
-                    <li>Tutorial:  L. Berti-Equille, D. Dao, S. Ermon, B. Goswami. Challenges in KDD and ML for Sustainable Development. Tutorial at the International Conference on Data Engineering (<b> KDD 2021</b>), Sinpapore, 15 August 2021. <span class="pub_downloads"> Download: <a href="https://laureberti.github.io/KDD2021_Tutorial/" title="Challenges in KDD and ML for Sustainable Development" target="_blank">[website]</a></li>
+                    <article style="max-height: none; height: 200px;" data-readmore="" aria-expanded="false" id="rmjs-1">
                    
-                    <li>Keynote talk entitled "Data Curation for ML : Towards a Principled Apporach" at the 1rst Workshop on Data Assessment and Readiness for AI in conjunction with the International Pacific-Asia Conference on Knowledge Discovery and Data Mining (<b>PaKDD 2021</b>), New Dehli, India, 11-14 May, 2021. </li>
+                    <ul>
 
-                    <li>Keynote talk entitled "ML-Based Knowledge Graph Curation: Current Solutions and Challenges" at the 5th workshop on Managing the Evolution and Preservation of the Data Web (<b>MEPDAW @ WWWW 2019</b>) in conjunction with The Web Conf 2019. <span class="pub_downloads"> Download:<a href="./pub/key_note_MEPDAW_Berti-Equille.pdf" title="ML-Based Knowledge Graph Curation: Current Solutions and Challenges" target="_blank">[slides]</a></li>
+                     <li> Keynote entitled "Optimization in Analytical and Scientific Workflows", CNRS headquarters, Paris, France, Oct. 4, 2024. <span class="pub_downloads"> Download: <a href="./pub/cnrs_2024.pdf" title="Optimization in Analytical and Scientific Workflows" target="_blank">[slides]</a></li>
 
-                    <li>Talk entitled "Reinforcement Learning for Data Cleaning and Data Preparation" presented at <b> HILDA @ SIGMOD 2019 </b> workshop in conjunction with SIGMOD2019, Amsterdam, The Netherlands, July 2019. <span class="pub_downloads"> Download: <a href="./pub/HILDA2019_Laure.pdf" title="Reinforcement Learning for Data Cleaning and Data Preparation" target="_blank">[slides]</a></li>
+                     <li>Keynote entitled "Challenges of Multimodal Fusion and Fact-checking", Intelligent Information Systems Seminar, Swedish Defence Research Agency, Stockholm, Sweden, June 4, 2024. <span class="pub_downloads"> Download: <a href="./pub/fos_2024.pdf" title="Challenges of Multimodal Fusion and Fact-checking" target="_blank">[slides]</a></li>
 
-                    <li>Keynote talk entitled "Machine Learning-Based Data Cleaning: Current Solutions and Challenges" at 21ème Edition du Colloque International sur le Document Numérique <b>CiDE.21</b>, Djerba, April 2019. <span class="pub_downloads"> Download: <a href="./pub/key_note_CIDE19.pdf" title="MLahcine Learning-Based Data Cleaning: Current Solutions and Challenges, CiDE 2018 Keynote Laure Berti-Equille" target="_blank">[slides]</a></li>
-                    <li>Tutorial: Laure Berti-Equille, Angela Bonifati, Tova Milo. Machine Learning to Data Management: A Round Trip. Tutorial accepted at the International Conference on Data Engineering (<b>ICDE 2018</b>), Paris, April 2018. <span class="pub_downloads"> Download: <a href="./pub/ICDE18_tutorial_ML_to_DM_A_Round_Trip.pdf" title="ML TO DM : A Round Trip, ICDE 2018 Tutorial Laure Berti-Equille and Angela Bonifati, Tova Milo " target="_blank">[slides]</a></li>
-                    <li>Tutorial: Laure Berti-Equille, Javier Borge-Holthoefer. Scaling Up Truth Discovery. Tutorial at the International Conference on Data Engineering (ICDE 2016), Helsinki, May 2016.<a href="./pub/tutorial-ICDE16-abstract.pdf" target="_blank"> [abstract]</a> <span class="pub_downloads"> Download: <a href="./pub/tutorial-ICDE2016-Laure-Berti-Equille.pdf" target="_blank"> [slides]</a> </li>
-                    <li>Tutorial: Laure Berti-Equille, Javier Borge-Holthoefer. Veracity of Big Data: From Truth Discovery Computation Algorithms to Models of Misinformation Dynamics. Tutorial at the 24th ACM International on Conference on Information and Knowledge Management (<b>CIKM 2015</b>), Melbourne, October 2015. <span class="pub_downloads"> Download: <a href="./pub/tutorial-CIKM2015.pdf" target="_blank">[slides] </a> </li>
-                    <li>Tutorial: Laure Berti-Equille, Tamraparni Dasu. New Directions for Data Quality Mining. Tutorial at the International Conference on Knowledge Discovery and Data Mining (<b>KDD 2009</b>), Paris, France, June 2009.<span class="pub_downloads"> Download:  <a href="./pub/tutorial-KDD09-Berti-Equille-Dasu.pdf" target="_blank">[slides]</a>
+                     <li>Keynote entitled "Data Curation for ML: Toward a Principled Approach", Univ. of Creta UCRC-KEME, Greece, May 15, 2024. <span class="pub_downloads"> Download: <a href="./pub/ucrc_2024.pdf" title="Data Curation for ML: Toward a Principled Approach" target="_blank">[slides]</a></li>
+
+
+                     <li>Keynote entitled "Data Quality in Environmental and Sustainability Sciences", CNRS headquarters, Paris, France March 29, 2024. <span class="pub_downloads"> Download: <a href="./pub/cnrs_dq_2024.pdf" title="Data Quality in Environmental and Sustainability Sciences" target="_blank">[slides]</a></li>
+
+                     <li>Keynote entitled "Data-centric Machine Learning Applied to Sustainability", Federal Univ. of Paraiba, Brazil, March 4, 2024. <span class="pub_downloads"> Download: <a href="./pub/ufpb2_2024.pdf" title="Data-centric Machine Learning Applied to Sustainability" target="_blank">[slides]</a></li>
+
+                     <li>Keynote entitled "Learning from Small Data in Ecology", Federal Univ. of Paraiba, Brazil, Feb. 16, 2024. <span class="pub_downloads"> Download: <a href="./pub/ufpb_2024.pdf" title="Learning from Small Data in Ecology" target="_blank">[slides]</a></li>
+
+                    <li>H. Patel, S. Guttula, R. S. Mittal, N. Manwani, L. Berti-Equille, and A. Manatkar. Advances in exploratory data analysis, visualisation and quality for data centric AI systems. Tutorial at the International Conference on Data Engineering (<b>KDD 2022</b>), Washington DC, 14-18 August 2022 and AI-ML Systems 2022, Bangalore, India, Oct. 12-15, 2022. <span class="pub_downloads"> Download: <a href=" https://www.slideshare.net/HimaPatel2/advances-in-exploratory-data-analysis-visualisation-and-quality-for-data-centric-ai-systems" title="KDD 2022 Tutorial" target="_blank">[slides]</a></li>
+
+                    <li>L. Berti-Equille, D. Dao, S. Ermon, B. Goswami. Challenges in KDD and ML for Sustainable Development. Tutorial at the International Conference on Data Engineering (<b> KDD 2021</b>), Sinpapore, 15 August 2021. <span class="pub_downloads"> Download: <a href="https://laureberti.github.io/KDD2021_Tutorial/" title="Challenges in KDD and ML for Sustainable Development" target="_blank">[website]</a></li>
+                   
+                    <li> Keynote entitled "Data Curation for ML : Towards a Principled Apporach" at the 1rst Workshop on Data Assessment and Readiness for AI in conjunction with the International Pacific-Asia Conference on Knowledge Discovery and Data Mining (<b>PaKDD 2021</b>), New Dehli, India, 11-14 May, 2021. </li>
+
+                    <li> Keynote entitled "ML-Based Knowledge Graph Curation: Current Solutions and Challenges" at the 5th workshop on Managing the Evolution and Preservation of the Data Web (<b>MEPDAW @ WWWW 2019</b>) in conjunction with The Web Conf 2019. <span class="pub_downloads"> Download:<a href="./pub/key_note_MEPDAW_Berti-Equille.pdf" title="ML-Based Knowledge Graph Curation: Current Solutions and Challenges" target="_blank">[slides]</a></li>
+
+                    <li>L. Berti-Equille. Reinforcement Learning for Data Cleaning and Data Preparation. Talk at <b> HILDA @ SIGMOD 2019 </b> workshop in conjunction with SIGMOD2019, Amsterdam, The Netherlands, July 2019. <span class="pub_downloads"> Download: <a href="./pub/HILDA2019_Laure.pdf" title="Reinforcement Learning for Data Cleaning and Data Preparation" target="_blank">[slides]</a></li>
+                       
+                    <li>Keynote entitled "Machine Learning-Based Data Cleaning: Current Solutions and Challenges" at 21ème Edition du Colloque International sur le Document Numérique <b>CiDE.21</b>, Djerba, April 2019. <span class="pub_downloads"> Download: <a href="./pub/key_note_CIDE19.pdf" title="MLahcine Learning-Based Data Cleaning: Current Solutions and Challenges, CiDE 2018 Keynote Laure Berti-Equille" target="_blank">[slides]</a></li>
+                    <li>Laure Berti-Equille, Angela Bonifati, Tova Milo. Machine Learning to Data Management: A Round Trip. Tutorial accepted at the International Conference on Data Engineering (<b>ICDE 2018</b>), Paris, April 2018. <span class="pub_downloads"> Download: <a href="./pub/ICDE18_tutorial_ML_to_DM_A_Round_Trip.pdf" title="ML TO DM : A Round Trip, ICDE 2018 Tutorial Laure Berti-Equille and Angela Bonifati, Tova Milo " target="_blank">[slides]</a></li>
+                    <li>Laure Berti-Equille, Javier Borge-Holthoefer. Scaling Up Truth Discovery. Tutorial at the International Conference on Data Engineering (ICDE 2016), Helsinki, May 2016.<a href="./pub/tutorial-ICDE16-abstract.pdf" target="_blank"> [abstract]</a> <span class="pub_downloads"> Download: <a href="./pub/tutorial-ICDE2016-Laure-Berti-Equille.pdf" target="_blank"> [slides]</a> </li>
+                    <li>Laure Berti-Equille, Javier Borge-Holthoefer. Veracity of Big Data: From Truth Discovery Computation Algorithms to Models of Misinformation Dynamics. Tutorial at the 24th ACM International on Conference on Information and Knowledge Management (<b>CIKM 2015</b>), Melbourne, October 2015. <span class="pub_downloads"> Download: <a href="./pub/tutorial-CIKM2015.pdf" target="_blank">[slides] </a> </li>
+                    <li>Laure Berti-Equille, Tamraparni Dasu. New Directions for Data Quality Mining. Tutorial at the International Conference on Knowledge Discovery and Data Mining (<b>KDD 2009</b>), Paris, France, June 2009.<span class="pub_downloads"> Download:  <a href="./pub/tutorial-KDD09-Berti-Equille-Dasu.pdf" target="_blank">[slides]</a>
                     </li>
-                    <li>Tutorial: Laure Berti-Equille, Tamraparni Dasu. Data Quality Mining: New Directions. Tutorial at the 2009 IEEE International Conference on Data Mining (<b>ICDM 2009</b>), Miami, Florida, USA, December 2009. <span class="pub_downloads"> Download: <a href="./pub/tutorial-icdm09pdf" target="_blank">[slides]</a> </li>
-                    <li>Tutorial:  Laure Berti-Equille. Analytics and Probabilistic Approaches for Data Quality,  presented at the Summer School Big Data CNRS 2014, Oléron, June 2014.</li>
-                    <li>Keynote talk: Laure Berti-Equille. Data Quality for Big Data Analysis, Keynote presented at the Summer School Big Data Analysis in Earth Sciences EarthBiAS 2014, University of Aegean, Rhodes, Greece, July 2014.</li>
-                    <li>Keynote talk:  Laure Berti-Equille. Truth Discovery Methods, Keynote presented at the Summer School Big Data Analysis in Earth Sciences EarthBiAS 2014, University of Aegean, Rhodes, Greece, July 2014.</li>
-                    <li>Tutorial: Laure Berti-Equille. Evaluation of Data and Knowledge Quality in Data Mining. Tutorial presented at the éEGC Winter School on Statistical Machine Learning and Data Mining, Hammamet, Tunisia, February 2010.</li>
+                    <li>Laure Berti-Equille, Tamraparni Dasu. Data Quality Mining: New Directions. Tutorial at the 2009 IEEE International Conference on Data Mining (<b>ICDM 2009</b>), Miami, Florida, USA, December 2009. <span class="pub_downloads"> Download: <a href="./pub/tutorial-icdm09pdf" target="_blank">[slides]</a> </li>
+                    <li>Laure Berti-Equille. Analytics and Probabilistic Approaches for Data Quality, Tutorial presented at the Summer School Big Data CNRS 2014, Oléron, June 2014.</li>
+                    <li>Laure Berti-Equille. Data Quality for Big Data Analysis, Keynote presented at the Summer School Big Data Analysis in Earth Sciences EarthBiAS 2014, University of Aegean, Rhodes, Greece, July 2014.</li>
+                    <li>Laure Berti-Equille. Truth Discovery Methods, Keynote presented at the Summer School Big Data Analysis in Earth Sciences EarthBiAS 2014, University of Aegean, Rhodes, Greece, July 2014.</li>
+                    <li>Laure Berti-Equille. Evaluation of Data and Knowledge Quality in Data Mining. Tutorial presented at the éEGC Winter School on Statistical Machine Learning and Data Mining, Hammamet, Tunisia, February 2010.</li>
 
-                    <li>Tutorial: Laure Berti-Equille. "Evaluation of the quality of data and knowledge in data mining", éEGC Winter School on Statistical Machine Learning and Data Mining, Hammamet, Tunisia, February 3, 2010. </li>
+                    <li>Laure Berti-Equille. "Evaluation of the quality of data and knowledge in data mining", éEGC Winter School on Statistical Machine Learning and Data Mining, Hammamet, Tunisia, February 3, 2010. </li>
                 </ul>
             </article>
         </section>
+
         <hr style="width:90%;text-align:left;margin-left:0">
+        
         <section id="teaching">
             <h2><i class="fa fa-graduation-cap" aria-hidden="true"></i> Mentoring</h2>
            
                 <h4>@ESPACE DEV, Montpellier, France </h4>
                 <ul>
+
+                    <li> Lisandre Bignon & Mathies Friess (Dec. 2025 – Feb. 2026, PFE PolyTech Montpellier Univ.) co-supervised with J. Guérin, IRD: "Efficient and Frgual Learning for marine biodiversity image annotation"
+                    </li>
                     <li> Omar El Baf (Apr. 2025 – Aug. 2025, Internship) co-supervised with A. Mouakher (UPVD), France: "Fighting Climate Misinformation with Multimodal Fact-Checking". </li>
                     
                     <li> Quentin Senatore (June 2025 – Aug. 2025, Internship) co-supervised with A. Mouakher (UPVD), France: "Fighting Climate Misinformation with Multimodal Fact-Checking". </li>
                     
+                      <li> Célia Blondin (Oct. 2024 – Present, Ph.D. thesis of Montpellier Univ.) co-supervised with J. Guérin, IRD: "Efficient and Frgual Learning for marine biodiversity image annotation"
+                    </li>
+
+                    </ul>
+                    <article style="max-height: None; height: 200px;" data-readmore="" aria-expanded="false" id="rmjs-1">
+                    <ul> 
+
                     <li> Hadrien Moncomble (Nov. 2024 – Oct. 2025, Alternant ENGIE CRIGEN Lab) co-supervised with C. de Zutter (ENGIE), A. Millon (AMU) "Apprentissage profond pour modéliser le comportement de vol des rapaces et leurs risques de collision avec des éoliennes".</li>
                     
                     <li> Sara Mobsite (Sept. 2024 – Present, Postdoc MOSAIC project) co-supervised with J. Guérin, and R. Hostache (IRD): "Deep learning models to predict and detect environmental and health challenges impacting the regions of East Africa and the Amazon".</li>
 
-                    <li> Célia Blondin (Oct. 2024 – Present, Ph.D. thesis of Montpellier Univ.) co-supervised with J. Guérin, (IRD): "Efficient and Frugual Learning for marine biodiversity image annotation".</li>
 
+                  
+            
                     <li> Célia Blondin (March 2024 – Aug. 2024, INSA Lyon Internship) co-supervised with J. Guérin, IRD, France: "Modeling Deep Neural Network Performances for Coral Detection from Submarine Images" </li>
-                    
+ 
                     <li> Yifan Zhang (Sept. 2024 – Feb. 2025, UTC Internship) co-supervised with J. Guérin, and T. Cathry, IRD, France: "Unsupervised Learning for Micro-deforestation Detection from Satellite Radar Images" </li>
-
+                
                     <li> Pius Nwachukwu (June 2024 – March 2025) Postdoc, ECO2ADAPT project (2022-2027): "Analysis of forest resilience from satellite immages".</li>
 
 
                     <li> Robin Jarry (Oct. 2020 – Sept. 2024, Ph.D. thesis of Montpellier Univ.) co-supervised with M. Chaumont, Univ. Nîmes, LIRMM, Montpellier, France and G. Subsol CNRS, LIRMM, Montpellier, France: "Assessment of CNN-based Methods for Poverty Estimation from Satellite Images" .</li>
-                        </ul>
 
-            <article style="max-height: none; height: 200px;" data-readmore="" aria-expanded="false" id="rmjs-1">
-                <ul>
 
                     <li> Pablo Beriain Telleria (May 2023 – September 2023, Internship with IMBE) co-supervised with S. Gachet, AMU, and A. Bondeau, IMBE, France: "Discovering Transistion Pathways towards Coviability". </li>
+
                     <li> Ali Ben Abbes (Oct. 2020 – Oct. 2021) Postdoc, PARSEC project (2019-2022): "Deep learning for poverty prediction from satellite images".</li>
+
                     <li> Marouane Azibou (Dec. 2020 – Dec. 2021, Ph.D. thesis of Montpellier Univ.) co-supervised with S. Sellami, Univ. Aix-Marseille, France: "Automatiser la gestion de la qualité des flux de données inter-applications par apprentissage semi-supervisé" with INSEPTI company. </li>
+
                     <li> Amina Ferhati (Oct. 2020 – Aug. 2021, PFE internship, ESI Algiers): "Détection de fake news par apprentissage profond".</li>
                     <li> Dylan VOISIN (March 2021 – July 2021, internship Master 2 Recherche) with N. Novelli, Aix-Marseille Univ. : "Etude de la robustesse des représentations de type embedding (plongement) par rapport au bruit et au manque de données pour les graphes de connaissances".</li>
+
                     <li> Vinciane LE MAGUET (Feb. 2021 – July 2021, internship Master 2 Recherche) : "Apprentissage par renforcement profond interactif et explicable appliqué à la détection d'anomalies".</li>
+
                     <li> Abdelouahab Chibah (Oct. 2020 – March 2021, Ph.D. thesis of Grenoble Univ.) co-supervised with S. Amer-Yahia, CNRS, IMAG, Grenoble, France: "Mining and querying the evolution of behaviors over time". </li>
                     <li> Hussein Khansa (Oct. 2019 – August 2021, Ph.D. thesis of Montpellier Univ.) co-supervised with C. Gervet, Univ. Montpellier, France: "Learning robust constrained model ensembles from large uncertain spatio-temporal data scenarios: the case of the climate impact study on agricultural planning". </li>
                 </ul>
-           
+               
                 <h4>@Aix-Marseille University, Marseille, France </h4>
                 <ul> 
+                    
                     <li> Yanis Gerst (March 2024 – Aug. 2024) M.Sc. Intern co-supervised with S. Sellami, S. Fournier and Grigor Bezirganyan, Aix-Marseille Univ., France: "Noise and Uncertainty Injection for Robustifying Deep Multimodal Learning". </li>
+
                     <li> Hassan Sarwat (March 2024 – Aug. 2024) M.Sc. Intern co-supervised with S. Sellami, S. Fournier and Grigor Bezirganyan, Aix-Marseille Univ., France: "Multimodal Deep Learning with Uncertainty Quantification". </li>
+
                     <li> Madjid Chergui (March 2024 – Aug. 2024) M.Sc. Intern co-supervised with S. Sellami, S. Fournier and Grigor Bezirganyan, Aix-Marseille Univ., France: "Deep Multimodal Data Fusion". </li>
+
                     <li> Alae Bouchiba (March 2024 – July. 2024) M.Sc. Intern co-supervised with S. Sellami, Aix-Marseille Univ., France: "Anomaly detection from Multivariate Data in Medical IoT". </li>
+
                     <li> Nouhaila El Bakioui (March 2024 – July. 2024) M.Sc. Intern co-supervised with N. Novelli and Q. Marcou, Aix-Marseille Univ., France: "Design of Real-time Algorithms for Assisting ICD Coding from multimodal Data". </li>
-                    <li> Grigor Bezirganyan (Oct. 2022 – Nov. 2025, Ph.D. thesis) co-supervised with S. Sellami and S. Fournier, Aix-Marseille Univ., France: "Data and Decision Fusion with Uncertainty Quantification in ML-based Healthcare Decision Systems". </li>
-                    <li> Guillaume Chambaret (March 2019 – April 2023, Ph.D. thesis CIFRE) co-supervised with F. Bouchara, Univ. Toulon, France: "Analyse et prédiction à partir de séries temporelles et recommandation sous contraintes pour la maintenance prédictive". </li>
+
+                    <li> Grigor Bezirganyan (Oct. 2022 – present, Ph.D. thesis) co-supervised with S. Sellami and S. Fournier, Aix-Marseille Univ., France: "Data and Decision Fusion with Uncertainty Quantification in ML-based Healthcare Decision Systems". </li>
+                    <li> Guillaume Chambaret (March 2019 – April 2023, Ph.D. thesis) co-supervised with F. Bouchara, Univ. Toulon, France: "Analyse et prédiction à partir de séries temporelles et recommandation sous contraintes pour la maintenance prédictive". </li>
                     <li> Ugo Comignani (Oct. 2019 – August 2020) Postdoc, ANR QualiHealth project </li>
                     <li> Victor Polizzi (Feb 2019 – July 2019) M.Sc. Intern Univ. Toulon, France, Projet SEAMED: "Analyse d’éléments de bioacoustique terrestre diurne et nocturne des stations d’enregistrement du Domaine du Rayol" (in French). </li>
+
                      <li> Liliane Kong Win Chang (Mars 2019 – July 2019) M.Sc. Intern Univ. Lyon, France, "Robustness to noise of ML model-agnostic explanation: an empirical study". </li>
                 </ul>
-
                 <h4>@Qatar Computing Research Institute, Doha, Qatar </h4>
                 <ul>
                     <li> Kushal Sha (October 2015 – July 2016) M.Sc. Intern, "Urban computing: traffic density near-future forecasting". </li>
@@ -1282,71 +1647,73 @@
             <h2><i class="fa fa-user" aria-hidden="true"></i>
                 Biographical Sketch</h2>
             <p> 
-                    Laure Berti-Equille is a Research Director (DR1) at IRD, the French Research Institute for Sustainable Development. 
+                 Laure Berti-Equille is a Research Director (DR1) at IRD, the French Research Institute for Sustainable Development. 
                 Before, she was a Full Professor in Computer Science at Aix-Marseille University (France), a senior scientist at Qatar Computing Research Institute (Qatar), an associate professor at University of Rennes 1 (France), and a 2-year visiting researcher at AT&amp;T Labs Research in New Jersey (USA), as a recipient of the prestigious European Marie Curie Outgoing Fellowship. 
                 In 2022, she was a visiting scientist at <a href="https://www.mit.edu"> Massachusetts Institute of Technology </a> LIDS (Laboratory for Information &amp; Decision Systems). 
                 Her current research interests are on the inter-play of data management, data analytics, and machine learning with a focus on anomaly detection, data cleaning and preparation, and multimodal data fusion and learning with main applications in medical and environmental domains in-line with SGDs. 
                 She is co-leading the <a href="https://ideal.ufpb.br/" title="IDEAL" target="_blank"> international joint lab IDEAL</a> with the Federal Univ. of Paraíba (Brazil) dedicated to AI for Agroecology. 
                 She has more than 180 publications in major conferences or journals along with 3 books, 10 chapters, and 13 co-edited proceedings. 
                 She has co-organized numerous workshops on data quality in conjunction with top conferences such as SIGMOD, VLDB and AAAI (2025). 
-                She has given many tutorials and keynote talks on data analytics and engineering for applied machine learning (KDD'22 &amp; '21, ICDE'18 &amp; '16, CIKM'15, KDD'09, ICDM'09). She served in numerous program committees of international conferences and was an Associate Editor of the VLDB Journal and the ACM Information and Data Quality Journal. She has been leading projects funded by the French National Agency of Research (ANR), the French National Research Council (CNRS), Belmont Forum, and the European Union. She is a IEEE and ACM senior member.
+                She has given many tutorials and keynote talks on data analytics and engineering for applied machine learning (KDD'22 &amp; '21, ICDE'18 &amp; '16, CIKM'15, KDD'09, ICDM'09). She served in numerous program committees of international conferences and was an Associate Editor of the VLDB Journal and the ACM Information and Data Quality Journal. She has been leading projects funded by the French National Agency of Research (ANR), the French National Research Council (CNRS), Belmont Forum, and the European Union. She is a IEEE and ACM senior member and ELLIS society member.
             </p>
         </section>
         <hr style="width:90%;text-align:left;margin-left:0">
         <section id="contact">
             <h2><i class="fa fa-location-arrow" aria-hidden="true"></i> Contact</h2>
-            <div class="col-sm-5"><a href="https://www.espace-dev.fr/en/sharing-and-integration-of-data-knowledge-pic/">
-                    <img class="img-very-small" src="img/logo-ird.png"></a>
+            <div>
+                 <a href="https://www.espace-dev.fr/en/" target="_blank" >
+                <div class="img-small">
+                    <img align="right" vertical-align= "middle" width="100" src="img/logo-ird.png"></a>
+                </div>
             </div>
-            <p><a href="https://www.espace-dev.fr/en/sharing-and-integration-of-data-knowledge-pic/">IRD ESPACE-DEV</a>
+            <p><a href="https://www.espace-dev.fr/en/">IRD ESPACE-DEV</a>  </br>
                 Maison de la télédétection </br>
                 500, rue Jean-François Breton </br>
                 34093 MONTPELLIER cedex 05, France</br>
                 <p><i class="fa fa-envelope" aria-hidden="true"> </i> laure DOT berti AT ird DOT fr</p>
             </p>
         </section>
+        <hr style="width:90%;text-align:left;margin-left:0">
         <div class="footer">
-            <div class="col-sm-8">
-                <p><small>©Laure Berti-Equille, Nov. 2024</small>
-            </div>
+        
+                <p><small>©Laure Berti-Equille, January 2026</small>
+       
         </div> <!-- /footer -->
+
     </div> <!-- /container -->
     <!-- javascript at the end of the doc so page loads faster -->
-    <script src="web_fichiers/jquery.js"></script>
-    <script src="web_fichiers/bootstrap.js"></script>
-    <script src="web_fichiers/library.js"></script>
-    <script src="web_fichiers/jquery-1.js"></script>
-    <script src="web_fichiers/prettify.js"></script>
-    <script src="web_fichiers/readmore.js"></script>
+  
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-1.js"></script>
+    <script src="js/readmore.js"></script>
+    <script src="js/bootstrap.js"></script>
     <script>
     $('article').readmore({
         collapsedHeight: 100,
         speed: 200
     });
-    // Wait a tick before firing Readmore on the #info block to give Prettify time to finish painting.
-    setTimeout(function() {
-        $('#info').readmore({
-            moreLink: '<a href="#">Usage, examples, and options</a>',
-            collapsedHeight: 432,
-            speed: 200,
-            afterToggle: function(trigger, element, expanded) {
-                if (!expanded) { // The "Close" link was clicked
-                    $('html, body').animate({ scrollTop: $(element).offset().top }, { duration: 100 });
-                }
-            }
-        });
-    }, 100);
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/index.js"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-138011367-1');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-138011367-1');
     </script>
+     <script>
+        //Javascript responsive code
+        var button = document.querySelector('.button');
+        var menu = document.querySelector('.menu');
+
+        button.onclick = function() {
+            button.classList.toggle('active');
+            menu.classList.toggle('active');
+       }
+
+    </script>
+    
 </body>
 
-</html>   
+</html>
