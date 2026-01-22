@@ -25,18 +25,20 @@
         @import url(https://fonts.googleapis.com/css?family=Montserrat);
         
         
-        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-family: 'Montserrat', Helvetica ; font-weight: 700;}
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-family: 'Montserrat', Helvetica ; font-weight: 800;}
         /* Masthead */
         .header, .footer,  h1, h3 { font-family: 'Montserrat', Helvetica, sans-serif; font-weight: normal; }
+
+    
 
         /* Navigation */
         h3.text-muted a {text-decoration: none; color: #999999; }
         h3.text-muted a:hover { text-decoration: none; color: #0088cc; }
 
-        p { text-align:left; vertical-align:middle font-size: 12px; line-height: 1.6em; }
+        p { text-align:left; vertical-align:middle font-size: 14px; line-height: 1.6em; }
 
 
-        img-small {vertical-align:text-top;border:0; width:120px;float:left; margin-right:10px; }
+        img-small {vertical-align:text-top;border:0; width:200px;float:left; margin-right:10px; }
         
         span.pub_authors {
           font-weight: 300;
@@ -191,7 +193,7 @@
 
         
 
-    @media screen and (max-width: 1037px) {
+    @media screen and (max-width: 700px) {
         body {
             position: relative;
         }
@@ -215,6 +217,7 @@
     ul-nav li-nav{
         margin: 20px 0;
         font-weight: bold;
+
     }
    
     ul-nav li-nav a:hover{
@@ -271,11 +274,8 @@
 </head>
 
 <body>
-    <header style="margin-left:auto;justify-content: center;align-items: center;">
-               <a href="https://en.ird.fr/" target="_blank" >
-            <div class="img-small">
-                <img align="center" vertical-align= "bottom" width="60" src="img/logo-ird.png">
-            </div></a> &nbsp;  &nbsp;  &nbsp; 
+    <header style="margin-left:auto;justify-content: center;align-items: center;font-size: calc(vw + vh);">
+              &nbsp;  &nbsp;  &nbsp; 
         
         <h2 class="text-muted">Laure Berti-Equille </br> 
                 <small>
@@ -304,8 +304,12 @@
                 <li-nav><a href="#bio" title="Bio"> <b style="border-radius: 25px;border: 1px solid #0088cc;padding: 3px;"> Bio </b></a></li>
                 <li-nav><a href="#contact" title="Contact"> <b style="border-radius: 25px;border: 1px solid #0088cc;padding: 3px;"> Contact </b></a></li>
         </ul-nav>
-
-     
+ &nbsp;  &nbsp;  &nbsp; 
+       <a href="https://en.ird.fr/" target="_blank" >
+            <div class="img-small">
+                <img align="center" vertical-align= "bottom" width="80" src="img/logo-ird.png">
+            </div></a>
+             &nbsp;  &nbsp;  &nbsp; 
         <div class="button"></div>
     </header>
     
