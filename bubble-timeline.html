@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laure Berti-Equille: Publication Bubble Chart</title>
+    
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    
+    <!-- Load color scale -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        #my_dataviz {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        
+        .bubbles {
+            stroke-width: 2px;
+            stroke: white;
+            opacity: .85;
+            transition: opacity 0.3s;
+        }
+        
+        .bubbles:hover {
+            stroke: #333;
+            stroke-width: 3px;
+            opacity: 1;
+        }
+        
+        .tooltip {
+            position: absolute;
+            pointer-events: none;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                margin: 10px;
+            }
+            
+            #my_dataviz {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1> Publication Bubble Chart</h1>
+    
+    <!-- Create a div where the graph will take place -->
+    <div id="my_dataviz"></div>
+
+    <script>
+        // Embedded CSV data
+        var csvData = `topic,venue,year,citations,authors
+Fact-Checking / Truth Discovery,VLDB,2009,317,3
+Data Quality / Data Cleaning,ACM,2013,214,3
+Fact-Checking / Truth Discovery,VLDB,2010,166,4
+Applied Data Analytics & ML,Review of Palaeobota,2012,147,6
+Data Quality / Data Cleaning,arXiv preprint arXiv,2024,89,4
+Applied Data Analytics & ML,The World Wide Web C,2019,88,1
+Fact-Checking / Truth Discovery,VLDB,2018,86,5
+Fact-Checking / Truth Discovery,arXiv preprint arXiv,2014,86,2
+Fact-Checking / Truth Discovery,Synthesis Lectures o,2015,84,2
+Data Quality / Data Cleaning,International Confer,2007,83,6
+Fact-Checking / Truth Discovery,arXiv preprint arXiv,2009,80,4
+Fact-Checking / Truth Discovery,IEEE,2011,78,3
+Applied Data Analytics & ML,Ecological Indicator,2016,76,4
+Fact-Checking / Truth Discovery,Handbook of Data Qua,2013,72,3
+Fact-Checking / Truth Discovery,Proceedings of the 2,2016,65,4
+Applied Data Analytics & ML,arXiv preprint arXiv,2022,61,5
+Data Quality / Data Cleaning,Quality measures in ,2007,60,1
+Applied Data Analytics & ML,Pattern Recognition ,2018,59,3
+Fact-Checking / Truth Discovery,arXiv preprint arXiv,2022,56,5
+Applied Data Analytics & ML,Proceedings of the 2,2016,56,7
+Multimodal Fusion & Learning,IEEE,2015,55,4
+Fact-Checking / Truth Discovery,ACM,2017,51,5
+Multimodal Fusion & Learning,The Twelfth Internat,2023,49,5
+Applied Data Analytics & ML,arXiv preprint arXiv,2022,42,5
+Multimodal Fusion & Learning,Computer Communicati,2007,42,6
+Applied Data Analytics & ML,ICWSM,2016,40,4
+Knowledge Engineering,Knowledge and inform,2007,40,1
+Fact-Checking / Truth Discovery,IEEE,2015,37,1
+Fact-Checking / Truth Discovery,JDIQ,2016,36,2
+Applied Data Analytics & ML,ACM,2021,35,5
+Fact-Checking / Truth Discovery,International Worksh,2005,34,7
+Applied Data Analytics & ML,IEEE,2018,33,2
+Data Quality / Data Cleaning,International Journa,2011,33,3
+Data Quality / Data Cleaning,ACM,2022,32,6
+Fact-Checking / Truth Discovery,VLDB,2010,31,4
+Applied Data Analytics & ML,VLDB,2010,30,5
+Data Quality / Data Cleaning,ICIQ,2005,27,2
+Data Quality / Data Cleaning,International Journa,2014,26,3
+Data Quality / Data Cleaning,Computers & Geoscien,2015,25,7
+Fact-Checking / Truth Discovery,IEEE,2015,25,4
+Data Quality / Data Cleaning,Universté de Rennes ,2007,25,1
+Fact-Checking / Truth Discovery,US Patent 8,2012,22,3
+Fact-Checking / Truth Discovery,DEXA,1999,22,1
+Applied Data Analytics & ML,Proceedings of the F,2021,21,5
+Applied Data Analytics & ML,INSCI,2019,20,1
+Applied Data Analytics & ML,IEEE,2024,19,5
+Applied Data Analytics & ML,IEEE,2005,19,3
+Applied Data Analytics & ML,ACM,2017,18,2
+Data Quality / Data Cleaning,US Patent 9,2017,18,3
+Applied Data Analytics & ML,HB4,2006,18,1
+Applied Data Analytics & ML,ISI,2003,18,1
+Fact-Checking / Truth Discovery,ICIQ,2004,17,1
+Applied Data Analytics & ML,AACL,2022,15,4
+Applied Data Analytics & ML,IAPR,2021,15,4
+Data Quality / Data Cleaning,IEEE,2009,14,2
+Fact-Checking / Truth Discovery,International Confer,2001,14,1
+Applied Data Analytics & ML,Hermés science,2012,12,1
+Applied Data Analytics & ML,CIDR,2020,11,1
+Applied Data Analytics & ML,KAIS,2015,11,3
+Applied Data Analytics & ML,ICDM,2013,11,3
+Data Quality / Data Cleaning,ICIQ,2011,11,4
+Data Quality / Data Cleaning,ICIQ,2008,11,7
+Multimodal Fusion & Learning,Proceedings of the 2,2005,11,3
+Multimodal Fusion & Learning,arXiv preprint arXiv,2024,10,4
+Applied Data Analytics & ML,Earth and Space Scie,2022,10,7
+Fact-Checking / Truth Discovery,Qualité des Données ,2008,10,6
+Data Quality / Data Cleaning,ACM,2006,10,2
+Applied Data Analytics & ML,Ingénierie des Systè,2002,10,1
+Applied Data Analytics & ML,2017 28th Internatio,2017,9,4
+Applied Data Analytics & ML,Journal of Applied M,2013,9,6
+Applied Data Analytics & ML,Dagstuhl Reports 13 ,2024,8,4
+Applied Data Analytics & ML,ACM,2021,8,7
+Data Quality / Data Cleaning,IJCAI,2021,8,2
+Knowledge Engineering,International Confer,2016,8,5
+Multimodal Fusion & Learning,ISI,2010,7,3
+Fact-Checking / Truth Discovery,AT&T,2009,7,2
+Multimodal Fusion & Learning,IEEE,2004,7,3
+Applied Data Analytics & ML,Revue Nationale des ,2003,7,1
+Applied Data Analytics & ML,ICPR,2016,6,3
+Knowledge Engineering,IEEE,2016,6,5
+Data Quality / Data Cleaning,IEEE,2006,6,1
+Fact-Checking / Truth Discovery,"IQ,",1998,6,1
+Fact-Checking / Truth Discovery,IEEE,2016,5,1
+Data Quality / Data Cleaning,Data and Information,2016,5,1
+Fact-Checking / Truth Discovery,Biological Knowledge,2013,5,2
+Applied Data Analytics & ML,ICIQ,1997,5,1
+Applied Data Analytics & ML,Journal of Biomedica,2024,4,3
+Multimodal Fusion & Learning,IEEE,2023,4,4
+Applied Data Analytics & ML,ICONIP,2023,4,4
+Applied Data Analytics & ML,ACM,2021,4,4
+Applied Data Analytics & ML,EDBT,2020,4,3
+Applied Data Analytics & ML,Advances in Knowledg,2017,4,3
+Applied Data Analytics & ML,5èmes Journées théma,2012,4,1
+Fact-Checking / Truth Discovery,Actes du congrès fra,1999,4,1
+Knowledge Engineering,Expert Systems 42 (8,2025,3,5
+Multimodal Fusion & Learning,arXiv preprint arXiv,2024,3,4
+Applied Data Analytics & ML,IEEE,2024,3,3
+Applied Data Analytics & ML,arXiv preprint arXiv,2023,3,5
+Fact-Checking / Truth Discovery,arXiv preprint arXiv,2023,3,3
+Applied Data Analytics & ML,Biodiversity Informa,2023,3,2
+Knowledge Engineering,Companion Proceeding,2019,3,1
+Data Quality / Data Cleaning,HILDA,2018,3,1
+Fact-Checking / Truth Discovery,Encyclopedia of Big ,2018,3,1
+Applied Data Analytics & ML,International Confer,2017,3,7
+Applied Data Analytics & ML,2016 27th Internatio,2016,3,3
+Fact-Checking / Truth Discovery,ACM,2015,3,2
+Data Quality / Data Cleaning,International Confer,2007,3,5
+Data Quality / Data Cleaning,Information Quality ,2007,3,1
+Data Quality / Data Cleaning,JDIM,2003,3,1
+Applied Data Analytics & ML,International Worksh,1998,3,3
+Multimodal Fusion & Learning,arXiv preprint arXiv,2024,2,5
+Multimodal Fusion & Learning,IGARSS,2023,2,4
+Fact-Checking / Truth Discovery,International Confer,2022,2,6
+Applied Data Analytics & ML,IEEE,2021,2,3
+Applied Data Analytics & ML,AAFD,2016,2,5
+Multimodal Fusion & Learning,EGC,2016,2,3
+Applied Data Analytics & ML,International Confer,2015,2,3
+Data Quality / Data Cleaning,Pacific-Asia Confere,2006,2,1
+Applied Data Analytics & ML,Génie logiciel,2005,2,1
+Multimodal Fusion & Learning,EGC,2004,2,3
+Multimodal Fusion & Learning,IEEE,2024,1,5
+Applied Data Analytics & ML,Revue d'Épidémiologi,2023,1,3
+Applied Data Analytics & ML,AAAI,2022,1,2
+Applied Data Analytics & ML,RDA,2022,1,7
+Fact-Checking / Truth Discovery,IEEE,2022,1,4
+Fact-Checking / Truth Discovery,Veracity of Data: Fr,2022,1,2
+Applied Data Analytics & ML,arXiv preprint arXiv,2020,1,3
+Fact-Checking / Truth Discovery,arXiv preprint arXiv,2019,1,3
+Fact-Checking / Truth Discovery,Encyclopedia of Big ,2018,1,1
+Applied Data Analytics & ML,SEFS,2017,1,5
+Fact-Checking / Truth Discovery,ICTPP,2016,1,3
+Applied Data Analytics & ML,EGC,2016,1,5
+Fact-Checking / Truth Discovery,International Worksh,2010,1,4
+Applied Data Analytics & ML,"(IQ’08),",2008,1,1
+Data Quality / Data Cleaning,Proceedings of the 6,2008,1,1
+Data Quality / Data Cleaning,Quality Measures in ,2006,1,1
+Fact-Checking / Truth Discovery,Proceedings of Intl.,2005,1,1
+Multimodal Fusion & Learning,Revue des Nouvelles ,2003,1,3
+Fact-Checking / Truth Discovery,EGC,2003,1,1
+Applied Data Analytics & ML,INGENIERIE,2001,1,3
+Fact-Checking / Truth Discovery,Actes du colloque fr,1998,1,2
+Multimodal Fusion & Learning,Joint European Confe,2025,0,4
+Applied Data Analytics & ML,EDP,2025,0,1
+Applied Data Analytics & ML,AAAI,2025,0,4
+Multimodal Fusion & Learning,CNIA,2024,0,4
+Applied Data Analytics & ML,Journal of Epidemiol,2024,0,3
+Applied Data Analytics & ML,Technologies logicie,2023,0,1
+Applied Data Analytics & ML,Sustainability scien,2023,0,3
+Applied Data Analytics & ML,arXiv preprint arXiv,2022,0,5
+Applied Data Analytics & ML,RDA,2022,0,7
+Fact-Checking / Truth Discovery,Veracity of Data: Fr,2022,0,2
+Fact-Checking / Truth Discovery,Veracity of Data: Fr,2022,0,2
+Fact-Checking / Truth Discovery,Veracity of Data: Fr,2022,0,2
+Fact-Checking / Truth Discovery,Veracity of Data: Fr,2022,0,2
+Applied Data Analytics & ML,VLDB,2022,0,9
+Applied Data Analytics & ML,IEEE,2021,0,3
+Applied Data Analytics & ML,agenda 53,2021,0,4
+Applied Data Analytics & ML,EGC,2021,0,6
+Applied Data Analytics & ML,Technologies logicie,2018,0,1
+Multimodal Fusion & Learning,RIA,2017,0,3
+Applied Data Analytics & ML,Actes des 17ème Jour,2017,0,4
+Knowledge Engineering,Biodiversity Informa,2017,0,8
+Data Quality / Data Cleaning,QDB,2016,0,5
+Applied Data Analytics & ML,ICTPP,2016,0,6
+Data Quality / Data Cleaning,ICIQ,2016,0,3
+Fact-Checking / Truth Discovery,arXiv e-prints,2015,0,3
+Data Quality / Data Cleaning,Inforsid-Atelier SI ,2014,0,4
+Data Quality / Data Cleaning,International Journa,2014,0,2
+Data Quality / Data Cleaning,Proceedings of the 1,2012,0,3
+Applied Data Analytics & ML,it-Information Techn,2012,0,1
+Applied Data Analytics & ML,EGC,2012,0,3
+Applied Data Analytics & ML,Mesurer et évaluer l,2012,0,6
+Applied Data Analytics & ML,Éditions Hermann,2012,0,6
+Applied Data Analytics & ML,La qualité et la gou,2012,0,2
+Fact-Checking / Truth Discovery,BEWEB,2011,0,4
+Applied Data Analytics & ML,La qualité des systè,2010,0,3
+Fact-Checking / Truth Discovery,Zoè Lacroix,2010,0,3
+Applied Data Analytics & ML,Hammamet,2010,0,3
+Knowledge Engineering,9th International Pr,2006,0,3
+Applied Data Analytics & ML,EGC,2006,0,1
+Data Quality / Data Cleaning,Université de Lille,2006,0,2
+Applied Data Analytics & ML,BNCOD,2005,0,1
+Data Quality / Data Cleaning,DIQ,2005,0,1
+Fact-Checking / Truth Discovery,CRM,2005,0,1
+Applied Data Analytics & ML,QDC,2005,0,1
+Data Quality / Data Cleaning,Université Paris 5,2005,0,2
+Multimodal Fusion & Learning,CORIMEDIA,2004,0,2
+Applied Data Analytics & ML,(IC,2004,0,3
+Applied Data Analytics & ML,Proceedings of the 5,2004,0,3
+Multimodal Fusion & Learning,Atelier n 6,2004,0,3
+Fact-Checking / Truth Discovery,Proceedings of the 2,2001,0,1
+Applied Data Analytics & ML,VSST,2001,0,2`;
+
+        // Parse CSV data
+        var data = d3.csvParse(csvData);
+        
+        // Convert strings to numbers
+        data.forEach(function(d) {
+            d.year = +d.year;
+            d.citations = +d.citations;
+            d.authors = +d.authors;
+        });
+
+        // Set the dimensions and margins of the graph
+        var margin = {top: 40, right: 200, bottom: 80, left: 60};
+        var width = Math.min(1000, window.innerWidth - 40) - margin.left - margin.right;
+        var height = Math.min(600, window.innerHeight - 200) - margin.top - margin.bottom;
+
+        // Append the svg object to the body of the page
+        var svg = d3.select("#my_dataviz")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        // ---------------------------//
+        //       AXIS AND SCALE       //
+        // ---------------------------//
+
+        // Add X axis (Year)
+        var x = d3.scaleLinear()
+            .domain([1997, 2026])
+            .range([0, width]);
+        svg.append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x).ticks(15).tickFormat(d3.format("d")));
+
+        // Add X axis label
+        svg.append("text")
+            .attr("text-anchor", "middle")
+            .attr("x", width / 2)
+            .attr("y", height +40)
+            .style("font-size", "12px")
+            .style("font-weight", "bold")
+            .text("Year");
+
+        // Add Y axis (Nb of authors)
+        var y = d3.scaleLinear()
+            .domain([0, 8])
+            .range([height, 0]);
+        svg.append("g")
+            .call(d3.axisLeft(y).ticks(6).tickFormat(function(d) {
+                return (d ) ;
+            }));
+
+        // Add Y axis label
+        svg.append("text")
+            .attr("text-anchor", "middle")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -45)
+            .attr("x", -height / 2)
+            .style("font-size", "14px")
+            .style("font-weight", "bold")
+            .text("Number of authors");
+
+        // Add a scale for bubble size (number of citations)
+        var z = d3.scaleSqrt()
+            .domain([1, 4])
+            .range([1, 4]);
+
+        // Add a scale for bubble color (topic)
+        var myColor = d3.scaleOrdinal()
+            .domain([
+                "Fact-Checking / Truth Discovery",
+                "Multimodal Fusion & Learning",
+                "Applied Data Analytics & ML",
+                "Uncertainty Quantification",
+                "Data Quality / Data Cleaning",
+                "Knowledge Engineering"
+            ])
+            .range(["#e74c3c", "#3498db", "#2ecc71", "#f39c12", "#9b59b6", "#1abc9c"]);
+
+        // ---------------------------//
+        //      TOOLTIP               //
+        // ---------------------------//
+
+        var tooltip = d3.select("#my_dataviz")
+            .append("div")
+            .style("opacity", 0)
+            .attr("class", "tooltip")
+            .style("background-color", "rgba(0, 0, 0, 0.9)")
+            .style("border-radius", "8px")
+            .style("padding", "12px")
+            .style("color", "white")
+            .style("box-shadow", "0 4px 6px rgba(0,0,0,0.1)");
+
+        var showTooltip = function(d) {
+            tooltip
+                .transition()
+                .duration(200)
+                .style("opacity", 1);
+            tooltip
+                .html(
+                    "<strong>" + d.venue + " " + d.year + "</strong><br/>" +
+                    "Topic: " + d.topic + "<br/>" +
+                    "Authors: " + d3.format(",")(d.authors) + "<br/>" +
+                    "Citations: " + d.citations
+                )
+                .style("left", (d3.event.pageX + 15) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+        };
+
+        var moveTooltip = function(d) {
+            tooltip
+                .style("left", (d3.event.pageX + 15) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+        };
+
+        var hideTooltip = function(d) {
+            tooltip
+                .transition()
+                .duration(200)
+                .style("opacity", 0);
+        };
+
+        // ---------------------------//
+        //       HIGHLIGHT GROUP      //
+        // ---------------------------//
+
+        var highlight = function(d) {
+            d3.selectAll(".bubbles").style("opacity", 0.1);
+            d3.selectAll("." + d.replace(/[^a-zA-Z0-9]/g, '_')).style("opacity", 1);
+        };
+
+        var noHighlight = function(d) {
+            d3.selectAll(".bubbles").style("opacity", 0.85);
+        };
+
+        // ---------------------------//
+        //       CIRCLES              //
+        // ---------------------------//
+
+        svg.append('g')
+            .selectAll("dot")
+            .data(data)
+            .enter()
+            .append("circle")
+            .attr("class", function(d) {
+                return "bubbles " + d.topic.replace(/[^a-zA-Z0-9]/g, '_');
+            })
+            .attr("cx", function(d) { return x(d.year); })
+            .attr("cy", function(d) { return y(d.authors); })
+            .attr("r", function(d) { return z(d.citations); })
+            .style("fill", function(d) { return myColor(d.topic); })
+            .on("mouseover", showTooltip)
+            .on("mousemove", moveTooltip)
+            .on("mouseleave", hideTooltip);
+
+        // ---------------------------//
+        //       LEGEND               //
+        // ---------------------------//
+
+        // Size legend (Authors)
+        var valuesToShow = [10, 100, 300];
+        var xCircle = width - 160+200;
+        var xLabel = width - 60+200;
+        
+        svg.selectAll("legend")
+            .data(valuesToShow)
+            .enter()
+            .append("circle")
+            .attr("cx", xCircle)
+            .attr("cy", function(d) { return height - 150 - z(d); })
+            .attr("r", function(d) { return z(d); })
+            .style("fill", "none")
+            .attr("stroke", "#666");
+
+        svg.selectAll("legend")
+            .data(valuesToShow)
+            .enter()
+            .append("line")
+            .attr('x1', function(d) { return xCircle + z(d); })
+            .attr('x2', xLabel)
+            .attr('y1', function(d) { return height - 150 - z(d); })
+            .attr('y2', function(d) { return height - 150 - z(d); })
+            .attr('stroke', '#666')
+            .style('stroke-dasharray', '2,2');
+
+        svg.selectAll("legend")
+            .data(valuesToShow)
+            .enter()
+            .append("text")
+            .attr('x', xLabel)
+            .attr('y', function(d) { return height - 150 - z(d); })
+            .text(function(d) { return d + " "; })
+            .style("font-size", 9)
+            .attr('alignment-baseline', 'middle');
+
+        // Legend title
+        svg.append("text")
+            .attr('x', xCircle)
+            .attr("y", height - 255)
+            .text("Number of Citations")
+            .style("font-weight", "bold")
+            .style("font-size", "12px")
+            .attr("text-anchor", "right");
+
+        // Topic legend
+        var size = 11;
+        var allgroups = [
+            "Fact-Checking / Truth Discovery",
+            "Multimodal Fusion & Learning",
+            "Applied Data Analytics & ML",
+            "Uncertainty Quantification",
+            "Data Quality / Data Cleaning",
+            "Knowledge Engineering"
+        ];
+
+        svg.selectAll("myrect")
+            .data(allgroups)
+            .enter()
+            .append("circle")
+            .attr("cx", width - 180+200)
+            .attr("cy", function(d, i) { return 10 + i * (size + 5); })
+            .attr("r", 7)
+            .style("fill", function(d) { return myColor(d); })
+            .style("cursor", "pointer")
+            .on("mouseover", function(d) { highlight(d); })
+            .on("mouseleave", function(d) { noHighlight(d); });
+
+        svg.append("text")
+            .attr('x', xCircle)
+            .attr("y", height - 370)
+            .text("Topics")
+            .style("font-weight", "bold")
+            .style("font-size", "12px")
+            .attr("text-anchor", "left");
+
+        svg.selectAll("mylabels")
+            .data(allgroups)
+            .enter()
+            .append("text")
+            .attr("x", width - 165+200)
+            .attr("y", function(d, i) { return 10 + i * (size + 5); })
+            .style("fill", function(d) { return myColor(d); })
+            .text(function(d) { return d; })
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("font-size", "11px")
+            .style("cursor", "pointer")
+            .on("mouseover", function(d) { highlight(d); })
+            .on("mouseleave", function(d) { noHighlight(d); });
+    </script>
+</body>
+</html>
