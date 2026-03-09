@@ -1,5 +1,19 @@
  const referencesBibliographiques = 
-    [{
+    [
+     {
+        titre: "Revista Tematica 2024",
+        auteurs: ["Laure Berti-Equille", "Matheus Soares de Lima", "Ayla Débora Dantas de Souza Rebouças","Lucas Cardoso dos Santos"]
+    },
+
+     {
+        titre: "CEST 2025",
+        auteurs: ["Laure Berti-Equille", "Pius Nwachukwu"]
+    },
+    {
+        titre: "ForestSAT 2026",
+        auteurs: ["Laure Berti-Equille", "Pius Nwachukwu"]
+    },
+    {
         titre: "PDDP 1998",
         auteurs: ["Laure Berti-Equille", "Jean-Luc Damoiseaux", "Elisabeth Murisasco"]
     },

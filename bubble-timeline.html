@@ -70,206 +70,208 @@
     </style>
 </head>
 <body>
-    <h1> Publication Bubble Chart</h1>
+    <h1>Laure Berti-Equille: Publication Bubble Chart</h1>
     
     <!-- Create a div where the graph will take place -->
     <div id="my_dataviz"></div>
 
     <script>
         // Embedded CSV data
-        var csvData = `topic,venue,year,citations,authors
-Fact-Checking / Truth Discovery,VLDB,2009,317,3
-Data Quality / Data Cleaning,ACM,2013,214,3
-Fact-Checking / Truth Discovery,VLDB,2010,166,4
-Applied Data Analytics & ML,Review of Palaeobota,2012,147,6
-Data Quality / Data Cleaning,arXiv preprint arXiv,2024,89,4
-Applied Data Analytics & ML,The World Wide Web C,2019,88,1
-Fact-Checking / Truth Discovery,VLDB,2018,86,5
-Fact-Checking / Truth Discovery,arXiv preprint arXiv,2014,86,2
-Fact-Checking / Truth Discovery,Synthesis Lectures o,2015,84,2
-Data Quality / Data Cleaning,International Confer,2007,83,6
-Fact-Checking / Truth Discovery,arXiv preprint arXiv,2009,80,4
-Fact-Checking / Truth Discovery,IEEE,2011,78,3
-Applied Data Analytics & ML,Ecological Indicator,2016,76,4
-Fact-Checking / Truth Discovery,Handbook of Data Qua,2013,72,3
-Fact-Checking / Truth Discovery,Proceedings of the 2,2016,65,4
-Applied Data Analytics & ML,arXiv preprint arXiv,2022,61,5
-Data Quality / Data Cleaning,Quality measures in ,2007,60,1
-Applied Data Analytics & ML,Pattern Recognition ,2018,59,3
-Fact-Checking / Truth Discovery,arXiv preprint arXiv,2022,56,5
-Applied Data Analytics & ML,Proceedings of the 2,2016,56,7
-Multimodal Fusion & Learning,IEEE,2015,55,4
-Fact-Checking / Truth Discovery,ACM,2017,51,5
-Multimodal Fusion & Learning,The Twelfth Internat,2023,49,5
-Applied Data Analytics & ML,arXiv preprint arXiv,2022,42,5
-Multimodal Fusion & Learning,Computer Communicati,2007,42,6
-Applied Data Analytics & ML,ICWSM,2016,40,4
-Knowledge Engineering,Knowledge and inform,2007,40,1
-Fact-Checking / Truth Discovery,IEEE,2015,37,1
-Fact-Checking / Truth Discovery,JDIQ,2016,36,2
-Applied Data Analytics & ML,ACM,2021,35,5
-Fact-Checking / Truth Discovery,International Worksh,2005,34,7
-Applied Data Analytics & ML,IEEE,2018,33,2
-Data Quality / Data Cleaning,International Journa,2011,33,3
-Data Quality / Data Cleaning,ACM,2022,32,6
-Fact-Checking / Truth Discovery,VLDB,2010,31,4
-Applied Data Analytics & ML,VLDB,2010,30,5
-Data Quality / Data Cleaning,ICIQ,2005,27,2
-Data Quality / Data Cleaning,International Journa,2014,26,3
-Data Quality / Data Cleaning,Computers & Geoscien,2015,25,7
-Fact-Checking / Truth Discovery,IEEE,2015,25,4
-Data Quality / Data Cleaning,Universté de Rennes ,2007,25,1
-Fact-Checking / Truth Discovery,US Patent 8,2012,22,3
-Fact-Checking / Truth Discovery,DEXA,1999,22,1
-Applied Data Analytics & ML,Proceedings of the F,2021,21,5
-Applied Data Analytics & ML,INSCI,2019,20,1
-Applied Data Analytics & ML,IEEE,2024,19,5
-Applied Data Analytics & ML,IEEE,2005,19,3
-Applied Data Analytics & ML,ACM,2017,18,2
-Data Quality / Data Cleaning,US Patent 9,2017,18,3
-Applied Data Analytics & ML,HB4,2006,18,1
-Applied Data Analytics & ML,ISI,2003,18,1
-Fact-Checking / Truth Discovery,ICIQ,2004,17,1
-Applied Data Analytics & ML,AACL,2022,15,4
-Applied Data Analytics & ML,IAPR,2021,15,4
-Data Quality / Data Cleaning,IEEE,2009,14,2
-Fact-Checking / Truth Discovery,International Confer,2001,14,1
-Applied Data Analytics & ML,Hermés science,2012,12,1
-Applied Data Analytics & ML,CIDR,2020,11,1
-Applied Data Analytics & ML,KAIS,2015,11,3
-Applied Data Analytics & ML,ICDM,2013,11,3
-Data Quality / Data Cleaning,ICIQ,2011,11,4
-Data Quality / Data Cleaning,ICIQ,2008,11,7
-Multimodal Fusion & Learning,Proceedings of the 2,2005,11,3
-Multimodal Fusion & Learning,arXiv preprint arXiv,2024,10,4
-Applied Data Analytics & ML,Earth and Space Scie,2022,10,7
-Fact-Checking / Truth Discovery,Qualité des Données ,2008,10,6
-Data Quality / Data Cleaning,ACM,2006,10,2
-Applied Data Analytics & ML,Ingénierie des Systè,2002,10,1
-Applied Data Analytics & ML,2017 28th Internatio,2017,9,4
-Applied Data Analytics & ML,Journal of Applied M,2013,9,6
-Applied Data Analytics & ML,Dagstuhl Reports 13 ,2024,8,4
-Applied Data Analytics & ML,ACM,2021,8,7
-Data Quality / Data Cleaning,IJCAI,2021,8,2
-Knowledge Engineering,International Confer,2016,8,5
-Multimodal Fusion & Learning,ISI,2010,7,3
-Fact-Checking / Truth Discovery,AT&T,2009,7,2
-Multimodal Fusion & Learning,IEEE,2004,7,3
-Applied Data Analytics & ML,Revue Nationale des ,2003,7,1
-Applied Data Analytics & ML,ICPR,2016,6,3
-Knowledge Engineering,IEEE,2016,6,5
-Data Quality / Data Cleaning,IEEE,2006,6,1
-Fact-Checking / Truth Discovery,"IQ,",1998,6,1
-Fact-Checking / Truth Discovery,IEEE,2016,5,1
-Data Quality / Data Cleaning,Data and Information,2016,5,1
-Fact-Checking / Truth Discovery,Biological Knowledge,2013,5,2
-Applied Data Analytics & ML,ICIQ,1997,5,1
-Applied Data Analytics & ML,Journal of Biomedica,2024,4,3
-Multimodal Fusion & Learning,IEEE,2023,4,4
-Applied Data Analytics & ML,ICONIP,2023,4,4
-Applied Data Analytics & ML,ACM,2021,4,4
-Applied Data Analytics & ML,EDBT,2020,4,3
-Applied Data Analytics & ML,Advances in Knowledg,2017,4,3
-Applied Data Analytics & ML,5èmes Journées théma,2012,4,1
-Fact-Checking / Truth Discovery,Actes du congrès fra,1999,4,1
-Knowledge Engineering,Expert Systems 42 (8,2025,3,5
-Multimodal Fusion & Learning,arXiv preprint arXiv,2024,3,4
-Applied Data Analytics & ML,IEEE,2024,3,3
-Applied Data Analytics & ML,arXiv preprint arXiv,2023,3,5
-Fact-Checking / Truth Discovery,arXiv preprint arXiv,2023,3,3
-Applied Data Analytics & ML,Biodiversity Informa,2023,3,2
-Knowledge Engineering,Companion Proceeding,2019,3,1
-Data Quality / Data Cleaning,HILDA,2018,3,1
-Fact-Checking / Truth Discovery,Encyclopedia of Big ,2018,3,1
-Applied Data Analytics & ML,International Confer,2017,3,7
-Applied Data Analytics & ML,2016 27th Internatio,2016,3,3
-Fact-Checking / Truth Discovery,ACM,2015,3,2
-Data Quality / Data Cleaning,International Confer,2007,3,5
-Data Quality / Data Cleaning,Information Quality ,2007,3,1
-Data Quality / Data Cleaning,JDIM,2003,3,1
-Applied Data Analytics & ML,International Worksh,1998,3,3
-Multimodal Fusion & Learning,arXiv preprint arXiv,2024,2,5
-Multimodal Fusion & Learning,IGARSS,2023,2,4
-Fact-Checking / Truth Discovery,International Confer,2022,2,6
-Applied Data Analytics & ML,IEEE,2021,2,3
-Applied Data Analytics & ML,AAFD,2016,2,5
-Multimodal Fusion & Learning,EGC,2016,2,3
-Applied Data Analytics & ML,International Confer,2015,2,3
-Data Quality / Data Cleaning,Pacific-Asia Confere,2006,2,1
-Applied Data Analytics & ML,Génie logiciel,2005,2,1
-Multimodal Fusion & Learning,EGC,2004,2,3
-Multimodal Fusion & Learning,IEEE,2024,1,5
-Applied Data Analytics & ML,Revue d'Épidémiologi,2023,1,3
-Applied Data Analytics & ML,AAAI,2022,1,2
-Applied Data Analytics & ML,RDA,2022,1,7
-Fact-Checking / Truth Discovery,IEEE,2022,1,4
-Fact-Checking / Truth Discovery,Veracity of Data: Fr,2022,1,2
-Applied Data Analytics & ML,arXiv preprint arXiv,2020,1,3
-Fact-Checking / Truth Discovery,arXiv preprint arXiv,2019,1,3
-Fact-Checking / Truth Discovery,Encyclopedia of Big ,2018,1,1
-Applied Data Analytics & ML,SEFS,2017,1,5
-Fact-Checking / Truth Discovery,ICTPP,2016,1,3
-Applied Data Analytics & ML,EGC,2016,1,5
-Fact-Checking / Truth Discovery,International Worksh,2010,1,4
-Applied Data Analytics & ML,"(IQ’08),",2008,1,1
-Data Quality / Data Cleaning,Proceedings of the 6,2008,1,1
-Data Quality / Data Cleaning,Quality Measures in ,2006,1,1
-Fact-Checking / Truth Discovery,Proceedings of Intl.,2005,1,1
-Multimodal Fusion & Learning,Revue des Nouvelles ,2003,1,3
-Fact-Checking / Truth Discovery,EGC,2003,1,1
-Applied Data Analytics & ML,INGENIERIE,2001,1,3
-Fact-Checking / Truth Discovery,Actes du colloque fr,1998,1,2
-Multimodal Fusion & Learning,Joint European Confe,2025,0,4
-Applied Data Analytics & ML,EDP,2025,0,1
-Applied Data Analytics & ML,AAAI,2025,0,4
-Multimodal Fusion & Learning,CNIA,2024,0,4
-Applied Data Analytics & ML,Journal of Epidemiol,2024,0,3
-Applied Data Analytics & ML,Technologies logicie,2023,0,1
-Applied Data Analytics & ML,Sustainability scien,2023,0,3
-Applied Data Analytics & ML,arXiv preprint arXiv,2022,0,5
-Applied Data Analytics & ML,RDA,2022,0,7
-Fact-Checking / Truth Discovery,Veracity of Data: Fr,2022,0,2
-Fact-Checking / Truth Discovery,Veracity of Data: Fr,2022,0,2
-Fact-Checking / Truth Discovery,Veracity of Data: Fr,2022,0,2
-Fact-Checking / Truth Discovery,Veracity of Data: Fr,2022,0,2
-Applied Data Analytics & ML,VLDB,2022,0,9
-Applied Data Analytics & ML,IEEE,2021,0,3
-Applied Data Analytics & ML,agenda 53,2021,0,4
-Applied Data Analytics & ML,EGC,2021,0,6
-Applied Data Analytics & ML,Technologies logicie,2018,0,1
-Multimodal Fusion & Learning,RIA,2017,0,3
-Applied Data Analytics & ML,Actes des 17ème Jour,2017,0,4
-Knowledge Engineering,Biodiversity Informa,2017,0,8
-Data Quality / Data Cleaning,QDB,2016,0,5
-Applied Data Analytics & ML,ICTPP,2016,0,6
-Data Quality / Data Cleaning,ICIQ,2016,0,3
-Fact-Checking / Truth Discovery,arXiv e-prints,2015,0,3
-Data Quality / Data Cleaning,Inforsid-Atelier SI ,2014,0,4
-Data Quality / Data Cleaning,International Journa,2014,0,2
-Data Quality / Data Cleaning,Proceedings of the 1,2012,0,3
-Applied Data Analytics & ML,it-Information Techn,2012,0,1
-Applied Data Analytics & ML,EGC,2012,0,3
-Applied Data Analytics & ML,Mesurer et évaluer l,2012,0,6
-Applied Data Analytics & ML,Éditions Hermann,2012,0,6
-Applied Data Analytics & ML,La qualité et la gou,2012,0,2
-Fact-Checking / Truth Discovery,BEWEB,2011,0,4
-Applied Data Analytics & ML,La qualité des systè,2010,0,3
-Fact-Checking / Truth Discovery,Zoè Lacroix,2010,0,3
-Applied Data Analytics & ML,Hammamet,2010,0,3
-Knowledge Engineering,9th International Pr,2006,0,3
-Applied Data Analytics & ML,EGC,2006,0,1
-Data Quality / Data Cleaning,Université de Lille,2006,0,2
-Applied Data Analytics & ML,BNCOD,2005,0,1
-Data Quality / Data Cleaning,DIQ,2005,0,1
-Fact-Checking / Truth Discovery,CRM,2005,0,1
-Applied Data Analytics & ML,QDC,2005,0,1
-Data Quality / Data Cleaning,Université Paris 5,2005,0,2
-Multimodal Fusion & Learning,CORIMEDIA,2004,0,2
-Applied Data Analytics & ML,(IC,2004,0,3
-Applied Data Analytics & ML,Proceedings of the 5,2004,0,3
-Multimodal Fusion & Learning,Atelier n 6,2004,0,3
-Fact-Checking / Truth Discovery,Proceedings of the 2,2001,0,1
-Applied Data Analytics & ML,VSST,2001,0,2`;
+        var csvData = `topic,venue,year,citations,authors,title
+Applied Data Analytics & ML,ForestSAT, 2026 ,0, 2, Analysis of Motifs of Intact Forest Resilience and Global Climate Variables 
+Applied Data Analytics & ML,Revista Tematica, 2026 ,0, 4, Ideal Score: uma aplicação móvel para cálculo automatizado de pontuação no jogo de tabuleiro IDEAL Game 
+Applied Data Analytics & ML,Expert Systems,2025,3,5,Single Word Change Is All You Need: Using LLMs to Create Synthetic Training Examples for Text Classifiers
+Multimodal Fusion & Learning,ECML,2025,0,4,EM-SEC: Efficient Multi-head Set-Valued Evidential Classification
+Applied Data Analytics & ML,EDP Sciences,2025,0,1,AI for SDGs: A technical and illustrated tour
+Applied Data Analytics & ML,AAAI,2025,0,4,AAAI 2025 workshop on Preparing Good Data for Generative AI (GoodData 2025)
+Applied Data Analytics & ML,arXiv,2024,89,4,Large language models can be zero-shot anomaly detectors for time series?
+Applied Data Analytics & ML,IEEE BigData,2024,19,5,Explingo: Explaining AI Predictions using Large Language Models
+Multimodal Fusion & Learning,arXiv,2024,10,4,LUMA: A Benchmark Dataset for Learning from Uncertain and Multimodal Data
+Applied Data Analytics & ML,Dagstuhl Reports,2024,8,4,"Integrating HPC, AI, and Workflows for Scientific Data Analysis (Dagstuhl Seminar 23352)"
+Applied Data Analytics & ML,Journal of Biomedical Informatics,2024,4,3,Creating a computer assisted ICD coding system: performance metric choice and use of the ICD hierarchy
+Multimodal Fusion & Learning,arXiv,2024,3,4,Multimodal Learning with Uncertainty Quantification based on Discounted Belief Fusion
+Applied Data Analytics & ML,IEEE BigData,2024,3,3,OrionBench: Benchmarking Time Series Generative Models in the Service of the End-User
+Multimodal Fusion & Learning,arXiv,2024,2,5,Hierarchical Classification for Automated Image Annotation of Coral Reef Benthic Structures
+Multimodal Fusion & Learning,IEEE BigData,2024,1,5,MixMAS: A Framework for Sampling-Based Mixer Architecture Search for Multimodal Fusion and Learning
+Applied Data Analytics & ML,CNIA,2024,0,4,Comparer le paradigme spatial au spatio-temporel pour estimer l’évolution d’indicateurs socio-économiques à partir d’images satellites
+Applied Data Analytics & ML,Journal of Epidemiology and Population Health,2024,0,3,Création d'un système d'aide informatisée au codage Classification internationale des maladies (CIM): choix de métrique de performance et utilisation de la hiérarchie CIM
+Multimodal Fusion & Learning,ICRL,2023,49,5,Faithful vision-language interpretation via concept bottleneck models
+Multimodal Fusion & Learning,IEEE BigData,2023,4,4,M2-Mixer: A Multimodal Mixer with Multi-head Loss for Classification from Multimodal Data
+Applied Data Analytics & ML,ICONIP,2023,4,4,In situ augmentation for defending against adversarial attacks on text classifiers
+Applied Data Analytics & ML,arXiv,2023,3,5,Pyreal: A Framework for Interpretable ML Explanations
+Applied Data Analytics & ML,arXiv,2023,3,3,Making the End-User a Priority in Benchmarking: OrionBench for Unsupervised Time Series Anomaly Detection
+Applied Data Analytics & ML,Biodiversity Information Science and Standards,2023,3,2,Combining Ecological and Socio-Environmental Data and Networks to Achieve Sustainability
+Applied Data Analytics & ML,IGARSS,2023,2,4,Comparing spatial and spatio-temporal paradigms to estimate the evolution of socio-economical indicators from satellite images
+Applied Data Analytics & ML,Revue d'Épidémiologie et Santé Publique,2023,1,3,P089-Création d'un système d'aide informatisée au codage CIM: choix de métrique et utilisation de la hiérarchie CIM
+Data Quality / Data Cleaning,Technologies logicielles,2023,0,1,Détection et correction des problèmes de qualité de données par apprentissage automatique
+Applied Data Analytics & ML,IRD,2023,0,3,Artificial intelligence for sustainability science
+Applied Data Analytics & ML,arXiv,2022,61,5,The Need for Interpretable Features: Motivation and Taxonomy
+Applied Data Analytics & ML,arXiv,2022,56,5,AER: Auto-Encoder with Regression for Time Series Anomaly Detection
+Applied Data Analytics & ML,arXiv,2022,42,5,Sintel: A Machine Learning Framework to Extract Insights from Signals
+Data Quality / Data Cleaning,ACM KDD,2022,32,6,"Advances in Exploratory Data Analysis, Visualisation and Quality for Data Centric AI Systems"
+Applied Data Analytics & ML,ACL-IJCNLP,2022,15,4,R&R: Metric-guided adversarial sentence generation
+Applied Data Analytics & ML,Earth and Space Science,2022,10,7,Mitigation Strategies to Improve Reproducibility of Poverty Estimations From Remote Sensing Images Using Deep Learning
+Applied Data Analytics & ML,ICPRAI,2022,2,6,Stochastic pairing for contrastive anomaly detection on time series
+Applied Data Analytics & ML,AAAI,2022,1,2,Discovering Transition Pathways Towards Coviability with Machine Learning
+Applied Data Analytics & ML,RDA,2022,1,7,Reproducibility checklist: pre-screen your Deep Learning experiment prior to your submission or publication! Checklist Strategies to Improve the Reproducibility of Deep …
+Fact-Checking / Truth Discovery,IEEE ICDE,2022,1,4,Provenance-aware Discovery of Functional Dependencies on Integrated Views
+Fact-Checking / Truth Discovery,Veracity of Data,2022,1,2,Introduction to Data Veracity
+Applied Data Analytics & ML,arXiv,2022,0,5,Reconstruction of Long-Term Historical Demand Data
+Applied Data Analytics & ML,RDA,2022,0,7,Reproducing Deep Learning experiments: common challenges and recommendations for improvement
+Fact-Checking / Truth Discovery,Veracity of Data,2022,0,2,Transdisciplinary Challenges of Truth Discovery
+Fact-Checking / Truth Discovery,Veracity of Data,2022,0,2,Trust Computation
+Fact-Checking / Truth Discovery,Veracity of Data,2022,0,2,Truth Discovery Computation
+Fact-Checking / Truth Discovery,Veracity of Data,2022,0,2,Information Extraction
+Data Quality / Data Cleaning,pVLDB,2022,0,9,48th International conference on Very Large Data Bases: proceedings
+Applied Data Analytics & ML,ACM CIKM,2021,35,5,DORA THE EXPLORER: exploring very large data with interactive deep reinforcement learning
+Applied Data Analytics & ML,AIDM@SIGMOD,2021,21,5,Balancing familiarity and curiosity in data exploration with deep reinforcement learning
+Applied Data Analytics & ML,IAPR,2021,15,4,Assessment of CNN-based Methods for Poverty Estimation from Satellite Images
+Data Quality / Data Cleaning,ACM KDD,2021,8,7,2nd International Workshop on Data Quality Assessment for Machine Learning
+Data Quality / Data Cleaning,IJCAI-PRICAI,2021,8,2,Explaining Automated Data Cleaning with CLeanEX
+Applied Data Analytics & ML,ACM KDD,2021,4,4,Challenges in KDD and ML for Sustainable Development
+Applied Data Analytics & ML,IEEE DSAA,2021,2,3,A Framework for Statistically-Sound Customer Segment Search
+Applied Data Analytics & ML,IEEE ICDE,2021,0,3,QeNoBi: A System for QuErying and mining BehavIoral Patterns
+Applied Data Analytics & ML,IRD,2021,0,4,L’intelligence artificielle pour la science de la durabilité
+Applied Data Analytics & ML,EGC,2021,0,6,Amélioration du pronostic par apprentissage profond pour des applications de maintenance prédictive
+Data Quality / Data Cleaning,CIDR,2020,11,1,Active reinforcement learning for data preparation: Learn2clean with human-in-the-loop
+Data Quality / Data Cleaning,EDBT,2020,4,3,Data quality checking for machine learning with mesqual
+Data Quality / Data Cleaning,arXiv,2020,1,3,Discovering Multi-Table Functional Dependencies Without Full Join Computation
+Data Quality / Data Cleaning,The World Wide Web Conf,2019,88,1,Learn2Clean: Optimizing the Sequence of Tasks for Web Data Preparation
+Data Quality / Data Cleaning,INSCI,2019,20,1,Reinforcement learning for data preparation with active reward learning
+Knowledge Engineering,WWW,2019,3,1,ML-Based Knowledge Graph Curation: Current Solutions and Challenges
+Data Quality / Data Cleaning,arXiv,2019,1,3,Are Outlier Detection Methods Resilient to Sampling?
+Data Quality / Data Cleaning,pVLDB,2018,86,5,Discovery of genuine functional dependencies from relational data with missing values
+Applied Data Analytics & ML,Pattern Recognition ,2018,59,3,Remote sensing image analysis by aggregation of segmentation-classification collaborative agents
+Data Quality / Data Cleaning,IEEE ICDE,2018,33,2,Machine Learning to Data Management: A Round Trip
+Data Quality / Data Cleaning,ACM HILDA@SIGMOD ,2018,3,1,Reinforcement learning for data cleaning and data preparation
+,,,,,
+Fact-Checking / Truth Discovery,Encyclopedia of Big Data Technologies,2018,1,1,Truth Discovery
+Data Quality / Data Cleaning,Technologies logicielles,2018,0,1,Qualité des données
+Fact-Checking / Truth Discovery,ACM SIGMOD,2017,51,5,Uguide: User-guided discovery of fd-detectable errors
+Applied Data Analytics & ML,ACM CIKM,2017,18,2,Profiling DRDoS attacks with data analytics pipeline
+Data Quality / Data Cleaning,US Patent,2017,18,3,Scalable automatic data repair
+Data Quality / Data Cleaning,DEXA,2017,9,4,Principled Data Preprocessing: Application to Biological Aquatic Indicators of Water Pollution
+Applied Data Analytics & ML,AKDM,2017,4,3,A collaborative framework for joint segmentation and classification of remote sensing images
+Applied Data Analytics & ML,ICSI,2017,3,7,On the role of political affiliation in human perception the case of Delhi OddEven experiment
+Applied Data Analytics & ML,SEFS,2017,1,5,"Evaluation of Heavy Metals, Pesticides and Emergent pollutants content in the Tula river Mexico"
+Multimodal Fusion & Learning,RIA,2017,0,3,Interactions segmentation-classification dans un cadre multi-paradigme pour l’analyse d’images de télédétection
+Applied Data Analytics & ML,EGC,2017,0,4,Sur l’évaluation et l’élaboration d’un jeu de données de référence de bonne qualité en télédétection
+Knowledge Engineering,BISS,2017,0,8,IndexMEED cases studies using" Omics" data with graph theory
+Applied Data Analytics & ML,Ecological Indicators,2016,76,4,Potential application of macroinvertebrates indices in bioassessment of Mexican streams
+Fact-Checking / Truth Discovery,WWW,2016,65,4,Vera: A platform for veracity estimation over web data
+Data Quality / Data Cleaning,ACM SIGMOD,2016,56,7,Rheem: Enabling multi-platform task execution
+Applied Data Analytics & ML,EcoMo@ICWSM,2016,40,4,Using Twitter to Understand Public Interest in Climate Change: The Case of Qatar.
+Fact-Checking / Truth Discovery,ACM JDIQ,2016,36,2,Veracity of big data: challenges of cross-modal truth discovery
+Knowledge Engineering,ICONIP,2016,8,5,Towards ontology reasoning for topological cluster labeling
+Applied Data Analytics & ML,ICPR,2016,6,3,Collaborative segmentation and classification for remote sensing image analysis
+Knowledge Engineering,IEEE DSAA,2016,6,5,On the Use of Ontology as a priori Knowledge into Constrained Clustering
+Fact-Checking / Truth Discovery,IEEE ICDE,2016,5,1,Scaling up truth discovery
+Data Quality / Data Cleaning,Data and Information Quality,2016,5,1,Quality of Web Data and Quality of Big Data: Open Problems
+Applied Data Analytics & ML,DEXA,2016,3,3,Metabolomic Data Profiling for Diabetes Research in Qatar
+Knowledge Engineering,AAFD,2016,2,5,Approche hybride à base d'ontologie pour le clustering par contraintes
+Multimodal Fusion & Learning,EGC,2016,2,3,Un cadre collaboratif pour la segmentation et la classification d'images de télédétection.
+Fact-Checking / Truth Discovery,QF Annual Research Conf.,2016,1,3,Discovering the Truth on the Web Data: One Facet of Data Forensics
+Knowledge Engineering,EGC,2016,1,5,Génération de contraintes pour le clustering à partir d'une ontologie-Application à la classification d'images satellites
+Data Quality / Data Cleaning,QDB,2016,6,5,The 11th International Workshop on Quality in DataBases in conjunction with VLDB
+Applied Data Analytics & ML,QF Annual Research Conf.,2016,0,6,Qurb: Qatar Urban Analytics
+Data Quality / Data Cleaning,ICIQ,2016,0,3,Proceedings of The 21st International Conference on Information Quality (ICIQ 2016)
+Fact-Checking / Truth Discovery,Synthesis Lectures on Data Management,2015,84,2,Veracity of data: From truth discovery computation algorithms to models of misinformation dynamics
+Multimodal Fusion & Learning,IEEE J. of Selected Topics in Applied Earth Observations and Remote Sensing,2015,55,4,Unsupervised Quantification of Under- and Over-Segmentation for Object-Based Remote Sensing Image Analysis
+Fact-Checking / Truth Discovery,IEEE BigData,2015,37,1,Data veracity estimation with ensembling truth discovery methods
+Data Quality / Data Cleaning,Computers & Geosciences,2015,25,7,A quality-aware spatial data warehouse for querying hydroecological data
+Fact-Checking / Truth Discovery,IEEE ICDE,2015,25,4,AllegatorTrack: Combining and reporting results of truth discovery from multi-source data
+Data Quality / Data Cleaning,KAIS,2015,11,3,A masking index for quantifying hidden glitches
+Fact-Checking / Truth Discovery,ACM CIKM,2015,3,2,Veracity of Big Data
+Applied Data Analytics & ML,ICEIS,2015,2,3,Towards Principled Data Science Assessment-The Personal Data Science Process (PdsP)
+Fact-Checking / Truth Discovery,arXiv,2015,0,3,Data fusion: resolving conflicts from multiple sources
+Fact-Checking / Truth Discovery,arXiv,2014,86,2,Truth discovery algorithms: An experimental evaluation
+Data Quality / Data Cleaning,IJSWIS,2014,26,3,Web Data Quality: Current State and New Challenges
+Data Quality / Data Cleaning,INFORSID,2014,0,4,Data processing for controlling data quality on surface water quality assessment
+Data Quality / Data Cleaning,IJSWIS,2014,0,2,Web Data Quality
+Data Quality / Data Cleaning,ACM SIGMOD,2013,214,3,Don't be SCAREd: use SCalable Automatic REpairing with maximal likelihood and bounded changes
+Fact-Checking / Truth Discovery,Handbook of Data Quality,2013,72,3,Data fusion: resolving conflicts from multiple sources
+Data Quality / Data Cleaning,IEEE ICDM,2013,11,3,A Masking Index for Quantifying Hidden Glitches
+Applied Data Analytics & ML,Journal of Applied Meteorology & Climatology,2013,9,6,Prediction of September–December Fire in New Caledonia (Southwestern Pacific) Using July Nino-4 Sea Surface Temperature Index
+Data Quality / Data Cleaning,Biological Knowledge Discovery Handbook,2013,5,2,"Cleaning, integrating, and warehousing genomic data from biomedical resources"
+Applied Data Analytics & ML,Palaeobotany and Palynology,2012,147,6,"Phytolith signal of aquatic plants and soils in Chad, Central Africa"
+Fact-Checking / Truth Discovery,US Patent,2012,22,3,Dependency between sources in truth discovery
+Data Quality / Data Cleaning,Hermés science,2012,12,1,La qualité et la gouvernance des données: au service de la performance des entreprises
+Data Quality / Data Cleaning,AAFD,2012,4,1,Panorama des méthodes de détection et de traitement des anomalies
+Data Quality / Data Cleaning,ICIQ,2012,0,3,Proceedings of the 17th International Conference on Information Quality
+Data Quality / Data Cleaning,it-Information Technology,2012,0,1,Multi-scale data integration challenges in the observational science data space
+Data Quality / Data Cleaning,EGC,2012,0,3,ADVISU: interactive visualization of anomalies and dependencies from massive scientific datasets
+Data Quality / Data Cleaning,QDC,2012,0,6,"Atelier Qualité des Données et des Connaissances, QDC 2012 en conjonction avec la conférence française Extraction et Gestion des Connaissances-EGC"
+Data Quality / Data Cleaning,Éditions Hermès,2012,0,6,Mesurer et évaluer la qualité des données et des connaissances
+Data Quality / Data Cleaning,La qualité et la gouvernance des données,2012,0,2,Application de mesures de distance pour la détection de problèmes de qualité de données
+Data Quality / Data Cleaning,IEEE ICDE,2011,78,3,Discovery of complex glitch patterns: A novel approach to quantitative data cleaning
+Data Quality / Data Cleaning,International IJIQ,2011,33,3,Assessment and analysis of information quality: a multidimensional model and case studies
+Data Quality / Data Cleaning,ICIQ,2011,11,4,DAQ_UWE: A framework for designing data quality aware web applications
+Fact-Checking / Truth Discovery,BEWEB,2011,0,4,SOLOMON: Seeking the truth via copying detection
+Fact-Checking / Truth Discovery,pVLDB,2010,166,4,Global Detection of Complex Copying Relationships Between Sources.
+Fact-Checking / Truth Discovery,pVLDB,2010,31,4,Solomon: Seeking the truth via copying detection
+Applied Data Analytics & ML,VLDB,2010,30,5,Processing top-k join queries
+Data Quality / Data Cleaning,ISI,2010,7,3,La qualité des systèmes d'information? Vers une vision plus intégrée
+Data Quality / Data Cleaning,RED,2010,1,4,Challenges of quality-driven resource discovery
+Data Quality / Data Cleaning,RSTI,2010,0,3,La qualité des systèmes d'information-analyse et évaluation
+Data Quality / Data Cleaning,RED,2010,0,3,Assuring Quality of Service and Quality of Data: New Challenges for Service and Resource Discovery
+Data Quality / Data Cleaning,QDC-EGC,2010,3,3,"Atelier Qualité des Données et des Connaissances, QDC 2010 en conjonction avec la conférence française Extraction et Gestion des Connaissances-EGC"
+Fact-Checking / Truth Discovery,pVLDB,2009,317,3,Truth Discovery and Copying Detection in a Dynamic World.
+Fact-Checking / Truth Discovery,arXiv,2009,80,4,Sailing the information ocean with awareness of currents: Discovery and application of source dependence
+Data Quality / Data Cleaning,IEEE ICDM,2009,14,2,Data Quality Mining: New Research Directions
+Fact-Checking / Truth Discovery,AT&T,2009,7,2,Truth discovery and copying detection from source update history
+Data Quality / Data Cleaning,ICIQ,2008,11,7,Multidimensional management and analysis of quality measures for CRM applications in an electricity company
+Data Quality / Data Cleaning,QDC,2008,10,6,Évaluation de la qualité des systèmes multisources Une approche par les patterns
+Data Quality / Data Cleaning,ICIQ,2008,1,1,Tracing data pollution in large business applications
+Data Quality / Data Cleaning,QDB,2008,1,1,Measuring and Constraining Data Quality with Analytic Workflows
+Data Quality / Data Cleaning,ICEIS,2007,83,6,A framework for quality evaluation in data integration systems
+Data Quality / Data Cleaning,Quality measures in Data Mining ,2007,60,1,Measuring and modelling data quality for quality-awareness in data mining
+Data Quality / Data Cleaning,Computer Comm.,2007,42,6,End-to-end quality of service provisioning through an integrated management system for multimedia content delivery
+Data Quality / Data Cleaning,KAIS,2007,40,1,Data quality awareness: a case study for cost optimal association rule mining
+Data Quality / Data Cleaning,Université de Rennes ,2007,25,1,Quality awareness for managing and mining data
+Data Quality / Data Cleaning,WISE,2007,3,5,Qdex: a database profiler for generic bio-data exploration and quality aware integration
+Data Quality / Data Cleaning,Information Quality Management,2007,3,1,Quality-Extended Query Processing for Mediation Systems
+Data Quality / Data Cleaning,Techniques de l'Ingénieur,2006,18,1,Qualité des données
+Data Quality / Data Cleaning,ACM SIGMOD,2006,10,2,Report from the First and Second International Workshops on Information Quality in Information Systems: IQIS 2004 and IQIS 2005 in conjunction with ACM SIGMOD/PODS Conferences
+Data Quality / Data Cleaning,IEEE Data Eng. Bull.,2006,6,1,Contributions to Quality-Aware Online Query Processing
+Data Quality / Data Cleaning,PaKDD,2006,2,1,Quality-aware association rule mining
+Data Quality / Data Cleaning,Quality Measures in Data Mining ,2006,1,1,Modelling and Measuring Data Quality for Quality-Awareness in Association Rule Mining
+Knowledge Engineering,Protégé,2006,0,3,Lessons Learned From Ontology Design
+Data Quality / Data Cleaning,EGC,2006,0,1,Modèle décisionnel basé sur la qualité des données pour sélectionner les règles d'associations légitimement intéressantes
+Data Quality / Data Cleaning,QDC-EGC,2006,0,2,Proceedings of the 2nd Workshop on Data and Knowledge Quality
+Data Quality / Data Cleaning,DILS,2005,34,7,Integrating and warehousing liver gene expression data and related biomedical resources in GEDAW
+Data Quality / Data Cleaning,ICIQ,2005,27,2,Quality-aware integration and warehousing of genomic data
+Applied Data Analytics & ML,IEEE ISM,2005,19,3,Enriching multimedia content description for broadcast environments: from a unified metadata model to a new generation of authoring tool
+Applied Data Analytics & ML,CVDB@SIGMOD,2005,11,3,Optimizing progressive query-by-example over pre-clustered large image databases
+Data Quality / Data Cleaning,Génie Logiciel,2005,2,1,"Assurer la qualité des données: un défi permanent pour les systèmes d'information, bases et entrepôts de données"
+Fact-Checking / Truth Discovery,AMSDA,2005,1,1,Cost of Low-Quality Data over Association Rules Discovery
+Data Quality / Data Cleaning,BNCOD,2005,0,1,Merging an active database and a reflective system: Modelling a new several active meta-levels architecture
+Data Quality / Data Cleaning,DIQ,2005,0,1,Recommendation of XML Documents exploiting Quality Metadata and Views
+Data Quality / Data Cleaning,CRM,2005,0,1,Qualité des données multi-sources: un aperçu des techniques issues du monde académique
+Applied Data Analytics & ML,QDC,2005,0,1,Nettoyage des données XML: combien ça coûte?
+Data Quality / Data Cleaning,QDC,2005,0,2,Proceedings of the 1st Workshop on Data and Knowledge Quality (DKQ 2005)
+Data Quality / Data Cleaning,ICIQ,2004,17,1,Quality-adaptive query processing over distributed sources
+Multimodal Fusion & Learning,IEEE ICME,2004,7,3,Multimedia indexing and retrieval with features association rules mining [image databases]
+Multimodal Fusion & Learning,EGC,2004,2,3,Recherche dans de grandes bases d'images fixes: une nouvelle approche guidée par les règles d'association.
+Multimodal Fusion & Learning,CORIMEDIA,2004,0,2,Visual Feature Mining for Adapting Query-by-Example over Large Image Databases
+Knowledge Engineering,IC,2004,0,3,Le projet SABRE: de l’ontologie à l’inférence
+Applied Data Analytics & ML,WIAMIS,2004,0,3,Features Mining for Multimedia Indexing And Retrieval (Poster)
+Applied Data Analytics & ML,EGC,2004,0,3,Recherche par le contenu dans une base d’images fixes: l’intérêt des règles d’association
+Data Quality / Data Cleaning,ISI,2003,18,1,Un état de l'art sur la qualité des données
+Data Quality / Data Cleaning,RNTI,2003,7,1,La qualité des données comme condition à la qualité des connaissances: un état de l'art
+Data Quality / Data Cleaning,JDIM,2003,3,1,Quality-based recommendation of XML documents
+Multimodal Fusion & Learning,RNTI,2003,1,3,Indexation et recherche par le contenu dans une base d'images fixes: l'intérêt des règles d'association
+Data Quality / Data Cleaning,EGC,2003,1,1,Renseigner la qualité des connaissances par la fusion d'indicateurs sur la qualité des données.
+Applied Data Analytics & ML,Ingénierie des Systèmes,2002,10,1,Annotation et recommandation collaboratives de documents selon leur qualité
+Data Quality / Data Cleaning,ER,2001,14,1,Integration of biological data and quality-driven source negotiation
+Data Quality / Data Cleaning,ISI,2001,1,3,Integration of biological data on transcriptome
+Data Quality / Data Cleaning,ER,2001,0,1,Multi-Source Model and Architecture for Quality Negotiation and Integration of Biological Data
+Data Quality / Data Cleaning,VSST,2001,0,2,"Documents, données et méta-données: une approche mixte pour un système de veille"
+Data Quality / Data Cleaning,DEXA,1999,22,1,Quality and recommendation of multi-source data for assisting technological intelligence applications
+Data Quality / Data Cleaning,INFORSID,1999,4,1,Qualité des données multi-sources et recommandation multi-critère
+Data Quality / Data Cleaning,ICIQ,1998,6,1,From Data Source Quality to Information Quality: The Relative Dimension.
+Data Quality / Data Cleaning,PDDP,1998,3,3,Combining the power of query languages and search engines for on-line document and information retrieval: The QIRi@ D environment
+Data Quality / Data Cleaning,VSST,1998,1,2,"Contribution à la définition d'un vigiciel: quelle modélisation de l'information factuelle, événementielle et référentielle?"
+Data Quality / Data Cleaning,ICIQ,1997,5,1,Out of Overinformation by Information Filtering and Information Weighting`;
 
         // Parse CSV data
         var data = d3.csvParse(csvData);
@@ -345,11 +347,10 @@ Applied Data Analytics & ML,VSST,2001,0,2`;
                 "Fact-Checking / Truth Discovery",
                 "Multimodal Fusion & Learning",
                 "Applied Data Analytics & ML",
-                "Uncertainty Quantification",
                 "Data Quality / Data Cleaning",
                 "Knowledge Engineering"
             ])
-            .range(["#e74c3c", "#3498db", "#2ecc71", "#f39c12", "#9b59b6", "#1abc9c"]);
+            .range(["#e74c3c", "#3498db", "#f39c12", "#9b59b6", "#1abc9c"]);
 
         // ---------------------------//
         //      TOOLTIP               //
@@ -482,7 +483,6 @@ Applied Data Analytics & ML,VSST,2001,0,2`;
             "Fact-Checking / Truth Discovery",
             "Multimodal Fusion & Learning",
             "Applied Data Analytics & ML",
-            "Uncertainty Quantification",
             "Data Quality / Data Cleaning",
             "Knowledge Engineering"
         ];
