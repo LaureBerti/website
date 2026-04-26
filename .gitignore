@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Secrets / credentials (never commit these)
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*secret*
+*password*
+*token*
+
+# Jekyll build output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editor
+.vscode/
+.idea/
+*.swp
