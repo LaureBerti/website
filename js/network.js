@@ -1,5 +1,20 @@
  const referencesBibliographiques = 
     [
+  {
+    titre: "Conférence Francophone Reconnaissance de 2026",
+    auteurs: ["Célia Blondin", "Joris Guerin", "Laure Berti-Equille."]
+  },
+
+  {
+    titre: "Artificial Intelligence in Geosciences 2026",
+    auteurs: ["Sara Mobsite", "Renaud Hostache", "Laure Berti-Equille", "Emmanuel Roux", "Thibault Catry", "Joris Guérin"]
+  },
+
+  {
+    titre: "Ecological Informatics 2026",
+    auteurs: ["Joris Guerin", "Guilherme Longo", "Regina Nobre", "Célia Blondin", "Laure Berti-Equille", "Daniele Ventura"]
+  },
+
      {
         titre: "Revista Tematica 2024",
         auteurs: ["Laure Berti-Equille", "Matheus Soares de Lima", "Ayla Débora Dantas de Souza Rebouças","Lucas Cardoso dos Santos"]

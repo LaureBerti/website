@@ -78,6 +78,9 @@
     <script>
         // Embedded CSV data
         var csvData = `topic,venue,year,citations,authors,title
+Applied Data Analytics & ML,Conférence Francophone Reconnaissance des Formes,2026,0,3,When Does Domain Specialization Matter? Comparing Foundation Models Across Low-Data Regimes for Coral Annotation.
+Applied Data Analytics & ML,Artificial Intelligence in Geosciences,2026,0,6,Enhancing land cover semantic segmentation with convolutional block attention modules and deep supervision
+Applied Data Analytics & ML,Ecological Informatics,2026,0,6,Assessing joint effects of sampling design and annotation quality on benthic cover estimates through Monte Carlo simulations
 Applied Data Analytics & ML,ForestSAT, 2026 ,0, 2, Analysis of Motifs of Intact Forest Resilience and Global Climate Variables 
 Applied Data Analytics & ML,Revista Tematica, 2026 ,0, 4, Ideal Score: uma aplicação móvel para cálculo automatizado de pontuação no jogo de tabuleiro IDEAL Game 
 Applied Data Analytics & ML,Expert Systems,2025,3,5,Single Word Change Is All You Need: Using LLMs to Create Synthetic Training Examples for Text Classifiers
@@ -284,7 +287,7 @@ Data Quality / Data Cleaning,ICIQ,1997,5,1,Out of Overinformation by Information
         });
 
         // Set the dimensions and margins of the graph
-        var margin = {top: 40, right: 200, bottom: 80, left: 60};
+        var margin = {top: 40, right: 260, bottom: 80, left: 60};
         var width = Math.min(1000, window.innerWidth - 40) - margin.left - margin.right;
         var height = Math.min(600, window.innerHeight - 200) - margin.top - margin.bottom;
 
@@ -302,11 +305,11 @@ Data Quality / Data Cleaning,ICIQ,1997,5,1,Out of Overinformation by Information
 
         // Add X axis (Year)
         var x = d3.scaleLinear()
-            .domain([1997, 2026])
+            .domain([1997, 2030])
             .range([0, width]);
         svg.append("g")
             .attr("transform", "translate(0," + height + ")")
-            .call(d3.axisBottom(x).ticks(15).tickFormat(d3.format("d")));
+            .call(d3.axisBottom(x).ticks(17).tickFormat(d3.format("d")));
 
         // Add X axis label
         svg.append("text")
@@ -337,9 +340,11 @@ Data Quality / Data Cleaning,ICIQ,1997,5,1,Out of Overinformation by Information
             .text("Number of authors");
 
         // Add a scale for bubble size (number of citations)
+        // Domain [0, 320] covers the actual citation range; minimum radius 4 keeps
+        // zero-citation papers visible.
         var z = d3.scaleSqrt()
-            .domain([1, 4])
-            .range([1, 4]);
+            .domain([0, 320])
+            .range([4, 28]);
 
         // Add a scale for bubble color (topic)
         var myColor = d3.scaleOrdinal()
@@ -373,10 +378,10 @@ Data Quality / Data Cleaning,ICIQ,1997,5,1,Out of Overinformation by Information
                 .style("opacity", 1);
             tooltip
                 .html(
-                    "<strong>" + d.venue + " " + d.year + "</strong><br/>" +
+                    "<strong>" + d.title + "</strong><br/>" +
+                    d.venue + " " + d.year + "<br/>" +
                     "Topic: " + d.topic + "<br/>" +
-                    "Authors: " + d3.format(",")(d.authors) + "<br/>" +
-                    "Citations: " + d.citations
+                    "Authors: " + d.authors + " · Citations: " + d.citations
                 )
                 .style("left", (d3.event.pageX + 15) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
@@ -432,53 +437,16 @@ Data Quality / Data Cleaning,ICIQ,1997,5,1,Out of Overinformation by Information
         //       LEGEND               //
         // ---------------------------//
 
-        // Size legend (Authors)
-        var valuesToShow = [10, 100, 300];
-        var xCircle = width - 160+200;
-        var xLabel = width - 60+200;
-        
-        svg.selectAll("legend")
-            .data(valuesToShow)
-            .enter()
-            .append("circle")
-            .attr("cx", xCircle)
-            .attr("cy", function(d) { return height - 150 - z(d); })
-            .attr("r", function(d) { return z(d); })
-            .style("fill", "none")
-            .attr("stroke", "#666");
+        var legendLeft = width + 12;
 
-        svg.selectAll("legend")
-            .data(valuesToShow)
-            .enter()
-            .append("line")
-            .attr('x1', function(d) { return xCircle + z(d); })
-            .attr('x2', xLabel)
-            .attr('y1', function(d) { return height - 150 - z(d); })
-            .attr('y2', function(d) { return height - 150 - z(d); })
-            .attr('stroke', '#666')
-            .style('stroke-dasharray', '2,2');
-
-        svg.selectAll("legend")
-            .data(valuesToShow)
-            .enter()
-            .append("text")
-            .attr('x', xLabel)
-            .attr('y', function(d) { return height - 150 - z(d); })
-            .text(function(d) { return d + " "; })
-            .style("font-size", 9)
-            .attr('alignment-baseline', 'middle');
-
-        // Legend title
+        // --- Topic legend ---
         svg.append("text")
-            .attr('x', xCircle)
-            .attr("y", height - 255)
-            .text("Number of Citations")
+            .attr("x", legendLeft)
+            .attr("y", 12)
+            .text("Research Topics")
             .style("font-weight", "bold")
-            .style("font-size", "12px")
-            .attr("text-anchor", "right");
+            .style("font-size", "12px");
 
-        // Topic legend
-        var size = 11;
         var allgroups = [
             "Fact-Checking / Truth Discovery",
             "Multimodal Fusion & Learning",
@@ -487,40 +455,85 @@ Data Quality / Data Cleaning,ICIQ,1997,5,1,Out of Overinformation by Information
             "Knowledge Engineering"
         ];
 
-        svg.selectAll("myrect")
+        svg.selectAll(".lgDot")
             .data(allgroups)
             .enter()
             .append("circle")
-            .attr("cx", width - 180+200)
-            .attr("cy", function(d, i) { return 10 + i * (size + 5); })
+            .attr("class", "lgDot")
+            .attr("cx", legendLeft + 7)
+            .attr("cy", function(d, i) { return 28 + i * 18; })
             .attr("r", 7)
             .style("fill", function(d) { return myColor(d); })
             .style("cursor", "pointer")
             .on("mouseover", function(d) { highlight(d); })
             .on("mouseleave", function(d) { noHighlight(d); });
 
-        svg.append("text")
-            .attr('x', xCircle)
-            .attr("y", height - 370)
-            .text("Topics")
-            .style("font-weight", "bold")
-            .style("font-size", "12px")
-            .attr("text-anchor", "left");
-
-        svg.selectAll("mylabels")
+        svg.selectAll(".lgLbl")
             .data(allgroups)
             .enter()
             .append("text")
-            .attr("x", width - 165+200)
-            .attr("y", function(d, i) { return 10 + i * (size + 5); })
+            .attr("class", "lgLbl")
+            .attr("x", legendLeft + 18)
+            .attr("y", function(d, i) { return 28 + i * 18; })
             .style("fill", function(d) { return myColor(d); })
             .text(function(d) { return d; })
-            .attr("text-anchor", "left")
-            .style("alignment-baseline", "middle")
             .style("font-size", "11px")
+            .attr("alignment-baseline", "middle")
             .style("cursor", "pointer")
             .on("mouseover", function(d) { highlight(d); })
             .on("mouseleave", function(d) { noHighlight(d); });
+
+        // --- Citation size legend ---
+        // starts 22px below the last topic item (y = 28 + 4*18 = 100)
+        var citHeaderY = 28 + 5 * 18 + 22;   // = 140
+
+        svg.append("text")
+            .attr("x", legendLeft)
+            .attr("y", citHeaderY)
+            .text("# Citations")
+            .style("font-weight", "bold")
+            .style("font-size", "12px");
+
+        var valuesToShow = [0, 100, 300];
+        var xCircle   = legendLeft + 55;
+        var xLabel    = legendLeft + 110;
+        // bottom y of the largest circle; leave 20px below header
+        var citBottom = citHeaderY + 20 + z(300) * 2 + 5;
+
+        svg.selectAll(".szCircle")
+            .data(valuesToShow)
+            .enter()
+            .append("circle")
+            .attr("class", "szCircle")
+            .attr("cx", xCircle)
+            .attr("cy", function(d) { return citBottom - z(d); })
+            .attr("r", function(d) { return z(d); })
+            .style("fill", "none")
+            .attr("stroke", "#666");
+
+        // lines from top of each circle to label column
+        svg.selectAll(".szLine")
+            .data(valuesToShow)
+            .enter()
+            .append("line")
+            .attr("class", "szLine")
+            .attr("x1", function(d) { return xCircle + z(d); })
+            .attr("x2", xLabel)
+            .attr("y1", function(d) { return citBottom - z(d) * 2; })
+            .attr("y2", function(d) { return citBottom - z(d) * 2; })
+            .attr("stroke", "#666")
+            .style("stroke-dasharray", "2,2");
+
+        svg.selectAll(".szLbl")
+            .data(valuesToShow)
+            .enter()
+            .append("text")
+            .attr("class", "szLbl")
+            .attr("x", xLabel + 3)
+            .attr("y", function(d) { return citBottom - z(d) * 2; })
+            .text(function(d) { return d; })
+            .style("font-size", 9)
+            .attr("alignment-baseline", "middle");
     </script>
 </body>
 </html>
