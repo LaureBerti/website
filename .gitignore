@@ -27,6 +27,10 @@ __pycache__/
 .venv/
 venv/
 
+# Internal tooling — not for public repo
+add_paper.py
+README.md
+
 # Editor
 .vscode/
 .idea/
