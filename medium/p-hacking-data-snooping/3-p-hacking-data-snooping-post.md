@@ -1,5 +1,6 @@
 # The Statistical Integrity Trap: What Every Data Scientist Must Know
 
+![Statistical Integrity](figures/cover_prototype.png)
 You ran the test. p = 0.048. Just under the magic threshold. You move on. But did you run that test 30 different ways first, stopping when you got the result you hoped for? If so, your 95% confidence interval is actually more like 78%—and you may not even know it.
 
 In this article you'll simulate p-hacking, data snooping, and multiple comparison inflation hands-on, see exactly how they corrupt your conclusions, and learn the tools that catch them: Bonferroni correction, Benjamini-Hochberg FDR, and proper train/test separation.
@@ -93,7 +94,7 @@ False positive rate — p-hacking (20 tries): 64.2%  (expected ~64%)
 
 > **Checkpoint:** The hacked FPR should be near 64%. If it's much lower, check that you're generating fresh random data on each inner loop iteration.
 
-![Line chart showing how false positive rate grows with the number of tests run](p_hacking_fpr.png)
+![Line chart showing how false positive rate grows with the number of tests run](figures/p_hacking_fpr.png)
 
 *Figure: Simulated false positive rate as a function of the number of independent tests performed under the null hypothesis. A single honest test sits near the nominal 5% level; after 20 tests the FPR exceeds 64%, making a spurious "significant" result nearly inevitable — even when nothing real is happening in the data.*
 
@@ -147,7 +148,7 @@ Benjamini-Hochberg significant: 0 / 20
 
 Under pure null (no real effect), corrections eliminate false positives. When there are real effects, BH is more powerful than Bonferroni—it finds more true positives while still controlling FDR.
 
-![Bar chart comparing raw p-values, Bonferroni-corrected values, and Benjamini-Hochberg corrected values across 20 tests](multiple_comparisons.png)
+![Bar chart comparing raw p-values, Bonferroni-corrected values, and Benjamini-Hochberg corrected values across 20 tests](figures/multiple_comparisons.png)
 
 *Figure: Raw p-values for 20 tests under the null (grey), alongside the Bonferroni (blue) and Benjamini-Hochberg (orange) corrected thresholds. Tests that appear significant before correction fall above the corrected thresholds after adjustment, showing how both methods eliminate the false positives that uncorrected testing would report.*
 
@@ -206,7 +207,7 @@ A 3.3% optimistic bias from feature selection leakage. The effect is amplified h
 
 ## 5. Recognizing and Preventing Each Problem
 
-![Statistical integrity problems, detection signals, and prevention strategies](table_integrity.png)
+![Statistical integrity problems, detection signals, and prevention strategies](figures/table_integrity.png)
 
 *Figure: Five common forms of statistical integrity failure in data science — from p-hacking and multiple comparisons to data snooping and cherry-picking. Each has a detectable signal pattern and a concrete prevention strategy. The most insidious are those that look like honest analysis until you inspect the workflow.*
 
