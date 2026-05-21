@@ -1,5 +1,7 @@
 # Anomaly Detection from Classical Methods, Deep Learning to LLM Zero-Shot Detectors
 
+![Anomaly Detection](figures/cover.png)
+
 Your fraud detection model just scored 98% in the lab. Then production hits and it misses a $2M transaction while flooding analysts with 400 false alarms daily. Anomaly detection is one of the oldest problems in data science—and one of the hardest to get right in practice.
 
 In this article you'll compare three families of anomaly detectors on the same benchmark: classical outlier scores (Isolation Forest, LOF), rolling statistics for time series, and zero-shot LLM detection. Every code block runs with standard Python dependencies—no extra installs required for the core examples.
