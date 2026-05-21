@@ -1,5 +1,5 @@
 # The Statistical Integrity Trap: What Every Data Scientist Must Know
-
+![Statistical Integrity](cover_prototype.png)
 You ran the test. p = 0.048. Just under the magic threshold. You move on. But did you run that test 30 different ways first, stopping when you got the result you hoped for? If so, your 95% confidence interval is actually more like 78%—and you may not even know it.
 
 In this article you'll simulate p-hacking, data snooping, and multiple comparison inflation hands-on, see exactly how they corrupt your conclusions, and learn the tools that catch them: Bonferroni correction, Benjamini-Hochberg FDR, and proper train/test separation.
