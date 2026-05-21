@@ -1,5 +1,5 @@
 # The Statistical Integrity Trap: What Every Data Scientist Must Know
-<<<<<<< HEAD
+
 
 ![Statistical Integrity](figures/cover_prototype.png)
 
