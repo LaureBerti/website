@@ -1,5 +1,7 @@
 # Uncertainty Quantification for ML Practitioners: Conformal Prediction, Ensembles, and When to Trust Your Model
 
+![Uncertainty Quantification](figures/cover.png)
+
 Your model says this loan application has a 73% probability of default. Should you approve or reject? That single number hides the real question: *how uncertain is the model about that 73%?* A well-calibrated model that says "73% ± 5%" is very different from one that says "73% ± 40%."
 
 In this article you'll implement four practical uncertainty quantification (UQ) techniques using only `numpy` and `scikit-learn`, see the math behind each method, and learn when to use which.
