@@ -281,6 +281,8 @@ Higher coverage demands wider intervals—there's no free lunch.
 ## References
 
 1. L. Berti-Equille, *AI for SDGs: Artificial Intelligence for the UN Sustainable Development Goals*, EDP Sciences, 2025. [Open access — edpsciences.org]
+2. G. Bezirganyan, S. Sellami, Laure Berti-Equille, & S. Fournier. Multimodal Learning with Uncertainty Quantification based on Discounted Belief Fusion. Proc. of the 28th Intl. Conf. on Artificial Intelligence and Statistics (AIStats 2025). Mai Khao, Thailand, May 3–5, 2025.
+3. G. Bezirganyan, S. Sellami, Laure Berti-Equille, & S. Fournier. EM-SEC: Efficient Multi-head Set-valued Evidential Classification. Proc. of the European Conference on Machine Learning and Principles and Practice on Knowledge Discovery in Databases (ECML PKDD 2025), Porto, Portugal, Sept. 15–19, 2025.
 
 *Laure Berti-Equille — Research Director (DR1) at IRD, France.
  [Web site](https://laureberti.github.io/website)
