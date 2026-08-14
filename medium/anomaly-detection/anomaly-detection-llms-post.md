@@ -83,7 +83,7 @@ Z-score recall:          80%
 
 ![Scatter plot comparing Isolation Forest vs LOF anomaly detection on 2D data](figures/anomaly_comparison.png)
 
-*Figure: Detected anomalies (marked in red) on the 2D benchmark dataset for Isolation Forest (left) and LOF (right). LOF achieves 100% recall by capturing corner-point outliers that differ from their local neighborhood, while Isolation Forest reaches 90% — the trade-off is speed: Isolation Forest scales to millions of rows where LOF's O(n²) cost becomes prohibitive.*
+*Figure: Detected anomalies (marked in red) on the 2D benchmark dataset for Isolation Forest (left) and LOF (right). LOF achieves 100% recall by capturing corner-point outliers that differ from their local neighborhood, while Isolation Forest reaches 100% — the trade-off is speed: Isolation Forest scales to millions of rows where LOF's O(n²) cost becomes prohibitive.*
 
 ---
 

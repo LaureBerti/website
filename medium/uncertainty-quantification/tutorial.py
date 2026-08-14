@@ -133,9 +133,9 @@ for coverage in [0.80, 0.90, 0.95]:
     print(f"Coverage {coverage:.0%} → q̂={q_hat:.1f}, width={width:.1f}")
 
 # Output:
-# Coverage 80% → q̂=21.3, width=42.6
-# Coverage 90% → q̂=33.7, width=67.4
-# Coverage 95% → q̂=44.1, width=88.2
+# Coverage 80% → q̂=32.8, width=65.5
+# Coverage 90% → q̂=41.1, width=82.2
+# Coverage 95% → q̂=51.1, width=102.2
 
 
 # ────────────────────────────────────────────────────────────

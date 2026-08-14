@@ -30,6 +30,8 @@ venv/
 # Internal tooling — not for public repo
 add_paper.py
 README.md
+# index of published Medium stories — keep this one tracked
+!medium/README.md
 
 # Editor
 .vscode/
