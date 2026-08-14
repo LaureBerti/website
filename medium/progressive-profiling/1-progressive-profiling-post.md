@@ -105,7 +105,7 @@ Before reaching for a sophisticated sampler, try random uniform. For profiling a
 
 ## Further Reading
 
-1. L. Berti-Équille, *Data Quality Profiling at Scale with Progressive Sampling: A Benchmark for Data-Centric AI Pipelines*, Transactions on Large-Scale Data- and Knowledge-Centered Systems (TLDKS), Springer. — the paper this tutorial is based on; full nine-strategy benchmark, real datasets, and scaling analysis.
+1. L. Berti-Équille, *Data Quality Profiling at Scale with Progressive Sampling: A Benchmark for Data-Centric AI Pipelines*, Transactions on Large-Scale Data- and Knowledge-Centered Systems (TLDKS), Springer. arXiv: https://arxiv.org/abs/2607.25356 — the paper this tutorial is based on; full nine-strategy benchmark, real datasets, and scaling analysis.
 2. L. Berti-Équille, *Learn2Clean: Optimizing the Sequence of Tasks for Web Data Preparation*, The Web Conference (WWW) 2019. — a data-centric view of how cleaning and preparation choices propagate into downstream model quality.
 3. Try it yourself: swap in one of your own CSVs, add a sampler (geometric, stratified, importance-weighted), and see whether *any* clever strategy beats random uniform on your data.
 
