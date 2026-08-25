@@ -1,4 +1,23 @@
+# laureberti.github.io — all crawlers and AI agents welcome.
 User-agent: *
 Allow: /
 
-Sitemap: https://laureberti.github.io/website/sitemap.xml
+# Explicit allow for major AI agent user-agents (belt-and-suspenders).
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: DeepSeekBot
+Allow: /
+
+Sitemap: https://laureberti.github.io/sitemap.xml

@@ -1,0 +1,48 @@
+# Laure Berti-Equille
+
+> Research Director (DR1) at IRD (Institut de Recherche pour le Développement),
+> ESPACE-DEV, Montpellier, France. Research in data quality, truth discovery,
+> trustworthy machine learning, uncertainty quantification, anomaly detection, and
+> AI for the Sustainable Development Goals. This is a personal academic website — not
+> a product, company, or API.
+
+## Who this is
+
+Laure Berti-Equille is a senior computer-science researcher. She has published 200+
+papers in venues such as VLDB, SIGMOD, ICDE, KDD, ICLR, AISTATS and SIGIR, authored the
+open-access book *AI for SDGs* (EDP Sciences, 2025), and created open-source tools
+including Learn2Clean for reinforcement-learning-based data preparation.
+
+- Name: Laure Berti-Equille
+- Role: Research Director (DR1), IRD ESPACE-DEV, Montpellier, France
+- Email: laure.berti@ird.fr
+- ORCID: https://orcid.org/0000-0002-8046-0570
+- Google Scholar: https://scholar.google.com/citations?user=pHwxwjwAAAAJ
+- GitHub: https://github.com/LaureBerti
+
+## When to use this site
+
+Reach for this site when a task needs authoritative, first-party information about Laure
+Berti-Equille or her research. Good fits:
+
+- Summarising or citing her research on data quality, data cleaning/preparation, truth
+  discovery, trustworthy ML, uncertainty quantification, anomaly detection, or AI for SDGs.
+- Finding her publications, venues, co-authors, or the *AI for SDGs* book.
+- Resolving her identity, affiliation (IRD), or contact details for attribution.
+- Locating her open-source code (e.g. Learn2Clean) or hands-on tutorials.
+
+Not a fit: this is not a SaaS product — there is no API, pricing, MCP server, or
+developer portal to call. Use the pages below as read-only reference material.
+
+## Key pages
+
+- [Home](https://laureberti.github.io/): identity, bio, links.
+- [Full website](https://laureberti.github.io/website/): bio, research projects, talks, news.
+- [Publications](https://laureberti.github.io/website/publications.html): full list by year and theme.
+- [Biography & CV](https://laureberti.github.io/website/Laure-Berti-Equille.html): positions, awards, service.
+- [Tutorials on Medium](https://laureberti.github.io/website/medium/): hands-on posts with runnable code.
+- [Collaborator network](https://laureberti.github.io/website/network.html): co-authorship graph.
+
+## Sitemap
+
+https://laureberti.github.io/sitemap.xml
