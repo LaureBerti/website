@@ -11,7 +11,6 @@
   <meta name="robots" content="all">
   <link rel="canonical" href="https://laureberti.github.io/">
 
-  <!-- Open Graph / entity resolution -->
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Laure Berti-Equille — Research Director (DR1), IRD">
   <meta property="og:description" content="Research in data quality, truth discovery, trustworthy machine learning, and AI for sustainable development.">
@@ -21,10 +20,11 @@
   <meta property="profile:last_name" content="Berti-Equille">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800" rel="stylesheet">
+  <!-- Site stylesheets (shared with /website/) -->
+  <link href="website/web_fichiers/academicons.min.css" rel="stylesheet">
+  <link href="website/web_fichiers/font-awesome.css" rel="stylesheet">
+  <link href="website/web_fichiers/bootstrap.css" rel="stylesheet">
 
-  <!-- Person structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -32,6 +32,7 @@
     "name": "Laure Berti-Equille",
     "givenName": "Laure",
     "familyName": "Berti-Equille",
+    "description": "Research Director (DR1) at IRD, France. Research in data quality, truth discovery, trustworthy machine learning, uncertainty quantification, anomaly detection, and AI for the Sustainable Development Goals.",
     "url": "https://laureberti.github.io/",
     "mainEntityOfPage": "https://laureberti.github.io/website/",
     "image": "https://laureberti.github.io/website/img/overview.png",
@@ -40,7 +41,17 @@
     "worksFor": {
       "@type": "Organization",
       "name": "IRD — Institut de Recherche pour le Développement",
-      "url": "https://www.ird.fr/"
+      "url": "https://www.ird.fr/",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "correspondence",
+        "email": "laure.berti@ird.fr"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Montpellier",
+        "addressCountry": "FR"
+      }
     },
     "affiliation": {
       "@type": "Organization",
@@ -65,87 +76,135 @@
       "https://laureberti.github.io/website/",
       "https://orcid.org/0000-0002-8046-0570",
       "https://scholar.google.com/citations?user=pHwxwjwAAAAJ",
-      "https://github.com/LaureBerti"
+      "https://github.com/LaureBerti",
+      "https://www.linkedin.com/in/laure-berti-equille/",
+      "https://twitter.com/laureberti",
+      "https://www.researchgate.net/profile/Laure-Berti-Equille",
+      "https://www.semanticscholar.org/author/1403176402",
+      "https://medium.com/@laure.berti2"
     ]
   }
   </script>
 
-  <style>
-    :root { --ink:#1a1a1a; --muted:#5a5a5a; --accent:#0088cc; --line:#e6e6e6; --bg:#ffffff; }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; background: var(--bg); color: var(--ink);
-      font-family: 'Montserrat', -apple-system, Helvetica, Arial, sans-serif;
-      line-height: 1.65; font-size: 17px;
-    }
-    .wrap { max-width: 760px; margin: 0 auto; padding: 56px 22px 72px; }
-    header { border-bottom: 2px solid var(--line); padding-bottom: 22px; margin-bottom: 26px; }
-    h1 { font-weight: 800; font-size: 2.1rem; margin: 0 0 4px; letter-spacing: -0.5px; }
-    .role { color: var(--muted); font-size: 1.02rem; font-weight: 400; }
-    .role a { color: var(--accent); text-decoration: none; }
-    h2 { font-weight: 700; font-size: 1.15rem; margin: 34px 0 10px; }
-    p { margin: 0 0 16px; }
-    a { color: var(--accent); }
-    .links { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; }
-    .links a { display: block; text-decoration: none; padding: 10px 14px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); }
-    .links a:hover { border-color: var(--accent); color: var(--accent); }
-    .links b { display: block; font-weight: 700; }
-    .links span { color: var(--muted); font-size: 0.86rem; }
-    .idlinks { font-size: 0.95rem; }
-    .idlinks a { margin-right: 16px; white-space: nowrap; }
-    footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
-    @media (max-width: 560px) { .links { grid-template-columns: 1fr; } h1 { font-size: 1.7rem; } }
+  <style type="text/css">
+    @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700,800);
+    h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', Helvetica, sans-serif; }
+    body { font-family: 'Montserrat', Helvetica, Arial, sans-serif; }
+    header { text-align: center; padding-top: 18px; }
+    h1.name { font-weight: 800; font-size: 2.2rem; color: #6b6b6b; margin: 0 0 2px; }
+    header small { color: #999; font-size: 1rem; }
+    header .icons { margin: 12px 0 6px; }
+    header .icons a { color: #555; margin: 0 5px; font-size: 1.35rem; text-decoration: none; }
+    header .icons a:hover { color: #0088cc; }
+    .ird { margin: 8px 0 2px; }
+    ul.menu { list-style: none; padding: 0; margin: 18px auto 4px; text-align: center; line-height: 2.5em; }
+    ul.menu li { display: inline-block; margin: 0 10px; }
+    ul.menu a { color: #999; text-decoration: none; font-weight: 700; }
+    ul.menu a:hover { color: #0088cc; }
+    .container { max-width: 820px; }
+    .lead-bio p { text-align: justify; line-height: 1.65em; }
+    h3.section { font-weight: 700; font-size: 1.15rem; margin: 26px 0 8px; color: #333; }
+    ul.pubs { padding-left: 1.1em; }
+    ul.pubs li { margin-bottom: 8px; line-height: 1.5em; }
+    .explore { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; }
+    .explore a { display: block; padding: 9px 13px; border: 1px solid #e6e6e6; border-radius: 8px; color: #333; text-decoration: none; }
+    .explore a:hover { border-color: #0088cc; color: #0088cc; }
+    .footer { text-align: center; color: #999; margin: 34px 0 24px; }
+    @media (max-width: 560px) { .explore { grid-template-columns: 1fr; } h1.name { font-size: 1.8rem; } }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <header>
-      <h1>Laure Berti-Equille</h1>
-      <div class="role">Research Director (DR1) &middot; <a href="https://www.ird.fr/">IRD</a>, ESPACE-DEV &middot; Montpellier, France</div>
-    </header>
-
-    <p>
-      Laure Berti-Equille is a Research Director (DR1) at IRD (Institut de Recherche pour
-      le Développement), based at the ESPACE-DEV joint research unit in Montpellier, France.
-      Her work spans <strong>data quality</strong>, data preparation and cleaning,
-      <strong>truth discovery</strong> and fact-checking, and <strong>trustworthy machine
-      learning</strong> — including uncertainty quantification, anomaly detection, and
-      multimodal deep learning — with applications to Earth observation and the United
-      Nations Sustainable Development Goals.
+  <header>
+    <h1 class="name text-muted">Laure Berti-Equille</h1>
+    <small>Research Director (DR1) &middot; IRD, ESPACE-DEV &middot; Montpellier, France</small>
+    <p class="icons">
+      <a href="https://github.com/LaureBerti" target="_blank" title="GitHub"><i class="fa fa-github-square"></i></a>
+      <a href="https://twitter.com/laureberti" target="_blank" title="Twitter"><i class="fa fa-twitter-square"></i></a>
+      <a href="https://www.linkedin.com/in/laure-berti-equille/" target="_blank" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+      <a href="https://scholar.google.fr/citations?user=pHwxwjwAAAAJ" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square"></i></a>
+      <a href="https://www.researchgate.net/profile/Laure-Berti-Equille" target="_blank" title="ResearchGate"><i class="ai ai-researchgate-square"></i></a>
+      <a href="https://orcid.org/0000-0002-8046-0570" target="_blank" title="ORCID"><i class="ai ai-orcid-square"></i></a>
+      <a href="https://www.semanticscholar.org/author/1403176402" target="_blank" title="Semantic Scholar"><i class="ai ai-semantic-scholar-square"></i></a>
+      <a href="https://medium.com/@laure.berti2" target="_blank" title="Medium"><i class="fa fa-medium"></i></a>
     </p>
-    <p>
-      She has published more than 200 papers in leading venues such as VLDB, SIGMOD, ICDE,
-      KDD, ICLR, AISTATS and SIGIR, authored the open-access book
-      <em>AI for SDGs</em> (EDP Sciences, 2025), and created open-source tools including
-      <a href="https://github.com/LaureBerti/Learn2Clean">Learn2Clean</a> for
-      reinforcement-learning-based data preparation. Before IRD she held research positions
-      at MIT (visiting researcher, LIDS), the Qatar Computing Research Institute,
-      AT&amp;T Labs–Research, and the University of Rennes.
-    </p>
-
-    <h2>Explore</h2>
-    <ul class="links">
-      <li><a href="https://laureberti.github.io/website/"><b>Full homepage</b><span>Bio, projects, talks, news</span></a></li>
-      <li><a href="https://laureberti.github.io/website/publications.html"><b>Publications</b><span>200+ papers, by year and theme</span></a></li>
-      <li><a href="https://laureberti.github.io/website/Laure-Berti-Equille.html"><b>Biography &amp; CV</b><span>Positions, awards, service</span></a></li>
-      <li><a href="https://laureberti.github.io/website/medium/"><b>Tutorials (Medium)</b><span>Hands-on posts with runnable code</span></a></li>
-      <li><a href="https://laureberti.github.io/website/network.html"><b>Collaborator network</b><span>Co-authorship graph</span></a></li>
-      <li><a href="https://laureberti.github.io/llms.txt"><b>For AI agents</b><span>llms.txt — who this is, when to use</span></a></li>
+    <a href="https://en.ird.fr/" target="_blank" class="ird"><img width="80" src="website/img/logo-ird.png" alt="IRD"></a>
+    <ul class="menu">
+      <li><a href="website/#research">Research</a></li>
+      <li><a href="website/#projects">Projects</a></li>
+      <li><a href="website/publications.html">Publications</a></li>
+      <li><a href="website/#talks">Talks</a></li>
+      <li><a href="website/Laure-Berti-Equille.html">Bio &amp; CV</a></li>
+      <li><a href="website/medium/">Tutorials</a></li>
+      <li><a href="contact/">Contact</a></li>
     </ul>
+  </header>
 
-    <h2>Find me</h2>
-    <p class="idlinks">
-      <a href="mailto:laure.berti@ird.fr">Email</a>
-      <a href="https://scholar.google.com/citations?user=pHwxwjwAAAAJ">Google Scholar</a>
-      <a href="https://orcid.org/0000-0002-8046-0570">ORCID</a>
-      <a href="https://github.com/LaureBerti">GitHub</a>
+  <div class="container">
+    <div class="lead-bio">
+      <p>
+        Laure Berti-Equille is a Research Director (DR1) at IRD (Institut de Recherche pour
+        le Développement), based at the ESPACE-DEV joint research unit in Montpellier, France.
+        Her work spans <strong>data quality</strong>, data preparation and cleaning,
+        <strong>truth discovery</strong> and fact-checking, and <strong>trustworthy machine
+        learning</strong> — including uncertainty quantification, anomaly detection, and
+        multimodal deep learning — with applications to Earth observation and the United
+        Nations Sustainable Development Goals.
+      </p>
+      <p>
+        She has published more than 200 papers in leading venues such as VLDB, SIGMOD, ICDE,
+        KDD, ICLR, AISTATS and SIGIR, authored the open-access book <em>AI for SDGs</em>
+        (EDP Sciences, 2025), and created open-source tools including
+        <a href="https://github.com/LaureBerti/Learn2Clean">Learn2Clean</a> for
+        reinforcement-learning-based data preparation. Before IRD she held research positions
+        at MIT (visiting researcher, LIDS), the Qatar Computing Research Institute,
+        AT&amp;T Labs–Research, and the University of Rennes. She is a Senior Member of IEEE
+        and ACM and a member of the ELLIS society.
+      </p>
+    </div>
+
+    <h3 class="section">Research themes</h3>
+    <p class="lead-bio">
+      Data quality and cleaning &middot; truth discovery and fact-checking &middot;
+      trustworthy and uncertainty-aware machine learning &middot; anomaly detection in
+      time series &middot; multimodal deep learning &middot; AI for the Sustainable
+      Development Goals (Earth observation, biodiversity, poverty estimation).
     </p>
 
-    <footer>
-      Laure Berti-Equille — Research Director (DR1), IRD ESPACE-DEV, Montpellier, France.
-      Contact: <a href="mailto:laure.berti@ird.fr">laure.berti@ird.fr</a>.
-      Full site: <a href="https://laureberti.github.io/website/">laureberti.github.io/website</a>.
-    </footer>
-  </main>
+    <h3 class="section">Selected publications</h3>
+    <ul class="pubs">
+      <li>G. Bezirganyan, S. Sellami, <strong>L. Berti-Equille</strong>, S. Fournier.
+        <em>Classification with Uncertainty-Aware Multimodal Deep Learning: A Survey.</em>
+        ACM SIGKDD Explorations 28(1):41–62, 2026.</li>
+      <li><strong>L. Berti-Equille</strong>.
+        <em>Data Quality Profiling at Scale with Progressive Sampling: A Benchmark for
+        Data-Centric AI Pipelines.</em> Trans. on Large-Scale Data- and Knowledge-Centered
+        Systems (TLDKS), Springer, 2026.</li>
+      <li>S. Alnegheimish, D. Liu, C. Sala, <strong>L. Berti-Equille</strong>, K. Veeramachaneni.
+        <em>Sintel: An Overarching Ecosystem for End-to-End Time Series Anomaly Detection.</em>
+        ACM SIGMOD 2022.</li>
+      <li><strong>L. Berti-Equille</strong>.
+        <em>Learn2Clean: Optimizing the Sequence of Tasks for Web Data Preparation.</em>
+        The Web Conference (WWW) 2019.</li>
+      <li><strong>L. Berti-Equille</strong>, H. Harmouch, F. Naumann, N. Novelli, S. Thirumuruganathan.
+        <em>Discovery of Genuine Functional Dependencies from Relational Data with Missing
+        Values.</em> VLDB 2018.</li>
+    </ul>
+    <p><a href="website/publications.html">See all 200+ publications &rarr;</a></p>
+
+    <h3 class="section">Explore</h3>
+    <ul class="explore">
+      <li><a href="website/">Full website — bio, projects, talks, news</a></li>
+      <li><a href="website/publications.html">Publications</a></li>
+      <li><a href="website/Laure-Berti-Equille.html">Biography &amp; CV</a></li>
+      <li><a href="website/medium/">Tutorials on Medium (runnable code)</a></li>
+      <li><a href="website/network.html">Collaborator network</a></li>
+      <li><a href="about/">About</a> &middot; <a href="contact/">Contact</a> &middot; <a href="llms.txt">llms.txt</a> (for AI agents)</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p><small>© Laure Berti-Equille &middot; IRD ESPACE-DEV, Montpellier, France &middot;
+    <a href="mailto:laure.berti@ird.fr">laure.berti@ird.fr</a></small></p>
+  </div>
 </body>
 </html>
